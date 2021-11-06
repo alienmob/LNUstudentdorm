@@ -1,13 +1,13 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-include '.../includes/session.php';
+include '../../includes/session.php';
 
-require '.../phpmailer/vendor/autoload.php';
+require '../../phpmailer/vendor/autoload.php';
 
-include('.../includes/conn.php');
+include('../../includes/conn.php');
 
-require_once '.../includes/config.php';
+require_once '../../includes/config.php';
 
 	if(isset($_POST['add'])){
 		$event_category = $_POST['event_category'];
@@ -105,5 +105,5 @@ $email = $row['email'];
 		$_SESSION['error'] = 'Fill up add form first';
 	}
 
-	header('location: .../pages/event.php');
+	header('location: ../../pages/event.php');
 ?>

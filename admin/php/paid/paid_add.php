@@ -1,5 +1,5 @@
 <?php
-include '.../includes/session.php';
+include '../../includes/session.php';
 
 if (isset($_POST['add'])) {
 	$student = $_POST['student_id'];
@@ -48,4 +48,4 @@ if (isset($_POST['add'])) {
 	$_SESSION['error'] = 'Fill up add form first';
 }
 
-header('location: .../pages/paid.php');
+header('location: ../../pages/paid.php');

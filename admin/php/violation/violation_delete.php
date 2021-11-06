@@ -1,5 +1,5 @@
 <?php
-	include '.../includes/session.php';
+	include '../../includes/session.php';
 
 	if(isset($_POST['delete'])){
 		$id = $_POST['id'];
@@ -15,6 +15,6 @@
 		$_SESSION['error'] = 'Select item to delete first';
 	}
 
-	header('location: .../pages/violation.php');
+	header('location: ../../pages/violation.php');
 	
 ?>

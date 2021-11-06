@@ -1,5 +1,5 @@
 <?php
-	include '.../includes/session.php';
+	include '../../includes/session.php';
 
 	if(isset($_POST['add'])){
 		$code = $_POST['code'];
@@ -37,6 +37,6 @@
 		$_SESSION['error'] = 'Fill up add form first';
 	}
 
-	header('location: .../pages/equipment.php');
+	header('location: ../../pages/equipment.php');
 
 ?>

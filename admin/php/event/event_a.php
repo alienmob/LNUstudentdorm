@@ -3,11 +3,11 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 include 'includes/session.php';
 
-require '.../phpmailer/vendor/autoload.php';
+require '../../phpmailer/vendor/autoload.php';
 
-include('.../includes/conn.php');
+include('../../includes/conn.php');
 
-require_once '.../includes/config.php';
+require_once '../../includes/config.php';
 
 	if(isset($_POST['attendance'])){
         $event = $_POST['event'];
@@ -114,5 +114,5 @@ $_SESSION['error'] = 'Fill up edit form first';
 }
 
 
-	header('location: .../pages/event.php');
+	header('location: ../../pages/event.php');
 ?>

@@ -1,5 +1,5 @@
 <?php
-include '.../includes/session.php';
+include '../../includes/session.php';
 
 if (isset($_POST['checkout'])) {
 	$transient = $_POST['transient_id'];
@@ -9,10 +9,10 @@ if (isset($_POST['checkout'])) {
 	if ($query->num_rows < 1) {
 		if (!isset($_SESSION['error'])) {
 			$_SESSION['error'] = 'Transient ID not found';
-			header('location: .../pages/checkin.php');
+			header('location: ../../pages/checkin.php');
 		}
 		$_SESSION['error'][] = 'Transient ID not found';
-		header('location: .../pages/checkin.php');
+		header('location: ../../pages/checkin.php');
 	} else {
         $row = $query->fetch_assoc();
 		$transient_id = $row['transient_id'];  //
@@ -48,9 +48,9 @@ if (isset($_POST['checkout'])) {
 	}
 } else {
 	$_SESSION['error'] = 'Fill up add form first';
-	header('location: .../pages/checkin.php');
+	header('location: ../../pages/checkin.php');
 }
 	
-header('location: .../pages/checkout.php');
+header('location: ../../pages/checkout.php');
 
 

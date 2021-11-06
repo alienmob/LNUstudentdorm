@@ -1,5 +1,5 @@
 <?php
-include '.../includes/session.php';
+include '../../includes/session.php';
 
 if (isset($_POST['checkin'])) {
 	$transient = $_POST['transient_id'];
@@ -9,10 +9,10 @@ if (isset($_POST['checkin'])) {
 	if ($query->num_rows < 1) {
 		if (!isset($_SESSION['error'])) {
 			$_SESSION['error'] = 'Transient ID not found';
-			header('location: .../pages/transient.php');
+			header('location: ../../pages/transient.php');
 		}
 		$_SESSION['error'][] = 'Transient ID not found';
-		header('location: .../pages/transient.php');
+		header('location: ../../pages/transient.php');
 	} else {
         $row = $query->fetch_assoc();
 		$transient_id = $row['transient_id'];  //
@@ -50,12 +50,12 @@ if (isset($_POST['checkin'])) {
 
 				
 					$_SESSION['error'] = '"' .$floor_row['floor_name']. '&nbsp;-&nbsp;' .$room_row['room_name']. '" Is Full';
-					header('location: .../pages/transient.php');
+					header('location: ../../pages/transient.php');
 					
 						
 					}else if ($status == 1) {
 							$_SESSION['error'] = '"' .$floor_row['floor_name']. '&nbsp;-&nbsp;' .$room_row['room_name']. '" Is Unavailable';
-							header('location: .../pages/transient.php');		
+							header('location: ../../pages/transient.php');		
 					}else{
         
         // $sql = "SELECT * FROM transient WHERE transient_id = '$transient'";
@@ -79,7 +79,7 @@ if (isset($_POST['checkin'])) {
 }
 } else {
 	$_SESSION['error'] = 'Fill up add form first';
-	header('location: .../pages/transient.php');
+	header('location: ../../pages/transient.php');
 }
 
-header('location: .../pages/checkin.php');
+header('location: ../../pages/checkin.php');

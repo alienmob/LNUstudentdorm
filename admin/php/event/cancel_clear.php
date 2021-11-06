@@ -1,5 +1,5 @@
 <?php
-	include '.../includes/session.php';
+	include '../../includes/session.php';
 
 	if(isset($_POST['cancel_clear'])){
 		$status = $_POST['status'];
@@ -16,6 +16,6 @@
 		$_SESSION['error'] = 'Check Status';
 	}
 
-	header('location: .../pages/event.php');
+	header('location: ../../pages/event.php');
 	
 ?>

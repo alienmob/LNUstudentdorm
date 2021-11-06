@@ -411,7 +411,7 @@ $(function(){
 });
 
 document.addEventListener('DOMContentLoaded', async function() {
-		let response = await fetch('includes/fetch_event.php');
+		let response = await fetch('../includes/fetch_event.php');
 		var calendarEl = document.getElementById('calendar');
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',

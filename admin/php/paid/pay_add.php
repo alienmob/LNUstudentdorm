@@ -1,5 +1,5 @@
 <?php
-include '.../includes/session.php';
+include '../../includes/session.php';
 
 if (isset($_POST['pay'])) {
 	$uid = $_POST['stud'];
@@ -55,7 +55,7 @@ if (isset($_POST['pay'])) {
 	$_SESSION['error'] = 'Fill up add form first';
 }
 
-header('location: .../pages/paid.php');
+header('location: ../../pages/paid.php');
 
 
 

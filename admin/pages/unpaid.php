@@ -79,7 +79,7 @@
                     $sql = "SELECT *, unpaid.id AS ID, unpaid.status AS pstat FROM unpaid LEFT JOIN students ON students.student_id=unpaid.student_id ORDER BY deadline DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
-                      $receipt = (!empty($row['receipt'])) ? '../img/'.$row['receipt'] : '../img/receipt.png';
+                      $receipt = (!empty($row['receipt'])) ? '../../img/'.$row['receipt'] : '../../img/receipt.png';
                       if ($row['pstat']) {
                         $status = '<span class="label label-success">Paid</span>';
                       } else {
@@ -182,8 +182,8 @@ getRow(id);
           $('#name').val(response.firstname+' '+response.lastname);
           $('#pname').val(response.firstname+' '+response.lastname);
           $('#upload2').val(response.receipt);
-          $('#upload').attr("src", response.receipt ? '../img/' + response.receipt : '../img/receipt.png');
-          $('#display_img').attr("src", response.receipt ? '../img/' + response.receipt : '../img/receipt.png');
+          $('#upload').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
+          $('#display_img').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
           $('.name_id').html(response.firstname+' '+response.lastname+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student ID:'+response.student_id);
           $('.res').html(response.date_from+'&nbsp; - &nbsp; '+response.date_to);
         }

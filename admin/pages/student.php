@@ -115,7 +115,7 @@ if (isset($_GET['rooms'])) {
                     
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
-                      $photo = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+                      $photo = (!empty($row['photo'])) ? '../../images/'.$row['photo'] : '../../images/profile.jpg';
                       echo "
                         <tr>
                           
@@ -209,7 +209,7 @@ function getRow(id){
       $('#edit_email').val(response.email);
       $('#edit_guardian').val(response.guardian);
       $('#edit_guardian_contact').val(response.guardian_contact);
-      $('#display_photo').attr("src", response.photo ? '../images/' + response.photo : '../images/profile.jpg');
+      $('#display_photo').attr("src", response.photo ? '../../images/' + response.photo : '../../images/profile.jpg');
       $('#selfloor').val(response.floor_id);
       $('#selfloor').html(response.floor_name);
       $('#selroom').val(response.room_id);
