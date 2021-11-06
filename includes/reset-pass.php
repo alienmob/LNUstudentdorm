@@ -33,6 +33,6 @@
    }		
 }
 
-header('location: http://localhost/Dormitory5.0/reset-password.php?token='.$token.'&email='.$email.'&action=reset');
+header('location: http://localhost/LNUstudentdorm/reset-password.php?token='.$token.'&email='.$email.'&action=reset');
 
 ?>

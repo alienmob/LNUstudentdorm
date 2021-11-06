@@ -37,8 +37,8 @@
      if ($conn->query($sql_insert)) {
       $output='<p>Dear user,</p>';
       $output.='<p>Please click on the following link to reset your password.</p>';
-      $output.='<p><a href="http://localhost/Dormitory5.0/reset-password.php?token='.$token.'&email='.$email.'&action=reset" target="_blank">
-      http://localhost/Dormitory5.0/reset-password.php
+      $output.='<p><a href="http://localhost/LNUstudentdorm/reset-password.php?token='.$token.'&email='.$email.'&action=reset" target="_blank">
+      http://localhost/LNUstudentdorm/reset-password.php
       ?token='.$token.'&email='.$email.'&action=reset</a></p>';		
       $output.='<p>Please be sure to copy the entire link into your browser.
       The link will expire after 1 day for security reason.</p>';
