@@ -42,9 +42,19 @@
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-            	<button type="submit" class="btn btn-success btn-rounded" name="attendance"><i class="fa fa-paper-plane"></i> Send</button>
+              <input type="submit" class="send-btn btn btn-success btn-rounded" name="attendance" value="Send" />
             	</form>
           	</div>
         </div>
     </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $(function() {
+                $(".send-btn").click(function() {
+                    $(this).val('Please Wait...');
+                });
+            });
+        </script>

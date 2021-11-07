@@ -80,7 +80,7 @@
 		WHERE student_id = '$id'";
 		if($conn->query($sql)){
 
-
+		
 
 			$_SESSION['success'] = 'Student updated successfully';
 		}

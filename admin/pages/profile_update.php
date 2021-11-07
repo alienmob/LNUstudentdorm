@@ -5,7 +5,7 @@
 		$return = $_GET['return'];
 	}
 	else{
-		$return = '../pages/home.php';
+		$return = 'home.php';
 	}
 
 	if(isset($_POST['save'])){
@@ -39,7 +39,7 @@
 				$_SESSION['success'] = 'Admin profile updated successfully';
 			}
 			else{
-				if($return == '../pages/borrow.php' OR $return == '../pages/return.php'){
+				if($return == 'borrow.php' OR $return == 'return.php'){
 					if(!isset($_SESSION['error'])){
 						$_SESSION['error'] = array();
 					}
@@ -53,7 +53,7 @@
 			
 		}
 		else{
-			if($return == '../pages/borrow.php' OR $return == '../pages/return.php'){
+			if($return == 'borrow.php' OR $return == 'return.php'){
 				if(!isset($_SESSION['error'])){
 					$_SESSION['error'] = array();
 				}
@@ -66,7 +66,7 @@
 		}
 	}
 	else{
-		if($return == '../pages/borrow.php' OR $return == '../pages/return.php'){
+		if($return == 'borrow.php' OR $return == 'return.php'){
 			if(!isset($_SESSION['error'])){
 				$_SESSION['error'] = array();
 			}

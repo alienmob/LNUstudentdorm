@@ -21,41 +21,41 @@
               <div class="form-group">
                     <label for="student_id" class="col-sm-3 control-label">Student ID</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Enter Student Number" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="getUID" class="col-sm-3 control-label">RFID:</label>
-                    <div class="col-sm-6">
-                      <textarea name="getUID" id="getUID" class="form-control" placeholder="Please Scan your Card / Key Chain to display ID" rows="2" required></textarea>
+                    <div class="col-sm-8">
+                      <textarea name="getUID" id="getUID" class="form-control" placeholder="Please Scan ID / Key Chain to display RFID" rows="1" required></textarea>
                     </div>
                 </div>
                 <!-- <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">Password</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                 </div> -->
                 <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Firstname</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="col-sm-3 control-label">Lastname</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="privilege" class="col-sm-3 control-label">Privilege</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="privilege" name="privilege" required>
                         <option value="" selected>- Select Privilege -</option>
                         <option value="Non-Athlete">Non-Athlete</option>
@@ -66,7 +66,7 @@
                 <div class="form-group">
                     <label for="gender" class="col-sm-3 control-label">Gender</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="gender" name="gender" required>
                         <option value="" selected>- Select Gender -</option>
                         <option value="Male">Male</option>
@@ -77,35 +77,35 @@
                 <div class="form-group">
                     <label for="address" class="col-sm-3 control-label">Address</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control" id="address" name="address" placeholder="Enter Address" rows="2" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="contact" class="col-sm-3 control-label">Contact No.</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="contact" name="contact" value="+63" placeholder="+63xxxxxxxxxx" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="guardian" class="col-sm-3 control-label">Name of Guardian</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="guardian" name="guardian" placeholder="Enter Name of Guardian" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="guardian_contact" class="col-sm-3 control-label">Guardian's Contact No.</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="guardian_contact" name="guardian_contact" placeholder="Enter Guardian's Contact Number" required>
                     </div>
                 </div>
@@ -146,12 +146,6 @@
                       </select>
                     </div>
 
-
-
-                   
-
-
-
                     </div>
                 </div>
 
@@ -159,7 +153,7 @@
                 <div class="form-group">
                     <label for="course" class="col-sm-3 control-label">Course</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="course" name="course" required>
                         <option value="" selected>- Select Course -</option>
                         <?php
@@ -177,7 +171,7 @@
                 <!-- <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div> -->
@@ -207,7 +201,7 @@
                 <div class="form-group">
                     <label for="edit_student_id" class="col-sm-3 control-label">Student ID</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_student_id" name="student_id" required>
                     </div>
                 </div>
@@ -215,21 +209,21 @@
                 <div class="form-group">
                     <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_firstname" name="firstname" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_lastname" name="lastname" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_privilege" class="col-sm-3 control-label">Privilege</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="edit_privilege" name="privilege" required>
                         <option value="" selected>- Select -</option>
                         <option value="Non-Athlete">Non-Athlete</option>
@@ -240,7 +234,7 @@
                 <div class="form-group">
                     <label for="edit_gender" class="col-sm-3 control-label">Gender</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="edit_gender" name="gender" required>
                         <option value="" selected>- Select -</option>
                         <option value="Male">Male</option>
@@ -251,35 +245,35 @@
                 <div class="form-group">
                     <label for="edit_address" class="col-sm-3 control-label">Address</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_address" name="address" required>
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control" id="edit_address" name="address" rows="2" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_contact" class="col-sm-3 control-label">Contact No.</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_contact" name="contact" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="email" class="form-control" id="edit_email" name="email" placeholder="Enter Email" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_guardian" class="col-sm-3 control-label">Name of Guardian</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_guardian" name="guardian" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_guardian_contact" class="col-sm-3 control-label">Guardian's Contact No.</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_guardian_contact" name="guardian_contact" required>
                     </div>
                 </div>
@@ -327,7 +321,7 @@
                 <div class="form-group">
                     <label for="course" class="col-sm-3 control-label">Course</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="course" name="course" required>
                         <option value="" selected id="selcourse"></option>
                         <?php
@@ -420,7 +414,7 @@
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="file" id="photo" name="photo" required>
                     </div>
                 </div>

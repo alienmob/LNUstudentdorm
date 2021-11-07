@@ -25,24 +25,11 @@
       <section class="content">
       <?php
         if(isset($_SESSION['error'])){
-          // echo "
-          //   <div class='alert alert-danger alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-warning'></i> Error!</h4>
-          //     ".$_SESSION['error']."
-          //   </div>
-          // ";
           echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>';";
           unset($_SESSION['error']);
         }
+        
         if(isset($_SESSION['success'])){
-          // echo "
-          //   <div class='alert alert-success alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-check'></i> Success!</h4>
-          //     ".$_SESSION['success']."
-          //   </div>
-          // ";
           echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>';";
           unset($_SESSION['success']);
         }
@@ -104,7 +91,11 @@
                         $can = '';
                       }
 
-
+                      if ($row['status'] != 'Cancelled!' AND $row['date'] > $date OR $row['date'] == $date) {
+                        $update = '<button data-toggle="modal"  class="edit btn btn-warning btn-sm btn-rounded" data-id="' . $row['studid'] . '"><i class="fa fa-edit"></i></button>';
+                      }else{
+                        $update = '';
+                      }
                       echo "
                         <tr>
                           
@@ -118,8 +109,10 @@
                           <td>". $status ."</td>
 
                           <td>
-                          <button data-toggle='modal'  class='edit btn btn-warning btn-sm btn-rounded' data-id='" . $row['studid'] . "'><i class='fa fa-edit'></i></button>
+                          <center>
+                          ". $update ."
                           <button data-toggle='modal'  class='delete btn btn-danger btn-sm btn-rounded' data-id='" . $row['studid'] . "'><i class='fa fa-trash'></i></button> 
+                          </center>
                           </td>
 
                           <td>
@@ -136,7 +129,7 @@
             </div>
           </div>
         </div>
-
+        <!-- <button data-toggle='modal'  class='edit btn btn-warning btn-sm btn-rounded' data-id='" . $row['studid'] . "'><i class='fa fa-edit'></i></button> -->
         
       </section>
     </div>

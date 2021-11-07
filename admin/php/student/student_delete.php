@@ -14,11 +14,12 @@
 		$sql = "DELETE FROM students WHERE student_id = '$id'";
 		if($conn->query($sql)){
 
+			
 
 			$sql = "UPDATE rooms SET occupants = occupants - 1 WHERE id = '$rid'";
 			$conn->query($sql);
 
-
+			
 			$_SESSION['success'] = 'Student deleted successfully';
 		}
 		else{

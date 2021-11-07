@@ -85,13 +85,16 @@
                       } else {
                         $status = '<span class="label label-danger">Unpaid</span>';
                       }
-                      if ($row['receipt'] != null) {
+                      if ($row['receipt'] != NULL) {
                         $status = '<span class="label label-success">Pending</span>';
                       }
                       date_default_timezone_set('Asia/Manila');
 	                    $date = date('Y-m-d');
                       if ($row['deadline'] < $date) {
-                        $status = '<span class="label label-warning">LATE</span>';
+                        $status = '<span class="label label-warning">Unpaid LATE</span>';
+                      }
+                      if ($row['deadline'] < $date AND $row['receipt'] != NULL) {
+                        $status = '<span class="label label-success">Pending LATE</span>';
                       }
                       if ($row['deadline'] == $date) {
                         $status = '<span class="label label-info">DEADLINE TODAY</span>';

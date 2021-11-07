@@ -125,14 +125,20 @@ $sql = "SELECT *, unpaid.id AS ID, unpaid.student_id AS studid FROM unpaid  WHER
 													$status = '<span class="label label-danger">Unpaid</span>';
 												  }
 
-                      date_default_timezone_set('Asia/Manila');
-	                    $today = date('Y-m-d');
-                      if ($row['deadline'] < $today) {
-                        $status = '<span class="label label-warning">LATE</span>';
-                      }
-                      if ($row['deadline'] == $today) {
-                        $status = '<span class="label label-info">DEADLINE TODAY</span>';
-                      }
+                          if ($row['receipt'] != NULL) {
+                            $status = '<span class="label label-success">Pending</span>';
+                          }
+                          date_default_timezone_set('Asia/Manila');
+                          $date = date('Y-m-d');
+                          if ($row['deadline'] < $date) {
+                            $status = '<span class="label label-warning">Unpaid LATE</span>';
+                          }
+                          if ($row['deadline'] < $date AND $row['receipt'] != NULL) {
+                            $status = '<span class="label label-success">Pending LATE</span>';
+                          }
+                          if ($row['deadline'] == $date) {
+                            $status = '<span class="label label-info">DEADLINE TODAY</span>';
+                          }
 
 												$date = (isset($_GET['action'])) ? 'date_paid' : 'date_unpaid';
 												echo "

@@ -83,12 +83,13 @@
 
 						$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, privilege, gender, address, contact, email, guardian, guardian_contact, floor_id, room_id, actualroom_id, course_id, photo) 
 						VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floors', '$rooms', '$room_id', '$course', '$filename')";
+		
 						if($conn->query($sql)){
-				
+		
 							$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
 							$conn->query($sql);							
 					
-							
+											
 							$_SESSION['success'] = 'Student added successfully';
 						}
 						else{
