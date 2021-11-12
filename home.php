@@ -58,7 +58,7 @@ $studid = $_SESSION['student'];
         //     </div>
 			
         //   ";
-		echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>';";
+		echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
           unset($_SESSION['error']);
         }
 
@@ -70,7 +70,7 @@ $studid = $_SESSION['student'];
         //       ".$_SESSION['email_error']."
         //     </div>
         //   ";
-		  echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['email_error']."')</script>';";
+		  echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['email_error']."')</script>";
           unset($_SESSION['email_error']);
         }
 
@@ -82,7 +82,7 @@ $studid = $_SESSION['student'];
         //       ".$_SESSION['reset_success']."
         //     </div>
         //   ";
-		echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['reset_success']."')</script>';";
+		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['reset_success']."')</script>";
           unset($_SESSION['reset_success']);
         }
 
@@ -94,7 +94,7 @@ $studid = $_SESSION['student'];
         //       ".$_SESSION['success']."
         //     </div>
         //   ";
-		echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>';";
+		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
           unset($_SESSION['success']);
         }
 		if(isset($_SESSION['login'])){
@@ -105,7 +105,7 @@ $studid = $_SESSION['student'];
 			//     ".$_SESSION['success']."
 			//   </div>
 			// ";
-			echo "'<script type='text/javascript'>toastr.info('&nbsp;&nbsp;".$_SESSION['login']."')</script>';";
+			echo "<script type='text/javascript'>toastr.info('&nbsp;&nbsp;".$_SESSION['login']."')</script>";
 			unset($_SESSION['login']);
 		  }
       ?>

@@ -1,4 +1,4 @@
-<aside class="main-sidebar bg-gradient-warning">
+<aside class="main-sidebar bg-gradient-default">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
@@ -13,10 +13,10 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header bg-orange">REPORTS</li>
+      <li class="header bg-default text-white">REPORTS</li>
       <li class=""><a href="home.php" class="text-white"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       
-      <li class="header bg-orange">MANAGE</li>
+      <li class="header bg-default text-white">MANAGE</li>
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-user"></i>
