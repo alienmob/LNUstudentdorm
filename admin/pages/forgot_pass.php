@@ -145,7 +145,6 @@ body {
         <br>
         <br>
         <br>
-        <br>
         <?php include '../includes/footer.php'; ?>
       </div>
   

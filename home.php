@@ -31,7 +31,7 @@ $studid = $_SESSION['student'];
   <?php include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper bg-gradient-default">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 	
     <!-- <section class="content-header text-white">

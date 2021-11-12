@@ -35,7 +35,7 @@
   	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   	<![endif]-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="../assets/css/varela_font.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -120,6 +120,14 @@
 .bg-gradient-warning2
 {
     background: linear-gradient(87deg, #fbb140 0, #fb6340 100%) !important;
+}
+.bg-gradient-defwarn
+{
+    background: linear-gradient(87deg, #fbb140 0, #172b4d 100%) !important;
+}
+.bg-gradient-defwarn2
+{
+    background: linear-gradient(87deg, #172b4d 0, #fbb140 100%) !important;
 }
 .bg-orange
 {

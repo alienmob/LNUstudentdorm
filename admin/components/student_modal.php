@@ -25,12 +25,7 @@
                       <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Enter Student Number" required>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="getUID" class="col-sm-3 control-label">RFID:</label>
-                    <div class="col-sm-8">
-                      <textarea name="getUID" id="getUID" class="form-control" placeholder="Please Scan ID / Key Chain to display RFID" rows="1" required></textarea>
-                    </div>
-                </div>
+               
                 <!-- <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">Password</label>
 
@@ -78,7 +73,7 @@
                     <label for="address" class="col-sm-3 control-label">Address</label>
 
                     <div class="col-sm-8">
-                      <textarea type="text" class="form-control" id="address" name="address" placeholder="Enter Address" rows="2" required></textarea>
+                      <textarea type="text" class="form-control" id="address" name="address" placeholder="House Number, Street, City/Municipality, Province" rows="2" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -175,6 +170,15 @@
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div> -->
+                <hr>
+                <div class="form-group">
+                    <label for="getUID" class="col-sm-3 control-label">RFID:</label>
+                    <div class="col-sm-8">
+                      <textarea name="getUID" id="getUID" class="form-control" placeholder="Please Scan ID / Key Chain to display RFID" rows="1" required></textarea>
+                    </div>
+                </div>
+              <label style="margin-left:150px;"><h5>Please scan RFID to confirm registration!</h5></label>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>

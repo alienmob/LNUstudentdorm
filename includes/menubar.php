@@ -1,4 +1,4 @@
-<aside class="main-sidebar bg-gradient-warning">
+<aside class="main-sidebar bg-gradient-default">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->

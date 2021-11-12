@@ -14,9 +14,9 @@
         <form class="form-horizontal" method="POST" action="borrow_add.php">
 
         <div class="form-group">
-            <label for="code" class="col-sm-3 control-label">Equipment Name</label>
+            <label for="code" class="col-sm-4 control-label">Equipment Name</label>
 
-            <div class="col-sm-9">
+            <div class="col-sm-6">
               <select class="form-control" id="code" name="code[]" required>
                 <option value="" selected>- Select -</option>
                 <?php
@@ -36,8 +36,8 @@
                  <div class="form-group">
                     <label for="note" class="col-sm-3 control-label">Request Note</label>
 
-                    <div class="col-sm-9">
-                      <textarea class="form-control" name="note" id="note" placeholder="Enter Your Request Note here..." required></textarea>
+                    <div class="col-sm-7">
+                      <textarea class="form-control" name="note" id="note" rows="4" placeholder="Enter Your Request Note here..." required></textarea>
                     </div>
                 </div>
 				

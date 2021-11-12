@@ -1,4 +1,4 @@
-<aside class="main-sidebar bg-gradient-warning">
+<aside class="main-sidebar bg-gradient-default">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
@@ -13,10 +13,10 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header bg-orange">REPORTS</li>
+      <li class="header bg-default text-white">REPORTS</li>
       <li class=""><a href="../pages/home.php" class="text-white"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       
-      <li class="header bg-orange">MANAGE</li>
+      <li class="header bg-default text-white">MANAGE</li>
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-graduation-cap"></i>
@@ -147,7 +147,14 @@
           <li><a href="../pages/checkout.php"><i class="fa fa-circle-o"></i> Check Out Status</a></li>
         </ul>
       </li>      
-      
+
+
+      <li>
+        <a href="#setting" class="text-white" data-toggle="modal">
+          <i class="fa fa-cogs"></i>
+          <span>RFID Settings</span>
+        </a>
+      </li>    
       <!-- <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-table"></i>
@@ -169,3 +176,21 @@
 
 
 <?php include '../components/event_a_modal.php'; ?>
+<?php include '../components/setting_modal.php'; ?>
+
+
+
+<script>
+
+function getRow(id){
+  $.ajax({
+    type: 'POST',
+    url: '../php/rfid_setting_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('#show_rfid').val(response.setting_id).html(response.function);
+    }
+  });
+}
+</script>

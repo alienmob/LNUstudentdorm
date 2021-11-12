@@ -17,16 +17,16 @@ if (isset($_GET['rooms'])) {
   <?php include '../includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper bg-gradient-default">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header text-white">
+    <section class="content-header">
       <h1>
         Student List
       </h1>
-      <ol class="breadcrumb bg-default">
-        <li><a href="#" class="text-white"><i class="fa fa-dashboard"></i> Home</a></li>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
         <li>Students</li>
-        <li class="active text-white">Student List</li>
+        <li class="active">Student List</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -40,7 +40,7 @@ if (isset($_GET['rooms'])) {
           //     ".$_SESSION['error']."
           //   </div>
           // ";
-          echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>';";
+          echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
           unset($_SESSION['error']);
         }
         if(isset($_SESSION['success'])){
@@ -51,7 +51,7 @@ if (isset($_GET['rooms'])) {
           //     ".$_SESSION['success']."
           //   </div>
           // ";
-          echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>';";
+          echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
           unset($_SESSION['success']);
         }
       ?>

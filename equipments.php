@@ -14,9 +14,9 @@
   <?php include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper bg-gradient-default">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header text-white">
+    <section class="content-header">
       <h1>
         Equipments
       </h1>
@@ -40,7 +40,7 @@
         //     </div>
 			
         //   ";
-		echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>';";
+		echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
           unset($_SESSION['error']);
         }
 
@@ -52,7 +52,7 @@
         //       ".$_SESSION['email_error']."
         //     </div>
         //   ";
-		  echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['email_error']."')</script>';";
+		  echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['email_error']."')</script>";
           unset($_SESSION['email_error']);
         }
 
@@ -64,7 +64,7 @@
         //       ".$_SESSION['reset_success']."
         //     </div>
         //   ";
-		echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['reset_success']."')</script>';";
+		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['reset_success']."')</script>";
           unset($_SESSION['reset_success']);
         }
 
@@ -76,7 +76,7 @@
         //       ".$_SESSION['success']."
         //     </div>
         //   ";
-		echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>';";
+		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
           unset($_SESSION['success']);
         }
       ?>

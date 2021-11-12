@@ -9,28 +9,28 @@
     <?php include '../includes/menubar.php'; ?>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper bg-gradient-default">
+    <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-      <section class="content-header text-white">
+      <section class="content-header">
         <h1>
           Event Management
         </h1>
-        <ol class="breadcrumb bg-default">
-          <li><a href="#" class="text-white"><i class="fa fa-dashboard"></i> Home</a></li>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
           <li>Events</li>
-          <li class="active text-white">Event Management</li>
+          <li class="active">Event Management</li>
         </ol>
       </section>
       <!-- Main content -->
       <section class="content">
       <?php
         if(isset($_SESSION['error'])){
-          echo "'<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>';";
+          echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
           unset($_SESSION['error']);
         }
         
         if(isset($_SESSION['success'])){
-          echo "'<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>';";
+          echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
           unset($_SESSION['success']);
         }
       ?>
