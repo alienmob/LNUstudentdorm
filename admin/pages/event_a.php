@@ -1,6 +1,6 @@
 <?php include '../includes/session.php'; ?>
 <?php include '../includes/header.php'; ?>
-<title>LNU Dormitory | Event Category</title>
+<title>LNU Dormitory | Log Book Record</title>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -12,17 +12,17 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Event Category
+        Event Attendance Record
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
         <li>Announcements</li>
-        <li class="active">Category</li>
+        <li class="active">Attendance Record</li>
       </ol>
     </section>
     <!-- Main content -->
     <section class="content">
-    <?php
+      <?php
         if(isset($_SESSION['error'])){
           // echo "
           //   <div class='alert alert-danger alert-dismissible'>
@@ -49,33 +49,45 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header with-border">
+            <!-- <div class="box-header with-border">
               <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a>
-            </div>
-
+            </div> -->
             <div class="box-body">
             <div class="table-responsive">
               <table id="example" class="table table-bordered table-striped">
-                <thead>
-                  <th>Category</th>
-                  <th>Actions</th>
+              <thead>
+
+                    <th>Student ID</th>
+                    <th>Event</th>
+                    <th>Name</th>
+                    <th>Date</th>					
+                    <th>Time In</th>
+                    <th>Time Out</th>
+
                 </thead>
                 <tbody>
-                  <?php
-                    $sql = "SELECT * FROM event_category";
-                    $query = $conn->query($sql);
-                    while($row = $query->fetch_assoc()){
-                      echo "
-                        <tr>
-                          <td>".$row['event_name']."</td>
-                          <td>
-                            <button class='btn btn-warning btn-sm edit btn-rounded' data-id='".$row['id']."'><i class='fa fa-edit'></i></button>
-                            <button class='btn btn-danger btn-sm delete btn-rounded' data-id='".$row['id']."'><i class='fa fa-trash'></i></button>
-                          </td>
-                        </tr>
-                      ";
-                    }
-                  ?>
+	<?php
+$sql = "SELECT * FROM event_attendance LEFT JOIN students ON students.rfid = event_attendance.rfid_id 
+LEFT JOIN event ON event.id = event_attendance.event_id
+LEFT JOIN event_category ON event_category.id = event.event_category_id ORDER BY event_attendance.id DESC";
+
+$query = $conn->query($sql);
+while ($row = $query->fetch_assoc()) {
+ 
+ echo "
+      <tr>
+
+       <td>".$row['student_id']."</td>
+       <td>".$row['event_name']. ' | ' .date('M d, Y', strtotime($row['date']))."</td>
+       <td>".$row['firstname']. ' ' .$row['lastname']."</td>
+       <td>" . date('M d, Y', strtotime($row['event_date'])) . "</td>
+       <td>" . $row['time_in'] . "</td>
+       <td>" . $row['time_out'] . "</td>
+
+      </tr>
+     ";
+}
+	?>
                 </tbody>
               </table>
             </div>
@@ -87,39 +99,9 @@
   </div>
     
   <?php include '../includes/footer.php'; ?>
-  <?php include '../components/eventcat_modal.php'; ?>
+
 </div>
 <?php include '../includes/scripts.php'; ?>
-<script>
-$(function(){
-  $(document).on('click', '.edit', function(e){
-    e.preventDefault();
-    $('#edit').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
 
-  $(document).on('click', '.delete', function(e){
-    e.preventDefault();
-    $('#delete').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
-});
-
-function getRow(id){
-  $.ajax({
-    type: 'POST',
-    url: '../php/event/eventcat_row.php',
-    data: {id:id},
-    dataType: 'json',
-    success: function(response){
-      $('.catid').val(response.id);
-      $('#edit_name').val(response.event_name);
-      $('#del_cat').html(response.event_name);
-    }
-  });
-}
-</script>
 </body>
 </html>

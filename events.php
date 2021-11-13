@@ -1,4 +1,4 @@
-<?php include 'includes/session.php'; ?>
+<?php include 'includes/conn.php'; ?>
 <?php include 'includes/header.php'; ?>
 
 <body class="hold-transition skin-blue layout-top-nav">
@@ -25,15 +25,37 @@
           unset($_SESSION['success']);
         }
       ?>
-					
+		
+		<?php
+	include 'includes/conn.php';
+    $sql = "SELECT * FROM `rfid_setting`";
+    $query = $conn->query($sql);
+    $row = $query->fetch_assoc();
+
+    $id = $row['setting_id'];
+    if($id == 1){
+      echo "
+      <h4 class='text-white'><span class='label label-transparent'>RFID Status: </span>
+	  <span class='label label-success'>Log Book Mode</span></h4>
+      
+      ";
+    }
+    else {
+      echo "
+	  <h4 class='text-white'><span class='label label-transparent'>RFID Status: </span>
+	  <span class='label label-success'>Attendance Mode</span></h4>
+      
+      ";
+    }
+    ?>
+	<br>
+		
 		<div class="box">
 		
 			<div class="box-header with-border">
 				<h3 class="box-title">Event Attendance</h3>	
-			</div>
-			
-		<div class="box-header with-border">
-			<div class="input-group col-sm-4 pull-right">
+
+				<div class="input-group col-sm-4 pull-right">
 				<span class="input-group-addon">Event:</span>
 				<select class="form-control" id="event_id" name="event_id" onchange="setEventID(this)">
 					<option value="" selected>- Select Event-</option>
@@ -61,7 +83,10 @@
 					?>
 				</select>
 			</div>
-		</div>
+			</div>
+			
+		
+			
 
 								<div class="box-body">
 				  				  <div class="table-responsive">

@@ -24,43 +24,57 @@
           unset($_SESSION['success']);
         }
       ?>
-					
-							<div class="box">
+
+	<?php
+	include 'includes/conn.php';
+    $sql = "SELECT * FROM `rfid_setting`";
+    $query = $conn->query($sql);
+    $row = $query->fetch_assoc();
+
+    $id = $row['setting_id'];
+    if($id == 1){
+      echo "
+      <h4 class='text-white'><span class='label label-transparent'>RFID Status: </span>
+	  <span class='label label-success'>Log Book Mode</span></h4>
+      
+      ";
+    }
+    else {
+      echo "
+	  <h4 class='text-white'><span class='label label-transparent'>RFID Status: </span>
+	  <span class='label label-success'>Attendance Mode</span></h4>
+      
+      ";
+    }
+    ?>
+	<br>
+				<div class="box">
+				
+					<div class="box-header with-border">
+						<h3 class="box-title">Log Book Record</h3>
+						
+					</div>
+
+					<div class="box-body">
+						<div class="table-responsive">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<th class="hidden"></th>
+								<th>Student ID</th>
+								<th>Name</th>					
+								<th>Date</th>					
+								<th>Time In</th>
+								<th>Time Out</th>
+
+							</thead>
+							<tbody id="logbook">
 							
-								<div class="box-header with-border">
-									<h3 class="box-title">Log Book Record</h3>
-									
-								</div>
-								
-								<!-- <div class="box-header with-border">
-								<div class="input-group col-sm-3 pull-right">
-				                <input type="text" class="form-control input-md" id="searchBox" placeholder="Search...">
-				                <span class="input-group-btn">
-				                    <button type="button" class="btn btn-primary btn-rounded btn-md"><i class="fa fa-search"></i> </button>
-				                </span>
-				            </div>
-								</div> -->
+							</tbody>
+						</table>
+					</div>
+					</div>
 
-								<div class="box-body">
-				  				  <div class="table-responsive">
-									<table class="table table-bordered table-striped">
-										<thead>
-											<th class="hidden"></th>
-											<th>Student ID</th>
-											<th>Name</th>					
-											<th>Date</th>					
-											<th>Time In</th>
-											<th>Time Out</th>
-
-										</thead>
-										<tbody id="logbook">
-										
-										</tbody>
-									</table>
-								</div>
-								</div>
-
-							</div>
+				</div>
 
 				</section>
 

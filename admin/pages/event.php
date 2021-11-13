@@ -17,7 +17,7 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-          <li>Events</li>
+          <li>Announcements</li>
           <li class="active">Event Management</li>
         </ol>
       </section>

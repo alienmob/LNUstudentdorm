@@ -92,7 +92,7 @@
         <ul class="treeview-menu">
           <li><a href="../pages/event.php"><i class="fa fa-circle-o"></i> Event Management</a></li>
           <li><a href="../pages/eventcat.php"><i class="fa fa-circle-o"></i> Category</a></li>
-          <li><a href="#attendance" data-toggle="modal"><i class="fa fa-pencil-square-o"></i><span>Attendance</span></a></li>
+          <li><a href="../pages/event_a.php"><i class="fa fa-circle-o"></i> Attendance Record</a></li>
         </ul>
       </li>
 
@@ -155,27 +155,38 @@
           <span>RFID Settings</span>
         </a>
       </li>    
-      <!-- <li class="treeview">
-        <a href="#" class="text-white">
-          <i class="fa fa-table"></i>
-          <span>Others</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="log.php"><i class="fa fa-circle-o"></i> Log Book</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Tenants Behavioral Records</a></li>
-          
-        </ul>
-      </li> -->
+      
     </ul>
+<br>
+    <?php
+    $sql = "SELECT * FROM `rfid_setting`";
+    $query = $conn->query($sql);
+    $row = $query->fetch_assoc();
+
+    $id = $row['setting_id'];
+    if($id == 1){
+      echo "
+      <div class='text-center'>
+      <h3><span class='label label-success'>Log Book Mode</span></h3>
+      <h5><span class='text-white'>RFID Status</span></h5>
+      </div>
+      ";
+    }
+    else {
+      echo "
+      <div class='text-center'>
+      <h3><span class='label label-success'>Attendance Mode</span></h3>
+      <h5><span class='text-white'>RFID Status</span></h5>
+      </div>
+      ";
+    }
+    ?>
+
   </section>
   <!-- /.sidebar -->
 </aside>
 
 
-<?php include '../components/event_a_modal.php'; ?>
 <?php include '../components/setting_modal.php'; ?>
 
 

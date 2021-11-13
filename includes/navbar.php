@@ -33,7 +33,7 @@
 
     <div class="navbar-custom-menu pull-left">
       <ul class="nav navbar-nav">
-        <li  id="navbarevent"><a href='events.php'> <strong>Events</strong></a></li>
+        <li  id="navbarevent"><a href='events.php'> <strong>Attendance</strong></a></li>
         <li id="navbarlogbook"><a href='index.php'> <strong>Log Book</strong></a></li>
       </ul>
     </div>
