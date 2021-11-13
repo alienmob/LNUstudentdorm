@@ -6,7 +6,8 @@
 		$rfid = $_POST['rfid'];
 
         if($rfid == 1){
-		$sql = "UPDATE rfid_setting SET setting_id = '$rfid', status = 0";
+		$sql = "UPDATE rfid_setting SET setting_id = '$rfid', event_id = NULL, status = 0";
+
         } else {
         $sql = "UPDATE rfid_setting SET setting_id = '$rfid', status = 1";
         }

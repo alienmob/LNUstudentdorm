@@ -92,6 +92,7 @@ $email = $row['email'];
    $_SESSION['email_success'] = 'Notification sent!';
   } catch (Exception $e) {
    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+   $_SESSION['error'] = 'Email was not sent. Please Check your Internet Connection!';
   }
  }
 

@@ -21,6 +21,19 @@ if (isset($_POST['add'])) {
 		$date_to = $_POST['date_to'];
 		$deadline = $_POST['deadline'];
 
+
+		$sql = "INSERT INTO unpaid (student_id, date_from, date_to, deadline) SELECT student_id,'$date_from','$date_to','$deadline' FROM students";
+		if ($conn->query($sql)) {
+			$added2--;
+			$sql = "UPDATE unpaid SET status = $added2 WHERE student_id = '$student_id'";
+			$conn->query($sql);
+		} else {
+			if (!isset($_SESSION['error'])) {
+				$_SESSION['error'] = array();
+			}
+			$_SESSION['error'][] = $conn->error;
+		}
+
 	// EMAIL
 
 $sql = "SELECT email FROM `students`";
@@ -75,6 +88,7 @@ $email = $row['email'];
    $_SESSION['email_success'] = 'Payment Notification sent!';
   } catch (Exception $e) {
    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+   $_SESSION['error'] = 'Email was not sent. Please Check your Internet Connection!';
   }
  }
 
@@ -115,17 +129,7 @@ $email = $row['email'];
 
 
 
-		$sql = "INSERT INTO unpaid (student_id, date_from, date_to, deadline) SELECT student_id,'$date_from','$date_to','$deadline' FROM students";
-		if ($conn->query($sql)) {
-			$added2--;
-			$sql = "UPDATE unpaid SET status = $added2 WHERE student_id = '$student_id'";
-			$conn->query($sql);
-		} else {
-			if (!isset($_SESSION['error'])) {
-				$_SESSION['error'] = array();
-			}
-			$_SESSION['error'][] = $conn->error;
-		}
+		
 	}
 
 	if ($added == 0) {

@@ -14,8 +14,8 @@ byte readcard[4];
 char str[32] = "";
 String StrUID;
 
-const char* ssid = "GitHub";
-const char* password = "jajajaja";
+const char* ssid = "Azepro";
+const char* password = "Orp3z@225_202!";
 
 IPAddress server(74, 125, 115, 105); // Google
 
@@ -94,7 +94,7 @@ void sendRfidLog() {
     UIDresultSend = StrUID;
 
     String postData = "cardid=" + String(UIDresultSend) + "&action=insertRecord";
-    http.begin(wifiClient, "http://192.168.43.140/LNUstudentdorm/admin/urfid.php"); //Specify request destination
+    http.begin(wifiClient, "http://192.168.1.11/LNUstudentdorm/admin/urfid.php"); //Specify request destination
     http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
    
     int httpCode = http.POST(postData);   //Send the request

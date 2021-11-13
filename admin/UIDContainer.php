@@ -1,1 +1,1 @@
-<?php $cardid=''; echo $cardid; ?>
+<?php $cardid='9AB00DBF'; echo $cardid; ?>

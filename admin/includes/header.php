@@ -123,11 +123,11 @@
 }
 .bg-gradient-defwarn
 {
-    background: linear-gradient(87deg, #fbb140 0, #172b4d 100%) !important;
+    background: linear-gradient(87deg, #fbb140 0, #fb6340, #172b4d 110%) !important;
 }
 .bg-gradient-defwarn2
 {
-    background: linear-gradient(87deg, #172b4d 0, #fbb140 100%) !important;
+    background: linear-gradient(87deg, #172b4d 0, #fb6340, #fbb140 100%) !important;
 }
 .bg-orange
 {
