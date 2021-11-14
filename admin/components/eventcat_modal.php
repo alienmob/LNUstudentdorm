@@ -5,14 +5,15 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Category</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Add New Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/event/eventcat_add.php">
                 <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label">Event Name</label>
+                    <label for="name" class="col-sm-4 control-label">Event Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="name" name="name" placeholder="Enter Event Category Name" required>
                     </div>
                 </div>
@@ -33,15 +34,16 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Category</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Edit Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/event/eventcat_edit.php">
                 <input type="hidden" class="catid" name="id">
                 <div class="form-group">
-                    <label for="edit_name" class="col-sm-3 control-label">Event Name</label>
+                    <label for="edit_name" class="col-sm-4 control-label">Event Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="edit_name" name="name">
                     </div>
                 </div>
@@ -62,7 +64,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/event/eventcat_delete.php">

@@ -5,14 +5,15 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Room Category</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Add New Room Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_category_add.php">
                 <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label">Room Name</label>
+                    <label for="name" class="col-sm-4 control-label">Room Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="name" name="name" placeholder="Enter Room Name" required>
                     </div>
                 </div>
@@ -33,15 +34,16 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Room Category</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Edit Room Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_category_edit.php">
                 <input type="hidden" class="catid" name="id">
                 <div class="form-group">
-                    <label for="edit_name" class="col-sm-3 control-label">Room Name</label>
+                    <label for="edit_name" class="col-sm-4 control-label">Room Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="edit_name" name="name">
                     </div>
                 </div>
@@ -62,7 +64,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_category_delete.php">

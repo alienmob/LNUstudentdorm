@@ -5,28 +5,23 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Add New Dorm Equipments</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Add New Dorm Equipments</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_add.php">
-          		  <!-- <div class="form-group">
-                  	<label for="code" class="col-sm-3 control-label">Equipment Code</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="code" name="code" required>
-                  	</div>
-                </div> -->
+          		 
                 <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label">Equipment Name</label>
+                    <label for="title" class="col-sm-4 control-label">Equipment Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <textarea class="form-control" name="title" id="title" placeholder="Enter Equipment Name" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="category" class="col-sm-3 control-label">Category</label>
+                    <label for="category" class="col-sm-4 control-label">Category</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <select class="form-control" name="category" id="category" required>
                         <option value="" selected>- Select Equipment Category -</option>
                         <?php
@@ -42,18 +37,18 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  	<label for="quantity_service" class="col-sm-3 control-label">Qty. Serviceable</label>
+                  	<label for="quantity_service" class="col-sm-4 control-label">Qty. Serviceable</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="quantity_service" name="quantity_service" placeholder="Enter Serviceable Quantity" required>
+                  	<div class="col-sm-5">
+                    	<input type="number" class="form-control" id="quantity_service" name="quantity_service" placeholder="Enter Serviceable Quantity" required>
                   	</div>
                 </div>
 
                 <div class="form-group">
-                  	<label for="quantity_unservice" class="col-sm-3 control-label">Qty. Unserviceable</label>
+                  	<label for="quantity_unservice" class="col-sm-4 control-label">Qty. Unusable</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="quantity_unservice" name="quantity_unservice" placeholder="Enter Unserviceable Quantity" required>
+                  	<div class="col-sm-5">
+                    	<input type="number" class="form-control" id="quantity_unservice" name="quantity_unservice" placeholder="Enter Unusable Quantity" required>
                   	</div>
                 </div>
 
@@ -82,7 +77,8 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Edit Equipment</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Edit Equipment</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_edit.php">
@@ -95,16 +91,16 @@
                     </div>
                 </div> -->
                 <div class="form-group">
-                    <label for="edit_title" class="col-sm-3 control-label">Equipment Name</label>
+                    <label for="edit_title" class="col-sm-4 control-label">Equipment Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <textarea class="form-control" name="title" id="edit_title"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="category" class="col-sm-3 control-label">Category</label>
+                    <label for="category" class="col-sm-4 control-label">Category</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <select class="form-control" name="category" id="category">
                         <option value="" selected id="catselect"></option>
                         <?php
@@ -119,29 +115,7 @@
                       </select>
                     </div>
                 </div>
-                <!-- <div class="form-group">
-                  	<label for="edit_quantity_total" class="col-sm-3 control-label">Total Quantity</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="edit_quantity_total" name="quantity_total" required>
-                  	</div>
-                </div>
-
-                <div class="form-group">
-                  	<label for="edit_quantity_unservice" class="col-sm-3 control-label">Qty. Unserviceable</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="edit_quantity_unservice" name="quantity_unservice" required>
-                  	</div>
-                </div> -->
-
-                <!-- <div class="form-group">
-                  	<label for="edit_quantity_total" class="col-sm-3 control-label">Total Qty.</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="edit_quantity_total" name="quantity_total" required>
-                  	</div>
-                </div> -->
+               
 
           	</div>
           	<div class="modal-footer">
@@ -160,7 +134,8 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Deleting...</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_delete.php">

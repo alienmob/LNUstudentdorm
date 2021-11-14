@@ -1,19 +1,20 @@
 <!-- Delete -->
 <div class="modal fade" id="pend_del">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content col-sm-5 pull-left">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Clear All Approved Requests?</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Clear All Approved Requests?</b></h4>
             </div>
             
               <form class="form-horizontal" method="POST" action="../php/pending/pending_delete.php">
 
            
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-danger btn-rounded" name="pend_del"><i class="fa fa-trash"></i> Clear</button>
+              <!-- <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button> -->
+              <button type="submit" class="btn btn-danger btn-block btn-md rounded-3" name="pend_del"><i class="fa fa-trash"></i> Clear</button>
               </form>
             </div>
         </div>
@@ -24,19 +25,20 @@
 <!-- Delete Decline -->
 <div class="modal fade" id="dec_del">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content col-sm-5 pull-right">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Clear All Declined Requests?</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Clear All Declined Requests?</b></h4>
             </div>
             
               <form class="form-horizontal" method="POST" action="../php/pending/pending_dec.php">
 
            
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-danger btn-rounded" name="dec_del"><i class="fa fa-trash"></i> Clear</button>
+              <!-- <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button> -->
+              <button type="submit" class="btn btn-danger btn-block btn-md rounded-3" name="dec_del"><i class="fa fa-trash"></i> Clear</button>
               </form>
             </div>
         </div>
@@ -49,41 +51,35 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>Approve Pending Request?</b></h4>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+        <h4 class="modal-title text-center"><b>Approve Pending Request?</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="../php/borrow_add.php">
         <input type="hidden" class="stud" name="id">
           <div class="form-group">
-            <label for="student" class="col-sm-3 control-label">Student ID</label>
+            <label for="student" class="col-sm-4 control-label">Student ID</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="edit_student" name="student" aria-disabled="student">
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="edit_student" name="student" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="name" class="col-sm-3 control-label">Name</label>
+            <label for="name" class="col-sm-4 control-label">Name</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="edit_name" name="name" disabled>
+            <div class="col-sm-5">
+              <text type="text" class="form-control" id="edit_name" name="name"></text>
             </div>
           </div>
           <div class="form-group">
-            <label for="code" class="col-sm-3 control-label">Equipment Name</label>
+            <label for="code" class="col-sm-4 control-label">Equipment Name</label>
 
-            <div class="col-sm-9">
-              <select class="form-control" id="code" name="code[]" aria-disabled="selcode2">
+            <div class="col-sm-5">
+              <select class="form-control" id="code" name="code[]" required>
                 <option value="" selected id="selcode2">- Select -</option>
-                <?php
-                $sql = "SELECT * FROM equipments";
-                $query = $conn->query($sql);
-                while ($row = $query->fetch_array()) {
-                  echo "
-                              <option value='" . $row['code'] . "'>" . $row['title'] . "</option>
-                            ";
-                }
-                ?>
+                
               </select>
             </div>
           </div>
@@ -92,7 +88,7 @@
                 <div class="form-group">
                     <label for="feedback" class="col-sm-3 control-label">Approval Note</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
                       <textarea class="form-control" name="feedback" id="feedback" placeholder="Enter Your Note here..." rows="3" required></textarea>
                     </div>
                 </div>
@@ -121,40 +117,33 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>Decline Pending Request?</b></h4>
+          <br>
+        <h4 class="modal-title text-center"><b>Decline Pending Request?</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="../php/pending/pending_decline.php">
         <input type="hidden" class="stud" name="id">
           <div class="form-group">
-            <label for="student" class="col-sm-3 control-label">Student ID</label>
+            <label for="student" class="col-sm-4 control-label">Student ID</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="decline_student" name="student" required>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="decline_student" name="student" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="name" class="col-sm-3 control-label">Name</label>
+            <label for="name" class="col-sm-4 control-label">Name</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="decline_name" name="name" disabled>
+            <div class="col-sm-5">
+              <text type="text" class="form-control" id="decline_name" name="name"></text>
             </div>
           </div>
           <div class="form-group">
-            <label for="code" class="col-sm-3 control-label">Equipment Name</label>
+            <label for="code" class="col-sm-4 control-label">Equipment Name</label>
 
-            <div class="col-sm-9">
+            <div class="col-sm-5">
               <select class="form-control" id="code" name="code[]" required>
                 <option value="" selected id="decode2">- Select -</option>
-                <?php
-                $sql = "SELECT * FROM equipments";
-                $query = $conn->query($sql);
-                while ($row = $query->fetch_array()) {
-                  echo "
-                              <option value='" . $row['code'] . "'>" . $row['title'] . "</option>
-                            ";
-                }
-                ?>
+                
               </select>
             </div>
           </div>
@@ -163,7 +152,7 @@
                 <div class="form-group">
                     <label for="decline" class="col-sm-3 control-label">Declinal Note</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
                       <textarea class="form-control" name="decline" id="decline" placeholder="Enter Your Note here..." rows="3" required></textarea>
                     </div>
                 </div>

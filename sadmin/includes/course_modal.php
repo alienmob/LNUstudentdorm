@@ -5,28 +5,29 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Course</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Add New Course</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="course_add.php">
                 <div class="form-group">
                     <label for="code" class="col-sm-3 control-label">Code</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="code" name="code" placeholder="Enter Course Code" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="title" class="col-sm-3 control-label">Course Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="title" name="title" placeholder="Enter Course Name" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="department" class="col-sm-3 control-label">Department</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="department" name="department" required>
                         <option value="" selected>- Select Department -</option>
                         <option value="College of Management and Entrepreneurship">College of Management and Entrepreneurship</option>
@@ -53,7 +54,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Course</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Edit Course</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="course_edit.php">
@@ -61,21 +63,21 @@
                 <div class="form-group">
                     <label for="edit_code" class="col-sm-3 control-label">Code</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_code" name="code">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_title" class="col-sm-3 control-label">Course Name</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_title" name="title">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="department" class="col-sm-3 control-label">Department</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                       <select class="form-control" id="department" name="department" required>
                         <option value="" selected id="edit_department">- Select Department -</option>
                         <option value="College of Management and Entrepreneurship">College of Management and Entrepreneurship</option>
@@ -102,7 +104,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="course_delete.php">

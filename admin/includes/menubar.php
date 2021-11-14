@@ -157,7 +157,7 @@
       </li>    
       
     </ul>
-<br>
+    
     <?php
     $sql = "SELECT * FROM `rfid_setting`";
     $query = $conn->query($sql);

@@ -5,7 +5,8 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Increase Occupancy</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Increase Occupancy</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/room/room_m_add.php">
@@ -34,7 +35,7 @@
                   	<label for="increase" class="col-sm-4 control-label">Increase Occupancy by</label>
 
                   	<div class="col-sm-6">
-                    	<input type="text" class="form-control" id="increase" name="increase" placeholder="Enter Quantity" required>
+                    	<input type="number" class="form-control" id="increase" name="increase" placeholder="Enter Quantity" required>
                   	</div>
                 </div>
 
@@ -67,7 +68,8 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Decrease Occupancy</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Decrease Occupancy</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/room/room_m_minus.php">
@@ -96,7 +98,7 @@
                   	<label for="decrease" class="col-sm-4 control-label">Decrease Occupancy by</label>
 
                   	<div class="col-sm-6">
-                    	<input type="text" class="form-control" id="decrease" name="decrease" placeholder="Enter Quantity" required>
+                    	<input type="number" class="form-control" id="decrease" name="decrease" placeholder="Enter Quantity" required>
                   	</div>
                 </div>
                 
@@ -127,7 +129,8 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Modify Room Status</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Modify Room Status</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/room/room_m_option.php">

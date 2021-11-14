@@ -58,14 +58,11 @@ if (isset($_GET['floor_category'])) {
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
+              
               <div class="box-header with-border">
-                <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a>
-                
-
-                <div class="box-tools pull-right">
-                  <form class="form-inline">
-                    <div class="form-group">
-                      <label>Floor Category: </label>
+                <div class="input-group col-sm-3 pull-right">
+					      <span class="input-group-addon">Floor Category:</span>
+                    
                       <select class="form-control input-sm" id="select_category">
                         <option value="0">ALL</option>
                         <?php
@@ -79,11 +76,7 @@ if (isset($_GET['floor_category'])) {
                         }
                         ?>
                       </select>
-                    </div>
-                  </form>
-                </div>
-              
-              
+                    </div> 
               </div>
 
               <div class="box-body">

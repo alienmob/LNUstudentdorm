@@ -36,6 +36,15 @@
 
 			$sql = "UPDATE admin SET username = '$username', password = '$password', firstname = '$firstname', lastname = '$lastname', address = '$address', email = '$email', contact = '$contact', photo = '$filename' WHERE id = '".$user['id']."'";
 			if($conn->query($sql)){
+
+	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+	$query = $conn->query($sql);
+	$row = $query->fetch_assoc();
+	$admin = $row['id'];
+
+	$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Profile Updated')";
+	$conn->query($sql);
+
 				$_SESSION['success'] = 'Admin profile updated successfully';
 			}
 			else{

@@ -5,35 +5,36 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Admin Profile</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>MIS Profile</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="profile_update.php?return=<?php echo basename($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
           		  <div class="form-group">
-                  	<label for="username" class="col-sm-3 control-label">Username:</label>
+                  	<label for="username" class="col-sm-4 control-label">Username:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password:</label>
+                    <label for="password" class="col-sm-4 control-label">Password:</label>
 
-                    <div class="col-sm-9"> 
+                    <div class="col-sm-6"> 
                       <input type="password" class="form-control" id="password" name="password" minlength="8" value="<?php echo $user['password']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                  	<label for="firstname" class="col-sm-3 control-label">Firstname:</label>
+                  	<label for="firstname" class="col-sm-4 control-label">Firstname:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="lastname" class="col-sm-3 control-label">Lastname:</label>
+                  	<label for="lastname" class="col-sm-4 control-label">Lastname:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
                   	</div>
                 </div>
@@ -41,17 +42,17 @@
                
               
                 <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo:</label>
+                    <label for="photo" class="col-sm-4 control-label">Photo:</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <label for="curr_password" class="col-sm-3 control-label">Current Password:</label>
+                    <label for="curr_password" class="col-sm-4 control-label">Current Password:</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="input current password to save changes" required>
                     </div>
                 </div>

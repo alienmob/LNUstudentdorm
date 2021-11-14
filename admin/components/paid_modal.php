@@ -57,45 +57,40 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>View</b></h4>
+          <br>
+        <h4 class="modal-title text-center"><b>View Paid Payment</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal">
 
           <input type="hidden" class="stud" name="id">
           <div class="form-group">
-            <label for="stud_id" class="col-sm-3 control-label">Student ID</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control stud_id" id="stud_id" name="stud_id" disabled>
+            <label for="stud_id" class="col-sm-4 control-label">Student ID</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control stud_id" id="stud_id" name="stud_id">
             </div>
           </div>
           <div class="form-group">
-            <label for="name" class="col-sm-3 control-label">Name</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control name" id="name" name="name" disabled>
+            <label for="name" class="col-sm-4 control-label">Name</label>
+            <div class="col-sm-5">
+              <text type="text" class="form-control name" id="name" name="name"></text>
             </div>
           </div>
           <div class="form-group">
-            <label for="validfrom" class="col-sm-3 control-label">Valid From</label>
-            <div class="col-sm-9">
-              <input type="date" class="form-control validfrom" id="validfrom" name="validfrom" disabled>
+            <label for="validfrom" class="col-sm-4 control-label">Valid From</label>
+            <div class="col-sm-5">
+              <input type="date" class="form-control validfrom" id="validfrom" name="validfrom">
             </div>
           </div>
           <div class="form-group">
-            <label for="validto" class="col-sm-3 control-label">Valid To</label>
-            <div class="col-sm-9">
-              <input type="date" class="form-control validto" id="validto" name="validto" disabled>
+            <label for="validto" class="col-sm-4 control-label">Valid To</label>
+            <div class="col-sm-5">
+              <input type="date" class="form-control validto" id="validto" name="validto">
             </div>
           </div>
-          <div class="form-group">
-            <label for="upload2" class="col-sm-3 control-label">Receipt</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control upload2" id="upload2" name="upload2" disabled>
-            </div>
-
-            
-
-          </div>
+          
+              <input type="hidden" class="form-control upload2" id="upload2" name="upload2" disabled>
+           
           <div class="col-md-12">
           <img src="" id="upload" width="540px" height="600px" style="border: 2px solid;" alt="Image Here">
           <hr>

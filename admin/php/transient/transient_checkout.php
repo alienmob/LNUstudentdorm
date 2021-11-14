@@ -39,6 +39,8 @@ if (isset($_POST['checkout'])) {
 			$conn->query($sql);
 			$sql = "UPDATE rooms SET occupants = occupants - 1 WHERE floor_category_id = '$floor_id' AND room_category_id = '$room_id'";
 			$conn->query($sql);
+			$sql = "UPDATE checkout SET status = 1 WHERE transient_id = '$transient_id'";
+			$conn->query($sql);
 			
 			$_SESSION['success'] = 'Transient "'.$transient.'" Checked Out Successfully';
 			}

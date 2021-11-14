@@ -126,8 +126,8 @@ function getRow(id){
     success: function(response){
       $('.checkid').val(response.checkid);
       $('#checkout_transient_id').val(response.transient_id);
-      $('#checkout_firstname').val(response.firstname);
-      $('#checkout_lastname').val(response.lastname);
+      $('#checkout_firstname').val(response.firstname).html(response.firstname);
+      $('#checkout_lastname').val(response.lastname).html(response.lastname);
 
       $('#checkout_floor').val(response.floor_id);
       $('#checkout_floor').html(response.floor_name);

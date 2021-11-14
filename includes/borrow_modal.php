@@ -8,7 +8,8 @@
           	<div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>Request to Borrow Equipment</b></h4>
+          <br>
+        <h4 class="modal-title text-center"><b>Request to Borrow Equipment</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="borrow_add.php">
@@ -34,9 +35,9 @@
 
 <hr>
                  <div class="form-group">
-                    <label for="note" class="col-sm-3 control-label">Request Note</label>
+                    <label for="note" class="col-sm-4 control-label">Request Note</label>
 
-                    <div class="col-sm-7">
+                    <div class="col-sm-6">
                       <textarea class="form-control" name="note" id="note" rows="4" placeholder="Enter Your Request Note here..." required></textarea>
                     </div>
                 </div>

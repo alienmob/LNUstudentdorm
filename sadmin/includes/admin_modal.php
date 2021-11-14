@@ -5,45 +5,46 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Admin</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Add New Admin</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="admin_add.php">
              
                 <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="firstname" class="col-sm-4 control-label">Firstname</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="lastname" class="col-sm-4 control-label">Lastname</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" required>
                     </div>
                 </div>
                
                 <div class="form-group">
-                    <label for="address" class="col-sm-3 control-label">Address</label>
+                    <label for="address" class="col-sm-4 control-label">Address</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
+                    <div class="col-sm-6">
+                      <textarea type="text" class="form-control" id="address" name="address" rows="2" placeholder="House Number, Street, City/Municipality, Province" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <label for="email" class="col-sm-4 control-label">Email</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Contact No.</label>
+                    <label for="contact" class="col-sm-4 control-label">Contact No.</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter Contact Number" required>
+                    <div class="col-sm-6">
+                      <input type="number" class="form-control" id="contact" name="contact" placeholder="Enter Contact Number" required>
                     </div>
                 </div>
             </div>
@@ -63,7 +64,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="admin_delete.php">

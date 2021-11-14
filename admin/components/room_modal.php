@@ -5,15 +5,16 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Room</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Add New Room</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_add.php">
                 
                 <div class="form-group">
-                    <label for="room" class="col-sm-3 control-label">Room Number</label>
+                    <label for="room" class="col-sm-4 control-label">Room Number</label>
 
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                       <input type="text" class="form-control" id="room" name="room" placeholder="Enter Room Number" required>
                     </div>
                 </div>
@@ -22,11 +23,11 @@
                 <div class="form-group">
                 <div class="form-row">
 
-                    <label for="floor&room" class="col-sm-3 control-label">Category</label>
+                    <label for="floor&room" class="col-sm-4 control-label">Category</label>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <select class="form-control" id="floor_category" name="floor_category" required>
-                        <option value="" selected>- Select Floor -</option>
+                        <option value="" selected>- Floor -</option>
                         <?php
                           $sql = "SELECT * FROM floor_category";
                           $query = $conn->query($sql);
@@ -39,9 +40,9 @@
                       </select>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <select class="form-control" id="room_category" name="room_category" required>
-                        <option value="" selected>- Select Room -</option>
+                        <option value="" selected>- Room -</option>
                         <?php
                           $sql = "SELECT * FROM room_category";
                           $query = $conn->query($sql);
@@ -56,12 +57,12 @@
 
                     </div>
                 </div>
-
+<hr>
                 <div class="form-group">
-                    <label for="occupancy" class="col-sm-3 control-label">Max. Occupancy</label>
+                    <label for="occupancy" class="col-sm-4 control-label">Max. Occupancy</label>
 
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="occupancy" name="occupancy" placeholder="Enter Maximum Occupancy" required>
+                    <div class="col-sm-5">
+                      <input type="number" class="form-control" id="occupancy" name="occupancy" placeholder="Enter Max. Occupancy" required>
                     </div>
                 </div>
             </div>
@@ -81,15 +82,16 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Room</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Edit Room</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_edit.php">
                 <input type="hidden" class="roomid" name="id">
                 <div class="form-group">
-                    <label for="edit_room" class="col-sm-3 control-label">Room Number</label>
+                    <label for="edit_room" class="col-sm-4 control-label">Room Number</label>
 
-                    <div class="col-sm-8">
+                    <div class="col-sm-4">
                       <input type="text" class="form-control" id="edit_room" name="room" required>
                     </div>
                 </div>
@@ -100,7 +102,7 @@
 
                     <label for="floor&room" class="col-sm-3 control-label">Category</label>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <select class="form-control" id="floor_category" name="floor_category" required>
                         <option value="" selected id="catselect">- Select Floor -</option>
                         <?php
@@ -115,7 +117,7 @@
                       </select>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <select class="form-control" id="room_category" name="room_category" required>
                         <option value="" selected id="catselect2">- Select Room -</option>
                         <?php
@@ -159,7 +161,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_delete.php">

@@ -182,13 +182,15 @@ getRow(id);
           $('#students').val(response.student_id);
           $('#validfrom').val(response.date_from);
           $('#validto').val(response.date_to);
-          $('#name').val(response.firstname+' '+response.lastname);
+          $('#name').val(response.firstname+' '+response.lastname).html(response.firstname+' '+response.lastname);
           $('#pname').val(response.firstname+' '+response.lastname);
           $('#upload2').val(response.receipt);
           $('#upload').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
           $('#display_img').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
           $('.name_id').html(response.firstname+' '+response.lastname+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student ID:'+response.student_id);
           $('.res').html(response.date_from+'&nbsp; - &nbsp; '+response.date_to);
+          $('#from').val(response.date_from);
+          $('#to').val(response.date_to);
         }
       });
     }

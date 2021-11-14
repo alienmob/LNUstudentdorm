@@ -5,14 +5,15 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Add an Event</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Add an Event</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/event/event_add.php">
                 <div class="form-group">
-                    <label for="event_category" class="col-sm-3 control-label">Event Title</label>
+                    <label for="event_category" class="col-sm-4 control-label">Event Title</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <select class="form-control" id="event_category" name="event_category" required>
                         <option value="" selected>- Select Event title -</option>
                         <?php
@@ -29,39 +30,39 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description" class="col-sm-3 control-label">Description</label>
+                    <label for="description" class="col-sm-4 control-label">Description</label>
 
-                    <div class="col-sm-9">
-                      <textarea class="form-control" name="description" id="description" placeholder="Enter Description of Event" required></textarea>
+                    <div class="col-sm-6">
+                      <textarea class="form-control" name="description" id="description" rows="3" placeholder="Enter Description of Event" required></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
-                  	<label for="location" class="col-sm-3 control-label">Location</label>
+                  	<label for="location" class="col-sm-4 control-label">Location</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="location" name="location" placeholder="Enter Location of Event" required>
                   	</div>
                 </div>
 
                 <div class="form-group">
-                  	<label for="date" class="col-sm-3 control-label">Scheduled Date</label>
+                  	<label for="date" class="col-sm-4 control-label">Scheduled Date</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-4">
                     	<input type="date" class="form-control" id="date" name="date" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="time_start" class="col-sm-3 control-label">Start</label>
+                  	<label for="time_start" class="col-sm-4 control-label">Start</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-4">
                     	<input type="time" class="form-control" id="time_start" name="time_start" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="time_end" class="col-sm-3 control-label">End</label>
+                  	<label for="time_end" class="col-sm-4 control-label">End</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-4">
                     	<input type="time" class="form-control" id="time_end" name="time_end" required>
                   	</div>
                 </div>
@@ -102,15 +103,16 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Edit Event</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Edit Event</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/event/event_edit.php">
               <input type="hidden" class="studid" name="id">
                 <div class="form-group">
-                    <label for="event_category" class="col-sm-3 control-label">Event Title</label>
+                    <label for="event_category" class="col-sm-4 control-label">Event Title</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <select class="form-control" id="event_category" name="event_category" required>
                         <option value="" selected id="edit_event_category">- Select Event title -</option>
                         <?php
@@ -127,39 +129,39 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description" class="col-sm-3 control-label">Description</label>
+                    <label for="description" class="col-sm-4 control-label">Description</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <textarea class="form-control" name="description" id="edit_description" placeholder="Enter Description of Event" required></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
-                  	<label for="location" class="col-sm-3 control-label">Location</label>
+                  	<label for="location" class="col-sm-4 control-label">Location</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="edit_location" name="location" placeholder="Enter Location of Event" required>
                   	</div>
                 </div>
 
                 <div class="form-group">
-                  	<label for="date" class="col-sm-3 control-label">Scheduled Date</label>
+                  	<label for="date" class="col-sm-4 control-label">Scheduled Date</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-4">
                     	<input type="date" class="form-control" id="edit_date" name="date" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="time_start" class="col-sm-3 control-label">Start</label>
+                  	<label for="time_start" class="col-sm-4 control-label">Start</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-4">
                     	<input type="time" class="form-control" id="edit_time_start" name="time_start" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="time_end" class="col-sm-3 control-label">End</label>
+                  	<label for="time_end" class="col-sm-4 control-label">End</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-4">
                     	<input type="time" class="form-control" id="edit_time_end" name="time_end" required>
                   	</div>
                 </div>
@@ -188,7 +190,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/event/event_delete.php">

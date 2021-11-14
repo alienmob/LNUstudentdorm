@@ -127,8 +127,8 @@ function getRow(id){
     dataType: 'json',
     success: function(response){
       $('.stud').val(response.stud);
-      $('#edit_student').val(response.student_id);
-      $('#edit_name').val(response.firstname+' '+response.lastname);
+      $('#edit_student').val(response.student_id).html(response.student_id);
+      $('#edit_name').val(response.firstname+' '+response.lastname).html(response.firstname+' '+response.lastname);
       $('#selcode2').val(response.code).html(response.title);
     
     }

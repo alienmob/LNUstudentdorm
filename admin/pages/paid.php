@@ -132,7 +132,7 @@
           $('#stud_id').val(response.student_id);
           $('#validfrom').val(response.date_from);
           $('#validto').val(response.date_to);
-          $('#name').val(response.firstname+' '+response.lastname);
+          $('#name').val(response.firstname+' '+response.lastname).html(response.firstname+' '+response.lastname);
           $('#pname').val(response.firstname+' '+response.lastname);
           $('#upload2').val(response.receipt);
           $('#upload').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');

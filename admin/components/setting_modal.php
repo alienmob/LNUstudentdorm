@@ -4,7 +4,8 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Change RFID Function</b></h4>
+                  <br>
+            	<h4 class="modal-title text-center"><b>Change RFID Function</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/rfid_setting.php">
@@ -12,7 +13,7 @@
               <div class="form-group">
                     <label for="rfid" class="col-sm-4 control-label">RFID Function</label>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                       <select class="form-control" id="rfid" name="rfid" required>
                         <?php
                           $sql = "SELECT * FROM rfid_setting LEFT JOIN setting ON setting.id=rfid_setting.setting_id ";

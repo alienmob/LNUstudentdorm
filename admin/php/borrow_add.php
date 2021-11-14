@@ -5,17 +5,6 @@ if (isset($_POST['add'])) {
 	$student = $_POST['student'];
 	$feedback = $_POST['feedback'];
 	
-	$sql = "SELECT * FROM equipments ";
-		$query = $conn->query($sql);
-		
-			$trow = $query->fetch_assoc();
-			$status = $trow['pendstat'];
-			$quantity1 = $trow['quantity'];
-			$title = $trow['title'];
-			if ($quantity1 == 1 && $status == 0) {
-				$_SESSION['error'] = 'Last Stock for Equipment "' . $title . '" is on Pending';
-				header('location: ../pages/equipment.php');
-			}else
 
 	$sql = "SELECT * FROM students WHERE student_id = '$student'";
 	$query = $conn->query($sql);
@@ -37,6 +26,8 @@ if (isset($_POST['add'])) {
 		$pid = $prow['id'];
 		
 		foreach ($_POST['code'] as $code) {
+
+
 			if (!empty($code)) {
 				$sql = "SELECT * FROM equipments WHERE code = '$code' AND status != 1";
 				$query = $conn->query($sql);
@@ -45,8 +36,8 @@ if (isset($_POST['add'])) {
 					$brow = $query->fetch_assoc();
 					$quantity = $brow['quantity'];
 					$bid = $brow['id'];
-
-					
+					$title1 = $brow['title'];
+			
 
 					$sql = "INSERT INTO borrow (student_id, equipment_id) VALUES ('$student_id', '$bid')";
 					if ($conn->query($sql)) {
@@ -55,13 +46,7 @@ if (isset($_POST['add'])) {
 						$conn->query($sql);
 						$sql = "UPDATE pending SET feedback = '$feedback', status = $added WHERE id = '$pid' AND status != 1";
 						$conn->query($sql);
-						// $sql = "DELETE FROM pending WHERE status = 1";
-						// $conn->query($sql);
-						// $sql = "DELETE FROM pending WHERE id = '$pid'";
-						// $conn->query($sql);
-
-						// $sql = "INSERT INTO feedback (student_id, pending_id, equipment_id, feedback) VALUES ('$student_id', '$pid', '$bid', '$feedback')";
-						// $conn->query($sql);
+						
 
 						$sql = "SELECT * FROM equipments WHERE code = '$code'";
 						$query = $conn->query($sql);
@@ -75,6 +60,24 @@ if (isset($_POST['add'])) {
 								$conn->query($sql);
 							}
 						}
+
+// Activity log
+$sqlname = "SELECT * FROM students WHERE student_id = '$student'";
+$query1 = $conn->query($sqlname);
+$row1 = $query1->fetch_assoc();
+$firstname = $row1['firstname'];
+$lastname = $row1['lastname'];
+
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Approved ".$firstname." ".$lastname."`s borrow request for ".$title1.".')";
+$conn->query($sql);
+// End activity log
+
+
 					} else {
 						if (!isset($_SESSION['error'])) {
 							$_SESSION['error'] = array();

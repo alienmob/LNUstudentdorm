@@ -17,6 +17,7 @@
 		$rooms = $_POST['room'];
 		$course = $_POST['course'];
 
+		
 
 		$sql = "SELECT * FROM rooms WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
 		$query = $conn->query($sql);
@@ -80,7 +81,15 @@
 		WHERE student_id = '$id'";
 		if($conn->query($sql)){
 
+			// Activity Log
+			$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+			$query = $conn->query($sql);
+			$row = $query->fetch_assoc();
+			$admin = $row['id'];
 		
+			$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Updated ".$firstname." ".$lastname."`s Student record.')";
+			$conn->query($sql);
+			// End Activity log
 
 			$_SESSION['success'] = 'Student updated successfully';
 		}

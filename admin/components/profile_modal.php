@@ -5,71 +5,72 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Admin Profile</b></h4>
+					  <br>
+            	<h4 class="modal-title text-center"><b>Update Admin Profile</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../pages/profile_update.php?return=<?php echo basename($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
           		  <div class="form-group">
-                  	<label for="username" class="col-sm-3 control-label">Username:</label>
+                  	<label for="username" class="col-sm-4 control-label">Username:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password:</label>
+                    <label for="password" class="col-sm-4 control-label">Password:</label>
 
-                    <div class="col-sm-9"> 
+                    <div class="col-sm-6"> 
                       <input type="password" class="form-control" id="password" name="password" minlength="8" value="<?php echo $user['password']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                  	<label for="firstname" class="col-sm-3 control-label">Firstname:</label>
+                  	<label for="firstname" class="col-sm-4 control-label">Firstname:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="lastname" class="col-sm-3 control-label">Lastname:</label>
+                  	<label for="lastname" class="col-sm-4 control-label">Lastname:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="address" class="col-sm-3 control-label">Address:</label>
+                  	<label for="address" class="col-sm-4 control-label">Address:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="text" class="form-control" id="address" name="address" value="<?php echo $user['address']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="email" class="col-sm-3 control-label">Email:</label>
+                  	<label for="email" class="col-sm-4 control-label">Email:</label>
 
-                  	<div class="col-sm-9">
+                  	<div class="col-sm-6">
                     	<input type="email" class="form-control" id="email" name="email" value="<?php echo $user['email']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="contact" class="col-sm-3 control-label">Contact Number:</label>
+                  	<label for="contact" class="col-sm-4 control-label">Contact Number:</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="contact" name="contact" value="<?php echo $user['contact']; ?>">
+                  	<div class="col-sm-6">
+                    	<input type="number" class="form-control" id="contact" name="contact" value="<?php echo $user['contact']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo:</label>
+                    <label for="photo" class="col-sm-4 control-label">Photo:</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <label for="curr_password" class="col-sm-3 control-label">Current Password:</label>
+                    <label for="curr_password" class="col-sm-4 control-label">Current Password:</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                       <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="Input current password to save changes" required>
                     </div>
                 </div>

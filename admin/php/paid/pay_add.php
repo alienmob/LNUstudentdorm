@@ -14,7 +14,7 @@ if (isset($_POST['pay'])) {
 		if (!isset($_SESSION['error'])) {
 			$_SESSION['error'] = array();
 		}
-		$_SESSION['error'][] = 'Student not found';
+		$_SESSION['error'] = 'Student not found';
 	} else {
         $row = $query->fetch_assoc();
 		$stud_id = $row['student_id'];  //

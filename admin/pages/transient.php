@@ -164,11 +164,11 @@ function getRow(id){
       $('#edit_contact').val(response.contact);
 
       $('#transient_id').val(response.transient_id);
-      $('#checkin_firstname').val(response.firstname);
-      $('#checkin_lastname').val(response.lastname);
+      $('#checkin_firstname').val(response.firstname).html(response.firstname);
+      $('#checkin_lastname').val(response.lastname).html(response.lastname);
       $('#checkin_gender').val(response.gender);
       $('#checkin_address').val(response.address);
-      $('#checkin_contact').val(response.contact);
+      $('#checkin_contact').val(response.contact).html(response.contact);
 
       
       $('.del_stu').html(response.firstname+' '+response.lastname);

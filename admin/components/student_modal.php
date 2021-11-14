@@ -14,7 +14,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Student</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Add New Student</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/student/student_add.php">
@@ -22,7 +23,7 @@
                     <label for="student_id" class="col-sm-3 control-label">Student ID</label>
 
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Enter Student Number" required>
+                      <input type="number" class="form-control" id="student_id" name="student_id" placeholder="Enter Student Number" required>
                     </div>
                 </div>
                
@@ -80,7 +81,7 @@
                     <label for="contact" class="col-sm-3 control-label">Contact No.</label>
 
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="contact" name="contact" value="+63" placeholder="+63xxxxxxxxxx" required>
+                      <input type="number" class="form-control" id="contact" name="contact" placeholder="09xxxxxxxxx" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -101,7 +102,7 @@
                     <label for="guardian_contact" class="col-sm-3 control-label">Guardian's Contact No.</label>
 
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="guardian_contact" name="guardian_contact" placeholder="Enter Guardian's Contact Number" required>
+                      <input type="number" class="form-control" id="guardian_contact" name="guardian_contact" placeholder="09xxxxxxxxx" required>
                     </div>
                 </div>
 
@@ -196,7 +197,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Student</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Update Student</b></h4>
             </div>
             <div class="modal-body">
               
@@ -206,7 +208,7 @@
                     <label for="edit_student_id" class="col-sm-3 control-label">Student ID</label>
 
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="edit_student_id" name="student_id" required>
+                      <input type="number" class="form-control" id="edit_student_id" name="student_id" required>
                     </div>
                 </div>
 
@@ -257,7 +259,7 @@
                     <label for="edit_contact" class="col-sm-3 control-label">Contact No.</label>
 
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="edit_contact" name="contact" required>
+                      <input type="number" class="form-control" id="edit_contact" name="contact" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -278,7 +280,7 @@
                     <label for="edit_guardian_contact" class="col-sm-3 control-label">Guardian's Contact No.</label>
 
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="edit_guardian_contact" name="guardian_contact" required>
+                      <input type="number" class="form-control" id="edit_guardian_contact" name="guardian_contact" required>
                     </div>
                 </div>
 
@@ -376,7 +378,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/student/student_delete.php">

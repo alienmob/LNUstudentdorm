@@ -5,23 +5,12 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Record Unpaid Students</b></h4>
+                      <br>
+            	<h4 class="modal-title text-center"><b>Record Unpaid Students</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/unpaid/unpaid_add.php">
-          		  <!-- <div class="form-group">
-                  	<label for="student_id" class="col-sm-3 control-label">Student ID</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="student_id" name="student_id" placeholder="Enter Student Number" required>
-                  	</div>	
-                </div> -->
-				<!-- <span id="append-div"></span>
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                      <button class="btn btn-primary btn-xs btn-rounded" id="append"><i class="fa fa-plus"></i> Student ID Field</button>
-                    </div>
-                </div> -->
+          		
 
                 <div class="form-group">
                   	<label for="date_from" class="col-sm-4 control-label">Date From</label>
@@ -71,53 +60,6 @@
             });
         </script>
 
-<script>
-	// $(document).on('click', '.add', function(e) {
-    //   e.preventDefault();
-    //   var id = $(this).data();
-    //   getRow(id.id);
-    //   Swal.fire({
-    //             title: 'Please Wait!',
-    //             html: 'Sending Email...',// add html attribute if you want or remove
-    //             allowOutsideClick: false,
-    //             onBeforeOpen: () => {
-    //                 Swal.showLoading()
-    //             },
-    //         });
-
-    // });
-
-
-// 	$(document).on("click", ".add", function(e){
-//             e.preventDefault();
-//             var id = $(this).data();
-
-// 			Swal.fire({
-//                 title: 'Please Wait!',
-//                 html: 'Sending Email...',// add html attribute if you want or remove
-//                 allowOutsideClick: false,
-//                 onBeforeOpen: () => {
-//                     Swal.showLoading()
-//                 },
-//             }).then((result) => {
-//   if (result.value) {
-//       $.ajax({
-//         url: 'assets/php/unpaid_add.php',
-//         method: 'post',
-//         data: { id: id },
-//         success:function(response){
-//             Swal.fire(
-//       'Restored!',
-//       'User Restored Successfully!',
-//       'success'
-//     )
-//         }
-//       });
-    
-//   }
-// })
-//         });
-	</script>
 
 
 <!-- Late -->
@@ -127,7 +69,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Late Unpaid Students</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Late Unpaid Students</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/unpaid/unpaid_late.php">
@@ -162,7 +105,8 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deadline Today</b></h4>
+                  <br>
+              <h4 class="modal-title text-center"><b>Deadline Today</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/unpaid/unpaid_today.php">

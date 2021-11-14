@@ -12,12 +12,9 @@ if (isset($_POST['add'])) {
 		if (!isset($_SESSION['error'])) {
 			$_SESSION['error'] = array();
 		}
-		$_SESSION['error'][] = 'Student not found';
+		$_SESSION['error'] = 'Student not found';
 	} else {
-		$row = $query->fetch_assoc();
-		$student_id = $row['student_id'];
 		
-
 		$added = 0;
 		$pending_id = $_POST['id'];
 		$sql = "SELECT * FROM pending WHERE id = $pending_id AND status != 1";
@@ -29,41 +26,34 @@ if (isset($_POST['add'])) {
 			if (!empty($code)) {
 				$sql = "SELECT * FROM equipments WHERE code = '$code' AND status != 1";
 				$query = $conn->query($sql);
-				
+				$row = $query->fetch_assoc();
+				$title = $row['title'];
+
 				if ($query->num_rows > 0) {
-					// $brow = $query->fetch_assoc();
-					// $quantity = $brow['quantity'];
-					// $bid = $brow['id'];
-
 					
-
-					// $sql = "INSERT INTO borrow (student_id, equipment_id) VALUES ('$student_id', '$bid')";
 					if ($conn->query($sql)) {
 						$added++;
-						// $sql = "UPDATE equipments SET quantity = $quantity - 1, status = 0 WHERE id = '$bid'";
-						// $conn->query($sql);
+			
 						$sql = "UPDATE pending SET decline = '$decline', status = 2 WHERE id = '$pid' AND status != 1";
 						$conn->query($sql);
-						// $sql = "DELETE FROM pending WHERE status = 1";
-						// $conn->query($sql);
-						// $sql = "DELETE FROM pending WHERE id = '$pid'";
-						// $conn->query($sql);
+					
 
-						// $sql = "INSERT INTO feedback (student_id, pending_id, equipment_id, feedback) VALUES ('$student_id', '$pid', '$bid', '$feedback')";
-						// $conn->query($sql);
+// Activity log
+$sqlname = "SELECT * FROM students WHERE student_id = '$student'";
+$query1 = $conn->query($sqlname);
+$row1 = $query1->fetch_assoc();
+$firstname = $row1['firstname'];
+$lastname = $row1['lastname'];
 
-						$sql = "SELECT * FROM equipments WHERE code = '$code'";
-						$query = $conn->query($sql);
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
 
-						$sql = "DELETE FROM pending WHERE status = 1";
-						// if ($query->num_rows > 0) {
-						// 	$quantity = $brow['quantity'];
-
-						// 	if ($quantity == 0) {
-						// 		$sql = "UPDATE equipments SET  status = 1 WHERE id = '$bid'";
-						// 		$conn->query($sql);
-						// 	}
-						// }
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Declined ".$firstname." ".$lastname."`s borrow request for ".$title.".')";
+$conn->query($sql);
+// End activity log
+						
 					} else {
 						if (!isset($_SESSION['error'])) {
 							$_SESSION['error'] = array();

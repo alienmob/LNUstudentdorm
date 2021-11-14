@@ -182,7 +182,7 @@ function getRow(id){
       
       $('#cancel_event_category').val(response.event_category_id).html(response.event_name);
       $('#cancel_description').val(response.description);
-      $('#cancel_location').val(response.location);
+      $('#cancel_location').val(response.location).html(response.location);
       $('#cancel_date').val(response.date);
       $('#cancel_time_start').val(response.time_start);
       $('#cancel_time_end').val(response.time_end);

@@ -58,40 +58,33 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><b>Return Equipment</b></h4>
+          <br>
+        <h4 class="modal-title text-center"><b>Return Equipment</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="../php/return_add.php">
         <input type="hidden" class="stud" name="id">
           <div class="form-group">
-            <label for="student" class="col-sm-3 control-label">Student ID</label>
+            <label for="student" class="col-sm-4 control-label">Student ID</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="edit_student" name="student" required>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="edit_student" name="student" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="name" class="col-sm-3 control-label">Name</label>
+            <label for="name" class="col-sm-4 control-label">Name</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="edit_name" name="name" disabled>
+            <div class="col-sm-5">
+              <text type="text" class="form-control" id="edit_name" name="name"></text>
             </div>
           </div>
           <div class="form-group">
-            <label for="code" class="col-sm-3 control-label">Equipment Name</label>
+            <label for="code" class="col-sm-4 control-label">Equipment Name</label>
 
-            <div class="col-sm-9">
+            <div class="col-sm-5">
               <select class="form-control" id="code" name="code[]" required>
                 <option value="" selected id="selcode2">- Select -</option>
-                <?php
-                $sql = "SELECT * FROM equipments";
-                $query = $conn->query($sql);
-                while ($row = $query->fetch_array()) {
-                  echo "
-                              <option value='" . $row['code'] . "'>" . $row['title'] . "</option>
-                            ";
-                }
-                ?>
+                
               </select>
             </div>
           </div>
