@@ -11,6 +11,16 @@ require_once '../../includes/config.php';
 
 	if(isset($_POST['today'])){
 
+// Activity log
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Sent ``Deadline Today`` Email Notification to All Registered Students.')";
+$conn->query($sql);
+// End activity log
+
 		// EMAIL
 
         date_default_timezone_set('Asia/Manila');

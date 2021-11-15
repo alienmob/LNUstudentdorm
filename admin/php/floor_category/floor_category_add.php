@@ -7,6 +7,17 @@
 		$sql = "INSERT INTO floor_category (floor_name) VALUES ('$name')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Floor Category added successfully';
+
+			// Activity log
+		$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+		$query = $conn->query($sql);
+		$row = $query->fetch_assoc();
+		$admin = $row['id'];
+		
+		$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Added ".$name." in Floor Category List.')";
+		$conn->query($sql);
+		// End activity log
+
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

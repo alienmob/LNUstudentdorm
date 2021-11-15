@@ -13,7 +13,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Event Management
+          Event Management Record
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>

@@ -14,49 +14,49 @@
                   	<label for="username" class="col-sm-4 control-label">Username:</label>
 
                   	<div class="col-sm-6">
-                    	<input type="text" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>">
+                    	<input type="text" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>" required>
                   	</div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-4 control-label">Password:</label>
 
                     <div class="col-sm-6"> 
-                      <input type="password" class="form-control" id="password" name="password" minlength="8" value="<?php echo $user['password']; ?>">
+                      <input type="password" class="form-control" id="password" name="password" minlength="8" value="<?php echo $user['password']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
                   	<label for="firstname" class="col-sm-4 control-label">Firstname:</label>
 
                   	<div class="col-sm-6">
-                    	<input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
+                    	<input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="lastname" class="col-sm-4 control-label">Lastname:</label>
 
                   	<div class="col-sm-6">
-                    	<input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
+                    	<input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="address" class="col-sm-4 control-label">Address:</label>
 
                   	<div class="col-sm-6">
-                    	<input type="text" class="form-control" id="address" name="address" value="<?php echo $user['address']; ?>">
+                    	<input type="text" class="form-control" id="address" name="address" value="<?php echo $user['address']; ?>" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="email" class="col-sm-4 control-label">Email:</label>
 
                   	<div class="col-sm-6">
-                    	<input type="email" class="form-control" id="email" name="email" value="<?php echo $user['email']; ?>">
+                    	<input type="email" class="form-control" id="email" name="email" value="<?php echo $user['email']; ?>" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="contact" class="col-sm-4 control-label">Contact Number:</label>
 
                   	<div class="col-sm-6">
-                    	<input type="number" class="form-control" id="contact" name="contact" value="<?php echo $user['contact']; ?>">
+                    	<input type="number" class="form-control" id="contact" name="contact" value="<?php echo $user['contact']; ?>" required>
                   	</div>
                 </div>
                 <div class="form-group">

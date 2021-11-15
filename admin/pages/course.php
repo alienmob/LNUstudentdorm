@@ -12,7 +12,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Course
+        Student Courses
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>

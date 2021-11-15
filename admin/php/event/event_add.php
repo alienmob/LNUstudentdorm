@@ -93,8 +93,20 @@ $email = $row['email'];
 
 // END EMAIL
 		
-		$sql = "INSERT INTO event (event_category_id, description, location, date, time_start, time_end) VALUES ('$event_category', '$description', '$location', '$date', '$time_start', '$time_end')";
+		$sql = "INSERT INTO event (event_category_id, description, location, date, time_start, time_end) VALUES 
+		('$event_category', '$description', '$location', '$date', '$time_start', '$time_end')";
 		if($conn->query($sql)){
+
+// Activity log
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Added ``".$call." | ".date('M d, Y', strtotime($date))."`` as an event in Event Management Record.')";
+$conn->query($sql);
+// End activity log
+
 			$_SESSION['success'] = 'Event added successfully';
 		}
 		else{

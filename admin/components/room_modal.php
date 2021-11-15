@@ -6,7 +6,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Add New Room</b></h4>
+              <h4 class="modal-title text-center"><b>Add New Room Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_add.php">
@@ -83,7 +83,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Edit Room</b></h4>
+              <h4 class="modal-title text-center"><b>Edit Room Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_edit.php">
@@ -105,30 +105,14 @@
                     <div class="col-sm-3">
                       <select class="form-control" id="floor_category" name="floor_category" required>
                         <option value="" selected id="catselect">- Select Floor -</option>
-                        <?php
-                          $sql = "SELECT * FROM floor_category";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['floor_name']."</option>
-                            ";
-                          }
-                        ?>
+                       
                       </select>
                     </div>
 
                     <div class="col-sm-3">
                       <select class="form-control" id="room_category" name="room_category" required>
                         <option value="" selected id="catselect2">- Select Room -</option>
-                        <?php
-                          $sql = "SELECT * FROM room_category";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['room_name']."</option>
-                            ";
-                          }
-                        ?>
+                        
                       </select>
                     </div>
 
@@ -162,7 +146,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Room Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/room/room_delete.php">

@@ -15,7 +15,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Add New Student</b></h4>
+              <h4 class="modal-title text-center"><b>Register New Student</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/student/student_add.php">
@@ -27,13 +27,6 @@
                     </div>
                 </div>
                
-                <!-- <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
-
-                    <div class="col-sm-8">
-                      <input type="password" class="form-control" id="password" name="password" required>
-                    </div>
-                </div> -->
                 <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Firstname</label>
 
@@ -164,13 +157,7 @@
                       </select>
                     </div>
                 </div>
-                <!-- <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo</label>
 
-                    <div class="col-sm-8">
-                      <input type="file" id="photo" name="photo">
-                    </div>
-                </div> -->
                 <hr>
                 <div class="form-group">
                     <label for="getUID" class="col-sm-3 control-label">RFID:</label>
@@ -183,12 +170,13 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-rounded" name="add"><i class="fa fa-save"></i> Add</button>
+              <button type="submit" class="btn btn-success btn-rounded" name="add"><i class="fa fa-check"></i> Register</button>
               </form>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Edit -->
 <div class="modal fade" id="edit">
@@ -198,7 +186,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Update Student</b></h4>
+              <h4 class="modal-title text-center"><b>Update Student Record</b></h4>
             </div>
             <div class="modal-body">
               
@@ -343,23 +331,6 @@
                     </div>
                 </div>
                 
-                <?php
- 
-//  $sql = "SELECT *, students.photo AS studid FROM students";
- 
-//  $query = $conn->query($sql);
-//  while($row = $query->fetch_assoc()){
-//    $photo = (!empty($row['studid'])) ? '../images/'.$row['studid'] : '../images/profile.jpg';
-//    echo "
-     
-//    <div class='col-md-12'>
-//    <img src='".$photo."' id='edit_photo' width='300px' height='300px' style='border: 2px solid;'/>
-//   </div>
-
-//    ";
-//  }
-
-?>
               
             </div>
             <div class="modal-footer">
@@ -379,7 +350,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Student Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/student/student_delete.php">
@@ -405,7 +376,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="del_stu"></span></b></h4>
+              <h4 class="modal-title text-center"><b><span class="del_stu"></span></b></h4>
             </div>
             <div class="modal-body">
             

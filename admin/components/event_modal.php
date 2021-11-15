@@ -6,7 +6,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Add an Event</b></h4>
+            	<h4 class="modal-title text-center"><b>Add Event/Announcement</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/event/event_add.php">
@@ -104,7 +104,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Edit Event</b></h4>
+            	<h4 class="modal-title text-center"><b>Edit Event/Announcement</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/event/event_edit.php">
@@ -191,7 +191,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Event/Announcment</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/event/event_delete.php">

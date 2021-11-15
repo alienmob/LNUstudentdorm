@@ -6,7 +6,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Add New Transient</b></h4>
+              <h4 class="modal-title text-center"><b>Register New Transient</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_add.php">
@@ -128,7 +128,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-rounded" name="add"><i class="fa fa-save"></i> Add</button>
+              <button type="submit" class="btn btn-success btn-rounded" name="add"><i class="fa fa-check"></i> Register</button>
               </form>
             </div>
         </div>
@@ -143,7 +143,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Edit Transient</b></h4>
+              <h4 class="modal-title text-center"><b>Update Transient Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_edit.php">
@@ -209,7 +209,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Transient Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_delete.php">
@@ -237,7 +237,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Re-Check In Past Transient</b></h4>
+              <h4 class="modal-title text-center"><b>Check-In Transient Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_checkin.php">
@@ -382,7 +382,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Check Out Transient</b></h4>
+              <h4 class="modal-title text-center"><b>Check Out Transient Record</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_checkout.php">

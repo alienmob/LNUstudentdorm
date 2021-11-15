@@ -11,6 +11,16 @@ require_once '../../includes/config.php';
 
 	if(isset($_POST['late'])){
 
+            // Activity log
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Sent Email Notification to All Late Unpaid Students.')";
+$conn->query($sql);
+// End activity log
+
 		// EMAIL
 
 date_default_timezone_set('Asia/Manila');
@@ -20,6 +30,8 @@ $sql = "SELECT * FROM unpaid LEFT JOIN students ON students.student_id=unpaid.st
 $query = $conn->query($sql);
 // $query = $conn->query($sql);
 // while ($row = $query->fetch_assoc()) {
+
+
  
 while ($row = $query->fetch_assoc()) {
 $email = $row['email'];

@@ -7,7 +7,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Add Violation</b></h4>
+              <h4 class="modal-title text-center"><b>Add Student Violation</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/violation/violation_add.php">
@@ -52,7 +52,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>View Student's Violation</b></h4>
+              <h4 class="modal-title text-center"><b>View Student Violation</b></h4>
             </div>
             <div class="modal-body">
               
@@ -135,7 +135,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Delete Violation?</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Student Violation?</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/violation/violation_delete.php">

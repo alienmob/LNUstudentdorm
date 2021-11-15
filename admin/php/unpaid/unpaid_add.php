@@ -16,27 +16,54 @@ if (isset($_POST['add'])) {
 	$added2 = 1;
 	$query = $conn->query($sql);
 	if ($query->num_rows > 0) {
-		$student_id = $_POST['student_id'];
+
 		$date_from = $_POST['date_from'];
 		$date_to = $_POST['date_to'];
 		$deadline = $_POST['deadline'];
 
+		$sql = "SELECT * FROM students";
+		$query = $conn->query($sql);
+		while($row = $query->fetch_assoc()){
+		$student_id = $row['student_id'];
+		$privilege = $row['privilege'];
 
-		$sql = "INSERT INTO unpaid (student_id, date_from, date_to, deadline) SELECT student_id,'$date_from','$date_to','$deadline' FROM students";
+		if($privilege == 'Athlete'){
+
+		$sql = "INSERT INTO paid (student_id, date_from, date_to, status) VALUES ('$student_id','$date_from','$date_to','1')";
+		$conn->query($sql);
+		}else{
+
+
+		$sql = "INSERT INTO unpaid (student_id, date_from, date_to, deadline) VALUES ('$student_id','$date_from','$date_to','$deadline')";
 		if ($conn->query($sql)) {
 			$added2--;
 			$sql = "UPDATE unpaid SET status = $added2 WHERE student_id = '$student_id'";
 			$conn->query($sql);
+
 		} else {
 			if (!isset($_SESSION['error'])) {
 				$_SESSION['error'] = array();
 			}
 			$_SESSION['error'][] = $conn->error;
 		}
+	}
+}
+		
+// Activity log
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES 
+('$admin', 'Set Payment for the month of ". date('M d, Y', strtotime($date_from)) ." to ". date('M d, Y', strtotime($date_to)) ."')";
+$conn->query($sql);
+// End activity log	
+		
 
 	// EMAIL
 
-$sql = "SELECT email FROM `students`";
+$sql = "SELECT email FROM `students` WHERE privilege = 'Non-Athlete'";
 $query = $conn->query($sql);
 // $query = $conn->query($sql);
 // while ($row = $query->fetch_assoc()) {

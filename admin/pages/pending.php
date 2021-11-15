@@ -12,12 +12,12 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Pending Requests
+          Student Request Record List
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
           <li>Transaction</li>
-          <li class="active">Pending</li>
+          <li class="active">Requests</li>
         </ol>
       </section>
       <!-- Main content -->

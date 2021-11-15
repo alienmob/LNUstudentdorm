@@ -35,6 +35,16 @@ $query = $conn->query($sql);
 $row = $query->fetch_assoc();
 $name = $row['event_name'];
 
+// Activity log
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Cancelled ``".$name." | ".date('M d, Y', strtotime($date))."`` event in Event Management Record.')";
+$conn->query($sql);
+// End activity log
+
 		// EMAIL
 
 $sql = "SELECT email FROM `students`";

@@ -17,16 +17,7 @@
                     <div class="col-sm-6">
                       <select class="form-control" id="room" name="room" required>
                         <option value="" selected id="room_select">- Select Room -</option>
-                        <?php
-                          $sql = "SELECT *, rooms.id AS id FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-                          LEFT JOIN room_category ON room_category.id=rooms.room_category_id";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['floor_name'].'&nbsp;-&nbsp;'.$row['room_name']."</option>
-                            ";
-                          }
-                        ?>
+                        
                       </select>
                     </div>
                 </div>
@@ -80,16 +71,7 @@
                     <div class="col-sm-6">
                       <select class="form-control" id="room_m" name="room_m" required>
                         <option value="" selected id="room_select_m">- Select Room -</option>
-                        <?php
-                          $sql = "SELECT *, rooms.id AS id FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-                          LEFT JOIN room_category ON room_category.id=rooms.room_category_id";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['floor_name'].'&nbsp;-&nbsp;'.$row['room_name']."</option>
-                            ";
-                          }
-                        ?>
+                       
                       </select>
                     </div>
                 </div>
@@ -134,17 +116,6 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/room/room_m_option.php">
-       
-
-              <!-- <div class="form-group">
-                    <label for="stat" class="col-sm-3 control-label">Status</label>
-                      <div class="col-sm-9">
-                    	
-
-                              <text class="label label-danger" id="stat"></text>
-
-                  	</div>
-                </div> -->
 
 
                 <div class="form-group">
@@ -153,16 +124,7 @@
                     <div class="col-sm-6">
                       <select class="form-control" id="room_option" name="room_option" required>
                         <option value="" selected id="option_m">- Select Room -</option>
-                        <?php
-                          $sql = "SELECT *, rooms.id AS id FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-                          LEFT JOIN room_category ON room_category.id=rooms.room_category_id";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['floor_name'].'&nbsp;-&nbsp;'.$row['room_name']."</option>
-                            ";
-                          }
-                        ?>
+                       
                       </select>
                     </div>
                 </div>

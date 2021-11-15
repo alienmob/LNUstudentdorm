@@ -12,7 +12,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Unpaid Status
+          Unpaid Student Record List
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
@@ -50,7 +50,7 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header with-border">
-                <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> Record Unpaid Student</a>
+                <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New Record</a>
 
                 <a href="#today" data-toggle="modal" class="btn btn-info btn-sm btn-rounded pull-right" style="margin:5px; margin-right:20px;"><i class="fa fa-bell"></i></a>
                 

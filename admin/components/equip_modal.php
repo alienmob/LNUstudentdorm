@@ -6,7 +6,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Add New Dorm Equipments</b></h4>
+            	<h4 class="modal-title text-center"><b>Add New Dormitory Equipment</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_add.php">
@@ -78,7 +78,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Edit Equipment</b></h4>
+            	<h4 class="modal-title text-center"><b>Edit Dormitory Equipment</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_edit.php">
@@ -135,7 +135,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Deleting...</b></h4>
+            	<h4 class="modal-title text-center"><b>Delete Equipment</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_delete.php">

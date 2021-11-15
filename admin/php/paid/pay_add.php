@@ -35,7 +35,22 @@ if (isset($_POST['pay'])) {
 			// $sql = "DELETE FROM `promissory` WHERE status = 1";
 			// $conn->query($sql);
 
-			
+// Activity log
+$sqlname = "SELECT * FROM students WHERE student_id = '$student_id'";
+$query1 = $conn->query($sqlname);
+$row1 = $query1->fetch_assoc();
+$firstname = $row1['firstname'];
+$lastname = $row1['lastname'];
+
+$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+$query = $conn->query($sql);
+$row = $query->fetch_assoc();
+$admin = $row['id'];
+
+$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Confirmed ".$firstname." ".$lastname."`s Unpaid Payment Record.')";
+$conn->query($sql);
+// End activity log
+
 			
 
 					} else {

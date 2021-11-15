@@ -60,7 +60,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="../pages/pending.php"><i class="fa fa-circle-o"></i> Pending Requests</a></li>
+        <li><a href="../pages/pending.php"><i class="fa fa-circle-o"></i> Student Requests</a></li>
           <li><a href="../pages/borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipment</a></li>
           <li><a href="../pages/return.php"><i class="fa fa-circle-o"></i> Returned Equipment</a></li>
           
@@ -75,8 +75,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Unpaid Status</a></li>
-        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Paid Status</a></li>
+        <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Unpaid Record</a></li>
+        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Paid Record</a></li>
           <!-- <li><a href="promissory.php"><i class="fa fa-circle-o"></i> Promissory Status</a></li> -->
           
         </ul>

@@ -6,7 +6,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                       <br>
-            	<h4 class="modal-title text-center"><b>Record Unpaid Students</b></h4>
+            	<h4 class="modal-title text-center"><b>Unpaid Student Form</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/unpaid/unpaid_add.php">

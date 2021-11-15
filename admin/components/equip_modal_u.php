@@ -6,7 +6,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Add Quantity of New Equipment</b></h4>
+            	<h4 class="modal-title text-center"><b>New stock of Equipment</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_add_u.php">
@@ -48,7 +48,7 @@
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
                   <br>
-            	<h4 class="modal-title text-center"><b>Add Quantity of New Unserviceable Equipment</b></h4>
+            	<h4 class="modal-title text-center"><b>For Replacement/Unusable Equipment</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_sub_u.php">

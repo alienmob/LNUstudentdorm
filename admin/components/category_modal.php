@@ -6,7 +6,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Add New Category</b></h4>
+              <h4 class="modal-title text-center"><b>Add New Equipment Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/category/category_add.php">
@@ -35,7 +35,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Edit Category</b></h4>
+              <h4 class="modal-title text-center"><b>Edit Equipment Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/category/category_edit.php">
@@ -65,13 +65,13 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Deleting...</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Equipment Category</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/category/category_delete.php">
                 <input type="hidden" class="catid" name="id">
                 <div class="text-center">
-                    <p>DELETE EQUIPMENT CATEGORY</p>
+                    <!-- <p>DELETE EQUIPMENT CATEGORY</p> -->
                     <h2 id="del_cat" class="bold"></h2>
                 </div>
             </div>
