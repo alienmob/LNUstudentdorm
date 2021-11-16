@@ -10,12 +10,12 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_add_u.php">
-          		 
+				<input type="hidden" class="equipid" name="id">
                 <div class="form-group">
                     <label for="title" class="col-sm-4 control-label">Equipment Name</label>
 
                     <div class="col-sm-6">
-                      <textarea class="form-control" name="title" id="title" placeholder="Enter Equipment Name" required></textarea>
+                      <text class="form-control" name="title" id="title" placeholder="Enter Equipment Name"></text>
                     </div>
                 </div>
                
@@ -52,12 +52,12 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/equip/equip_sub_u.php">
-          		 
+				<input type="hidden" class="equipid" name="id">
                 <div class="form-group">
                     <label for="title2" class="col-sm-4 control-label">Equipment Name</label>
 
                     <div class="col-sm-6">
-                      <textarea class="form-control" name="title2" id="title2" placeholder="Enter Equipment Name" required></textarea>
+                      <text class="form-control" name="title2" id="title2" placeholder="Enter Equipment Name"></text>
                     </div>
                 </div>
                

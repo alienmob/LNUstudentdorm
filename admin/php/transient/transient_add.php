@@ -67,6 +67,17 @@
 
 			$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE floor_category_id = '$floor_id' AND room_category_id = '$room_id'";
 			$conn->query($sql);	
+
+			// Activity Log
+			$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+			$query = $conn->query($sql);
+			$row = $query->fetch_assoc();
+			$admin = $row['id'];
+		
+			$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Added ``".$firstname." ".$lastname."`` to the Transient record.')";
+			$conn->query($sql);
+			// End Activity Log
+
 			$_SESSION['success'] = 'Transient added successfully';
 		}
 		

@@ -242,12 +242,12 @@
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_checkin.php">
                 <input type="hidden" class="tranid" name="id">
-
+                <input type="hidden" class="trans" name="id">
                 <div class="form-group">
                     <label for="transient_id" class="col-sm-4 control-label">Transient ID</label>
 
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" id="transient_id" name="transient_id" required>
+                      <text type="text" class="form-control" id="transient_id" name="transient_id"></text>
                     </div>
                 </div>
                 <div class="form-group">
@@ -268,10 +268,9 @@
                     <label for="gender" class="col-sm-4 control-label">Gender</label>
 
                     <div class="col-sm-6">
-                      <select class="form-control" id="checkin_gender" name="gender">
-                        <option value="" selected>- Select -</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                      <select class="form-control" id="gender" name="gender">
+                        <option value="" selected id="checkin_gender">- Select -</option>
+                        
                       </select>
                     </div>
                 </div>
@@ -279,7 +278,7 @@
                     <label for="address" class="col-sm-4 control-label">Address</label>
 
                     <div class="col-sm-6">
-                      <textarea type="text" class="form-control" id="checkin_address" name="address" rows="2"></textarea>
+                      <textarea type="text" class="form-control" id="checkin_address" name="address" rows="2" disabled></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -387,12 +386,12 @@
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/transient/transient_checkout.php">
                 <input type="hidden" class="checkid" name="id">
-
+                <input type="hidden" class="trans" name="id">
                 <div class="form-group">
                     <label for="transient_id" class="col-sm-4 control-label">Transient ID</label>
 
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" id="checkout_transient_id" name="transient_id" required>
+                      <text type="text" class="form-control" id="checkout_transient_id" name="transient_id"></text>
                     </div>
                 </div>
                 <div class="form-group">
@@ -418,14 +417,14 @@
                     <label for="floor&room" class="col-sm-3 control-label">Room No.</label>
 
                     <div class="col-sm-4">
-                      <select class="form-control" id="floor" name="floor" required>
+                      <select class="form-control" id="floor" name="floor" disabled>
                         <option value="" selected id="checkout_floor">- Select Floor -</option>
                        
                       </select>
                     </div>
 
                     <div class="col-sm-4">
-                      <select class="form-control" id="room" name="room" required>
+                      <select class="form-control" id="room" name="room" disabled>
                         <option value="" selected id="checkout_room">- Select Room -</option>
                         
                       </select>
@@ -442,11 +441,11 @@
                   	<label for="" class="col-sm-3 control-label">Check In</label>
 
                   	<div class="col-sm-4">
-                    	<input type="date" class="form-control" id="checkout_date_in" name="date_in" required>
+                    	<input type="date" class="form-control" id="checkout_date_in" name="date_in" disabled>
                   	</div>
 
                   	<div class="col-sm-4">
-                    	<input type="time" class="form-control" id="checkout_time_in" name="time_in" required>
+                    	<input type="time" class="form-control" id="checkout_time_in" name="time_in" disabled>
                   	</div>
     
                 </div>
@@ -458,11 +457,11 @@
                   	<label for="" class="col-sm-3 control-label">Check Out</label>
 
                   	<div class="col-sm-4">
-                    	<input type="date" class="form-control" id="checkout_date_out" name="date_out" required>
+                    	<input type="date" class="form-control" id="checkout_date_out" name="date_out" disabled>
                   	</div>
 
                   	<div class="col-sm-4">
-                    	<input type="time" class="form-control" id="checkout_time_out" name="time_out" required>
+                    	<input type="time" class="form-control" id="checkout_time_out" name="time_out" disabled>
                   	</div>
     
                 </div>

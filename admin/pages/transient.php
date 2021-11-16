@@ -12,7 +12,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Transient List
+        Transient Record List
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
@@ -163,11 +163,12 @@ function getRow(id){
       $('#edit_address').val(response.address);
       $('#edit_contact').val(response.contact);
 
-      $('#transient_id').val(response.transient_id);
+      $('.trans').val(response.transient_id);
+      $('#transient_id').val(response.transient_id).html(response.transient_id);
       $('#checkin_firstname').val(response.firstname).html(response.firstname);
       $('#checkin_lastname').val(response.lastname).html(response.lastname);
-      $('#checkin_gender').val(response.gender);
-      $('#checkin_address').val(response.address);
+      $('#checkin_gender').val(response.gender).html(response.gender);
+      $('#checkin_address').val(response.address).html(response.address);
       $('#checkin_contact').val(response.contact).html(response.contact);
 
       

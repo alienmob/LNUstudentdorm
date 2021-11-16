@@ -67,7 +67,7 @@
                   </thead>
                   <tbody>
                     <?php
-                    $sql = "SELECT *, paid.id AS ID, paid.status AS pstat FROM paid LEFT JOIN students ON students.student_id=paid.student_id ORDER BY date_paid DESC";
+                    $sql = "SELECT *, paid.id AS ID, paid.status AS pstat FROM paid LEFT JOIN students ON students.student_id=paid.student_id ORDER BY paid.date_paid DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                        $receipt = (!empty($row['receipt'])) ? '../../img/'.$row['receipt'] : '../../img/logo.png';
@@ -129,9 +129,9 @@
         success: function(response) {
           console.log(response);
           $('.ID').val(response.id);
-          $('#stud_id').val(response.student_id);
-          $('#validfrom').val(response.date_from);
-          $('#validto').val(response.date_to);
+          $('#stud_id').val(response.student_id).html(response.student_id);
+          $('#validfrom').val(response.date_from).html(response.date_from);
+          $('#validto').val(response.date_to).html(response.date_to);
           $('#name').val(response.firstname+' '+response.lastname).html(response.firstname+' '+response.lastname);
           $('#pname').val(response.firstname+' '+response.lastname);
           $('#upload2').val(response.receipt);

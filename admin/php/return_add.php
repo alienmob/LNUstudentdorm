@@ -2,7 +2,7 @@
 include '../includes/session.php';
 
 if (isset($_POST['add'])) {
-	$student = $_POST['student'];
+	$student = $_POST['student_id'];
 
 	$sql = "SELECT * FROM students WHERE student_id = '$student'";
 	$query = $conn->query($sql);

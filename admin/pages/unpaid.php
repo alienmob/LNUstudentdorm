@@ -179,9 +179,13 @@ getRow(id);
           console.log(response);
           $('.ID').val(response.id);
           $('#stud').val(response.id);
-          $('#students').val(response.student_id);
-          $('#validfrom').val(response.date_from);
-          $('#validto').val(response.date_to);
+          $('.student').val(response.student_id);
+          $('.vfrom').val(response.date_from);
+          $('.vto').val(response.date_to);
+
+          $('#students').val(response.student_id).html(response.student_id);
+          $('#validfrom').val(response.date_from).html(response.date_from);
+          $('#validto').val(response.date_to).html(response.date_to);
           $('#name').val(response.firstname+' '+response.lastname).html(response.firstname+' '+response.lastname);
           $('#pname').val(response.firstname+' '+response.lastname);
           $('#upload2').val(response.receipt);
@@ -189,8 +193,8 @@ getRow(id);
           $('#display_img').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
           $('.name_id').html(response.firstname+' '+response.lastname+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student ID:'+response.student_id);
           $('.res').html(response.date_from+'&nbsp; - &nbsp; '+response.date_to);
-          $('#from').val(response.date_from);
-          $('#to').val(response.date_to);
+          $('#from').html(response.date_from);
+          $('#to').html(response.date_to);
         }
       });
     }

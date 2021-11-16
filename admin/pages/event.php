@@ -180,12 +180,17 @@ function getRow(id){
       $('#edit_time_start').val(response.time_start);
       $('#edit_time_end').val(response.time_end);
       
+
+      $('.cancel_description').val(response.description);
+      $('.cancel_date').val(response.date);
+      $('.cancel_time_start').val(response.time_start);
+      $('.cancel_time_end').val(response.time_end);
       $('#cancel_event_category').val(response.event_category_id).html(response.event_name);
-      $('#cancel_description').val(response.description);
+      $('#cancel_description').val(response.description).html(response.description);
       $('#cancel_location').val(response.location).html(response.location);
-      $('#cancel_date').val(response.date);
-      $('#cancel_time_start').val(response.time_start);
-      $('#cancel_time_end').val(response.time_end);
+      $('#cancel_date').val(response.date).html(response.date);
+      $('#cancel_time_start').val(response.time_start).html(response.time_start);
+      $('#cancel_time_end').val(response.time_end).html(response.time_end);
 
       $('.del_event').html(response.event_name);
       $('.del_event2').html(response.description);

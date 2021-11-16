@@ -2,8 +2,7 @@
 	include '../../includes/session.php';
 
 	if(isset($_POST['add'])){
-		
-		$title = $_POST['title'];
+		$id = $_POST['id'];
 		$quantity_service = $_POST['quantity_service'];
 		$added = "Added ";
 		$added2 = " as Serviceable Equipment";
@@ -18,13 +17,29 @@
 		// }
 		// $code = substr(str_shuffle($letters), 0, 1).substr(str_shuffle($numbers), 0, 2);
 		//
+	$sql = "SELECT * FROM equipments WHERE id = '$id'";
+	$query = $conn->query($sql);
+	$row = $query->fetch_assoc();
+	$title = $row['title'];
 
 		$sql = "INSERT INTO reports (equipment_reports, details) VALUES ('$title', '$added' '$quantity_service' ' ' '$title' '$added2')";
 		if($conn->query($sql)){
-			$sql = "UPDATE equipments SET quantity = $quantity_service + quantity, quantity_service = $quantity_service + quantity_service, quantity_total = $quantity_service + quantity_total, status = 0 WHERE title = '$title'";
+			$sql = "UPDATE equipments SET quantity = $quantity_service + quantity, quantity_service = $quantity_service + quantity_service, quantity_total = $quantity_service + quantity_total, status = 0 WHERE id = '$id'";
 			$conn->query($sql);
 
 			$_SESSION['success'] = $quantity_service . ' ' . $title . ' successfully added';
+
+
+	// Activity log
+	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+	$query = $conn->query($sql);
+	$row = $query->fetch_assoc();
+	$admin = $row['id'];
+	
+	$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Added ``".$quantity_service."`` new stock/s for ".$title." in Equipment quantity Management.')";
+	$conn->query($sql);
+	// End activity log
+
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

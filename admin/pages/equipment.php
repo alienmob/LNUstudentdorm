@@ -181,7 +181,7 @@ if (isset($_GET['category'])) {
         success: function(response) {
           $('.equipid').val(response.equipid);
           $('#edit_code').val(response.code);
-          $('#edit_title').val(response.title);
+          $('#edit_title').val(response.title).html(response.title);
           $('#catselect').val(response.category_id).html(response.name);
           $('#edit_quantity').val(response.quantity);
           $('#edit_quantity_service').val(response.quantity_service);

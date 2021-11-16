@@ -2,7 +2,8 @@
 include '../../includes/session.php';
 
 if (isset($_POST['add'])) {
-	$student = $_POST['student'];
+	$id = $_POST['id'];
+	$student = $_POST['student_id'];
 	$decline = $_POST['decline'];
 	
 

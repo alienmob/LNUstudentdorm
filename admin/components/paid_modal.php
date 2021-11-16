@@ -67,7 +67,7 @@
           <div class="form-group">
             <label for="stud_id" class="col-sm-4 control-label">Student ID</label>
             <div class="col-sm-5">
-              <input type="number" class="form-control stud_id" id="stud_id" name="stud_id">
+              <text type="number" class="form-control stud_id" id="stud_id" name="stud_id"></text>
             </div>
           </div>
           <div class="form-group">
@@ -79,13 +79,13 @@
           <div class="form-group">
             <label for="validfrom" class="col-sm-4 control-label">Valid From</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control validfrom" id="validfrom" name="validfrom">
+              <text type="date" class="form-control validfrom" id="validfrom" name="validfrom"></text>
             </div>
           </div>
           <div class="form-group">
             <label for="validto" class="col-sm-4 control-label">Valid To</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control validto" id="validto" name="validto">
+              <text type="date" class="form-control validto" id="validto" name="validto"></text>
             </div>
           </div>
           

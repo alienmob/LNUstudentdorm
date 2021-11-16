@@ -173,8 +173,8 @@ if (isset($_GET['category'])) {
         success: function(response) {
           $('.equipid').val(response.equipid);
           $('#edit_code').val(response.code);
-          $('#title').val(response.title);
-          $('#title2').val(response.title);
+          $('#title').val(response.title).html(response.title);
+          $('#title2').val(response.title).html(response.title);
           $('#catselect').val(response.category_id).html(response.name);
           $('#edit_quantity').val(response.quantity);
           $('#del_book').html(response.title);

@@ -12,12 +12,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Equipment Category
+        Equipment Category List
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
         <li>Facility</li>
-        <li class="active">Category</li>
+        <li class="active">Equipment Category</li>
       </ol>
     </section>
     <!-- Main content -->

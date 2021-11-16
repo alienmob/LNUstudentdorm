@@ -48,7 +48,8 @@
                   	<label for="quantity_unservice" class="col-sm-4 control-label">Qty. Unusable</label>
 
                   	<div class="col-sm-5">
-                    	<input type="number" class="form-control" id="quantity_unservice" name="quantity_unservice" placeholder="Enter Unusable Quantity" required>
+                    	<input type="number" class="form-control" id="quantity_unservice" name="quantity_unservice" placeholder="Enter Unusable Quantity">
+                      <p class="text-danger">*optional</p>
                   	</div>
                 </div>
 

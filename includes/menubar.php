@@ -26,7 +26,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pending.php"><i class="fa fa-circle-o"></i> Pending Requests</a></li>
+          <li><a href="pending.php"><i class="fa fa-circle-o"></i> Requests</a></li>
           <li><a href="borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipments</a></li>
           <li><a href="return.php"><i class="fa fa-circle-o"></i> Returned Equipments</a></li>
           

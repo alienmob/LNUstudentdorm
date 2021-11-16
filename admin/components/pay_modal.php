@@ -11,10 +11,13 @@
         <form class="form-horizontal" method="POST" action="../php/paid/pay_add.php">
           <!-- <input type="hidden" class="studid" id="studid" name="id"> -->
           <input type="hidden" class="stud" id="stud" name="stud">
+          <input type="hidden" class="student" name="student_id">
+          <input type="hidden" class="vfrom" name="vfrom">
+          <input type="hidden" class="vto" name="vto">
           <div class="form-group">
             <label for="students" class="col-sm-4 control-label">Student ID</label>
             <div class="col-sm-5">
-              <input type="number" class="form-control students" id="students" name="students" required>
+              <text type="number" class="form-control students" id="students" name="students"></text>
             </div>
           </div>
           <div class="form-group">
@@ -26,13 +29,13 @@
           <div class="form-group">
             <label for="validfrom" class="col-sm-4 control-label">Valid From</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control validfrom" id="validfrom" name="validfrom" required>
+              <text type="date" class="form-control validfrom" id="validfrom" name="validfrom"></text>
             </div>
           </div>
           <div class="form-group">
             <label for="validto" class="col-sm-4 control-label">Valid To</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control validto" id="validto" name="validto" required>
+              <text type="date" class="form-control validto" id="validto" name="validto"></text>
             </div>
           </div>
          
@@ -68,24 +71,7 @@
             <div class="modal-body">
             <!-- <h4><b><span class="res"></span></b></h4> -->
 
-            <form class="form-horizontal">
-            <div class="form-group">
-            <div class="form-row">
-            
-            <label for="from" class="col-sm-1 control-label"></label>
-            <div class="col-sm-4">
-              <input type="date" class="form-control" id="from" name="from" required>
-            </div>
-
-          
-            <label for="to" class="col-sm-1 control-label">to</label>
-            <div class="col-sm-4">
-              <input type="date" class="form-control" id="to" name="to" required>
-            </div>
-
-          </div>
-            </div>
-          </form>
+           
 
 <div class="col-md-12">
    <img src="" id="display_img" width="540px" height="700px" style="border: 2px solid;" alt="Image Here">
@@ -94,7 +80,24 @@
 
             </div>
             <div class="modal-footer">
+ 
+            <div class="form-group">
+            <div class="form-row">
+            
+            <label for="from" class="col-sm control-label"></label>
+            <div class="col-sm-3">
+              <text type="date" class="form-control" id="from" name="from"></text>
+            </div>
+
+          
+            <label for="to" class="col-sm-1 control-label">to</label>
+            <div class="col-sm-3">
+              <text type="date" class="form-control" id="to" name="to"></text>
+            </div>
+
               <button type="button" class="btn btn-default btn-rounded pull-right" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              </div>
+              </div>
               </form>
             </div>
         </div>

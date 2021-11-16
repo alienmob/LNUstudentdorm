@@ -11,6 +11,10 @@
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="../php/event/event_cancel.php">
               <input type="hidden" class="studid" name="id">
+              <input type="hidden" class="cancel_description" name="description">
+              <input type="hidden" class="cancel_date" name="date">
+              <input type="hidden" class="cancel_time_start" name="time_start">
+              <input type="hidden" class="cancel_time_end" name="time_end">
                 <div class="form-group">
                     <label for="event_category" class="col-sm-4 control-label">Event Title</label>
 
@@ -26,7 +30,7 @@
                     <label for="description" class="col-sm-4 control-label">Description</label>
 
                     <div class="col-sm-6">
-                      <textarea class="form-control" name="description" id="cancel_description" placeholder="Enter Description of Event" required></textarea>
+                      <textarea class="form-control" name="description" id="cancel_description" placeholder="Enter Description of Event" disabled></textarea>
                     </div>
                 </div>
 
@@ -34,7 +38,7 @@
                   	<label for="location" class="col-sm-4 control-label">Location</label>
 
                   	<div class="col-sm-6">
-                    	<text type="text" class="form-control" id="cancel_location" name="location" placeholder="Enter Location of Event" required></text>
+                    	<text type="text" class="form-control" id="cancel_location" name="location" placeholder="Enter Location of Event"></text>
                   	</div>
                 </div>
 
@@ -42,21 +46,21 @@
                   	<label for="date" class="col-sm-4 control-label">Scheduled Date</label>
 
                   	<div class="col-sm-4">
-                    	<input type="date" class="form-control" id="cancel_date" name="date" required>
+                    	<text type="date" class="form-control" id="cancel_date" name="date"></text>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="time_start" class="col-sm-4 control-label">Start</label>
 
                   	<div class="col-sm-4">
-                    	<input type="time" class="form-control" id="cancel_time_start" name="time_start" required>
+                    	<input type="time" class="form-control" id="cancel_time_start" name="time_start" disabled>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="time_end" class="col-sm-4 control-label">End</label>
 
                   	<div class="col-sm-4">
-                    	<input type="time" class="form-control" id="cancel_time_end" name="time_end" required>
+                    	<input type="time" class="form-control" id="cancel_time_end" name="time_end" disabled>
                   	</div>
                 </div>
 				

@@ -59,11 +59,12 @@
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="../php/borrow_add.php">
         <input type="hidden" class="stud" name="id">
+        <input type="hidden" class="student" name="student_id">
           <div class="form-group">
             <label for="student" class="col-sm-4 control-label">Student ID</label>
 
             <div class="col-sm-5">
-              <input type="number" class="form-control" id="edit_student" name="student" required>
+              <text type="number" class="form-control" id="edit_student" name="student"></text>
             </div>
           </div>
           <div class="form-group">
@@ -123,11 +124,12 @@
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="../php/pending/pending_decline.php">
         <input type="hidden" class="stud" name="id">
+        <input type="hidden" class="student" name="student_id">
           <div class="form-group">
             <label for="student" class="col-sm-4 control-label">Student ID</label>
 
             <div class="col-sm-5">
-              <input type="number" class="form-control" id="decline_student" name="student" required>
+              <text type="number" class="form-control" id="decline_student" name="student"></text>
             </div>
           </div>
           <div class="form-group">

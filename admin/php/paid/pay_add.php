@@ -3,9 +3,9 @@ include '../../includes/session.php';
 
 if (isset($_POST['pay'])) {
 	$uid = $_POST['stud'];
-	$student_id = $_POST['students'];
-	$date_from = $_POST['validfrom'];
-	$date_to = $_POST['validto'];
+	$student_id = $_POST['student_id'];
+	$date_from = $_POST['vfrom'];
+	$date_to = $_POST['vto'];
 	$upload2 = $_POST['upload2'];
 
 	$sql = "SELECT * FROM students WHERE student_id = '$student_id'";

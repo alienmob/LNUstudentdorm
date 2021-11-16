@@ -12,12 +12,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Check Out Status
+      Checked Out Trasient Record List
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
         <li>Transient Management</li>
-        <li class="active">Check Out Status</li>
+        <li class="active">Checked-Out Transient</li>
       </ol>
     </section>
     <!-- Main content -->

@@ -12,12 +12,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Check In Status
+        Checked In Trasient Record List
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
         <li>Transient Management</li>
-        <li class="active">Check In Status</li>
+        <li class="active">Checked-In Transient</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -125,7 +125,10 @@ function getRow(id){
     dataType: 'json',
     success: function(response){
       $('.checkid').val(response.checkid);
-      $('#checkout_transient_id').val(response.transient_id);
+
+      $('.trans').val(response.transient_id);
+
+      $('#checkout_transient_id').val(response.transient_id).html(response.transient_id);
       $('#checkout_firstname').val(response.firstname).html(response.firstname);
       $('#checkout_lastname').val(response.lastname).html(response.lastname);
 
@@ -134,10 +137,10 @@ function getRow(id){
       $('#checkout_room').val(response.room_id);
       $('#checkout_room').html(response.room_name);
       
-      $('#checkout_date_in').val(response.date_in);
-      $('#checkout_time_in').val(response.time_in);
-      $('#checkout_date_out').val(response.date_out);
-      $('#checkout_time_out').val(response.time_out);
+      $('#checkout_date_in').val(response.date_in).html(response.date_in);
+      $('#checkout_time_in').val(response.time_in).html(response.time_in);
+      $('#checkout_date_out').val(response.date_out).html(response.date_out);
+      $('#checkout_time_out').val(response.time_out).html(response.time_out);
       
 
       

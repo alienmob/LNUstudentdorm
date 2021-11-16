@@ -3,25 +3,18 @@ include '../../includes/session.php';
 
 if (isset($_POST['checkin'])) {
 	$transient = $_POST['transient_id'];
+	$id = $_POST['id'];
 
-	$sql = "SELECT * FROM transient WHERE transient_id = '$transient'";
+	$sql = "SELECT * FROM transient WHERE transient_id = '$id'";
 	$query = $conn->query($sql);
-	if ($query->num_rows < 1) {
-		if (!isset($_SESSION['error'])) {
-			$_SESSION['error'] = 'Transient ID not found';
-			header('location: ../../pages/transient.php');
-		}
-		$_SESSION['error'][] = 'Transient ID not found';
-		header('location: ../../pages/transient.php');
-	} else {
+
         $row = $query->fetch_assoc();
 		$transient_id = $row['transient_id'];  //
 		$added = 0;
 
-		if ($query->num_rows > 0) {
 
-			$floor_id = $_POST['floor'];
-			$room_id = $_POST['room'];
+		$floor_id = $_POST['floor'];
+		$room_id = $_POST['room'];
         $date_in = $_POST['date_in'];
         $time_in = $_POST['time_in'];
         $date_out = $_POST['date_out'];
@@ -71,10 +64,26 @@ if (isset($_POST['checkin'])) {
 			
 
 			$_SESSION['success'] = 'Transient "'.$transient_id.'" Checked In Successfully';
+
+	// Activity Log
+	$sqlname = "SELECT * FROM transient WHERE transient_id = '$id'";
+	$query1 = $conn->query($sqlname);
+	$row1 = $query1->fetch_assoc();
+	$firstname = $row1['firstname'];
+	$lastname = $row1['lastname'];
+
+	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
+	$query = $conn->query($sql);
+	$row = $query->fetch_assoc();
+	$admin = $row['id'];
+
+	$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Checked-In ".$firstname." ".$lastname.".')";
+	$conn->query($sql);
+	// end Activity log
 			
 		
-	}
-}
+	
+
 	}
 }
 } else {
