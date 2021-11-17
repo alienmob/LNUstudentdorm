@@ -49,6 +49,7 @@
         </ul>
       </li>
       <li class=""><a href="violation.php" class="text-white"><i class="fa fa-exclamation-triangle"></i> <span>Violations</span></a></li>
+      <li class=""><a href="complaint.php" class="text-white"><i class="fa fa-question-circle"></i> <span>Complaints</span></a></li>
       
       
     </ul>

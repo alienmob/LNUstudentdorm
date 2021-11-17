@@ -27,7 +27,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="admin.php"><i class="fa fa-circle-o"></i> Admin List</a></li>
-          <!-- <li><a href="log_record.php"><i class="fa fa-circle-o"></i> Log Record</a></li> -->
+          <li><a href="logs.php"><i class="fa fa-circle-o"></i> Activity Logs</a></li>
         </ul>
       </li>
       <li class="treeview">

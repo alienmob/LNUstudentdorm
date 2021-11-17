@@ -13,7 +13,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Announcements
+          Events/Announcement Record List
         </h1>
         
       </section>

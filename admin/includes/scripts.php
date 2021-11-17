@@ -32,6 +32,7 @@
 <script src="../assets/js/dataTables/buttons.html5.min.js"></script>
 <script src="../assets/js/dataTables/buttons.print.min.js"></script>
 
+<script src='../assets/js/nprogress.js'></script>
 <!-- ChartJS -->
 <script src="../../bower_components/chart.js/Chart.js"></script>
 <!-- daterangepicker -->
@@ -49,7 +50,21 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- Active Script -->
 
+<script>
+ NProgress.start();
 
+setTimeout(() => {
+   NProgress.set(0.6);
+ }, 500)
+
+ $( document ).ready(function() {
+   NProgress.set(0.9);
+   setTimeout(() => {
+     NProgress.done();
+     NProgress.remove();
+    }, 1000)
+ });	
+</script>
 
 
 <script>

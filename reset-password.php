@@ -18,7 +18,7 @@
 <script type="text/javascript" src="admin/assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="admin/assets/js/all.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link href="admin/assets/css/varela_font.css" rel="stylesheet">
 
 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -27,8 +27,15 @@
 
 <style type="text/css">
 body {
-		font-family: 'Varela Round', sans-serif;
+		font-family: 'Loto', sans-serif;
 	}
+  .center-lnu{
+    position: absolute;
+    top: -10%;
+    padding-top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
 
 </head>
@@ -63,10 +70,10 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
   $token = $_GET["token"];
   $email = $_GET["email"];
   $curDate = date("Y-m-d H:i:s");
-  $sql = "SELECT * FROM `password_reset` WHERE `token`='".$token."' and `email`='".$email."'";
+  $sql = "SELECT * FROM `password_reset` WHERE `token`='$token' AND `email`='$email'";
   $query = $conn->query($sql);
   if($query->num_rows < 1){
-   $_SESSION['expired'] = 'Password reset doesn\'t exist';
+   $_SESSION['expired'] = 'Password reset does not exist';
   } 
   else {
    $query = $conn->query($sql);
@@ -78,9 +85,6 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
 
   <!-- Main content -->
   <div class="main-content">
-  
-
-
     <!-- Page content -->
     <div class="container">
       <div class="row justify-content-center">
@@ -89,9 +93,7 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
           <div class="card bg-secondary border-0 mb-0">
 
             <div class="card-body px-lg-5">
-            <!-- <img src="admin/assets/img/logo.png" class="centerL"> -->
-        
-
+            
               <div class="text-center text-muted mb-4">
                 <big>Reset Your Password</big>
               </div>
@@ -193,7 +195,9 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
         <div class='card bg-secondary border-0 mb-0'>
 
           <div class='card-body px-lg-5'>
-          <img src='admin/assets/img/logo.png' class='centerL'>
+          <div class='pb-8'>
+          <img src='admin/assets/img/logo.png' class='center-lnu'>
+      </div>
       
 
             <div class='text-center text-muted mb-4'>
@@ -227,7 +231,9 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
         <div class='card bg-secondary border-0 mb-0'>
 
           <div class='card-body px-lg-5'>
-          <img src='admin/assets/img/logo.png' class='centerL'>
+          <div class='pb-8'>
+          <img src='admin/assets/img/logo.png' class='center-lnu'>
+      </div>
       
 
             <div class='text-center text-muted mb-4'>
@@ -265,7 +271,9 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
         <div class='card bg-secondary border-0 mb-0'>
 
           <div class='card-body px-lg-5'>
-          <img src='admin/assets/img/logo.png' class='centerL'>
+          <div class='pb-8'>
+          <img src='admin/assets/img/logo.png' class='center-lnu'>
+      </div>
       
 
             <div class='text-center text-muted mb-4'>
@@ -293,19 +301,6 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
 
 <?php include 'includes/scripts.php' ?>
 
-<!-- Footer -->
-<!-- <footer class="py-5" id="footer-main">
-    <div class="container">
-      <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
-          <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2021 <a href="https://www.lnu.edu.ph/" class="font-weight-bold ml-1" target="_blank">Leyte Normal University</a>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </footer> -->
 
   <!-- jQuery CDN -->
 <script type="text/javascript" src="admin/assets/js/jquery.min.js"></script>

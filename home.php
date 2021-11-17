@@ -34,12 +34,12 @@ $studid = $_SESSION['student'];
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 	
-    <!-- <section class="content-header text-white">
-      <h1>
-        Announcements
-      </h1>
-
-    </section> -->
+    <section class="content-header">
+        <h1>
+          Student Home Page
+        </h1>
+        
+      </section>
 
     <!-- Main content -->
     <section class="content">

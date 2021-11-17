@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Course
+        Course Record List
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> MIS</a></li>
         <li>Students</li>
-        <li class="active">Course</li>
+        <li class="active">Course List</li>
       </ol>
     </section>
     <!-- Main content -->

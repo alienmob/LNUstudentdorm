@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Student List
+        Student Record List
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> MIS</a></li>

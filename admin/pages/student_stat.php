@@ -60,9 +60,8 @@
                   <th>Student ID</th>
                   <th>Name</th>
                   <th>Room</th>
-                  <th>Address</th>
-                  <th>Contact No.</th>
-                  <th>Status</th>
+                  <th>Account Status</th>
+                  <th>Dormitory Status</th>
                 </thead>
                 <tbody>
                   <?php
@@ -72,20 +71,23 @@
                     while($row = $query->fetch_assoc()){
                       
                         if ($row['status']) {
-                          
                             $status = '<span class="label label-danger">OUT</span>';
                           } else {
                             $status = '<span class="label label-success">IN</span>';
                           }
+
+                          if ($row['verified_at'] == NULL) {
+                            $verify = '<span class="label label-danger">Unverified</span>';
+                          } else {
+                            $verify = '<span class="label label-success">Verified</span>';
+                          }
                       echo "
                         <tr>
-                          
-                          <td>".$row['student_id']."</td>
-                          <td>".$row['firstname']. ' ' .$row['lastname']."</td>
-                          <td>".$row['floor_name'].'-'.$row['room_name']."</td>
-                          <td>".$row['address']."</td>
-                          <td>".$row['contact']."</td>
-                          <td>".$status."</td>
+                        <td>".$row['student_id']."</td>
+                        <td>".$row['firstname']. ' ' .$row['lastname']."</td>
+                        <td>".$row['floor_name'].'-'.$row['room_name']."</td>
+                        <td>".$verify."</td>
+                        <td>".$status."</td>
               
                         </tr>
                       ";

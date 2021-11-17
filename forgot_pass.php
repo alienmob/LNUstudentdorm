@@ -22,7 +22,7 @@
 <script type="text/javascript" src="admin/assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="admin/assets/js/all.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link href="admin/assets/css/varela_font.css" rel="stylesheet">
 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -30,7 +30,7 @@
 
 <style type="text/css">
 body {
-		font-family: 'Varela Round', sans-serif;
+		font-family: 'Loto', sans-serif;
 	}
 </style>
 

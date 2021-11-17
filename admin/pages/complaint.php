@@ -13,12 +13,12 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Student Violation Record List
+          Student Complaint Record List
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
           <li>Students</li>
-          <li class="active">Violations</li>
+          <li class="active">Complaints</li>
         </ol>
       </section>
       <!-- Main content -->
@@ -51,12 +51,7 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header with-border">
-                <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a>
-                
-
-               
-              
-              
+                <!-- <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a> -->     
               </div>
 
               <div class="box-body">
@@ -64,33 +59,33 @@
                 <table id="example" class="table table-bordered table-striped">
                   <thead>
                     
+                    <th>Date</th>
                     <th>Student Number</th>
                     <th>Name</th>
                     <th>Room</th>
                     <th>Course</th>
-                    <th>Violation</th>
-                    <th>Date</th>
+                    <th>Complaint</th>
                     <th>Actions</th>
                   </thead>
                   <tbody>
                     <?php
-                     $sql = "SELECT *, violations.id AS id FROM violations LEFT JOIN students ON students.student_id=violations.student_id 
+                     $sql = "SELECT *, complaints.id AS id FROM complaints LEFT JOIN students ON students.student_id=complaints.student_id 
                      LEFT JOIN floor_category ON floor_category.id=students.floor_id 
                      LEFT JOIN room_category ON room_category.id=students.room_id 
-                     LEFT JOIN course ON course.id=students.course_id ORDER BY violations.date DESC";
+                     LEFT JOIN course ON course.id=students.course_id ORDER BY complaints.id DESC";
 
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                      
                       echo "
                         <tr>
-                          
+                        <td>" . date('M d, Y | h:ia', strtotime($row['date'])) . "</td>
                           <td>" . $row['student_id'] . "</td>
                           <td>" . $row['firstname'] . ' ' . $row['lastname'] . "</td>
                           <td>" . $row['floor_name'] .'&nbsp;-&nbsp;'. $row['room_name'] . "</td>
                           <td>" . $row['code'] . "</td>
-                          <td>" . $row['violation'] . "</td>
-                          <td>" . date('M d, Y', strtotime($row['date'])) . "</td>
+                          <td>" . $row['complaint'] . "</td>
+                          
                           <td>
                             <button class='btn btn-info btn-sm view btn-rounded' data-id='" . $row['id'] . "'><i class='fa fa-eye'></i></button>
                             <button class='btn btn-danger btn-sm delete btn-rounded' data-id='" . $row['id'] . "'><i class='fa fa-trash'></i></button>
@@ -110,7 +105,7 @@
     </div>
 
     <?php include '../includes/footer.php'; ?>
-    <?php include '../components/violation_modal.php'; ?>
+    <?php include '../components/complaint_modal.php'; ?>
 
 
   </div>
@@ -140,7 +135,7 @@
     function getRow(id) {
       $.ajax({
         type: 'POST',
-        url: '../php/violation/violation_row.php',
+        url: '../php/complaint/complaint_row.php',
         data: {
           id: id
         },
@@ -152,8 +147,8 @@
           $('#selfloor').val(response.floor_category_id).html(response.floor_name);
           $('#selroom').val(response.room_category_id).html(response.room_name);
           $('#course').val(response.title);
-          $('#view_violation').val(response.violation);
-          $('#view_date').val(response.date);
+          $('#view_complaint').val(response.complaint);
+          $('#view_date').val(response.date).html(response.date);
           $('.del_name').html(response.firstname+' '+response.lastname);
           $('.del_vio').html(response.violation);
         }

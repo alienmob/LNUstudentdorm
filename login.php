@@ -8,12 +8,17 @@
 		
 		$sql = "SELECT * FROM students WHERE student_id = '$student'";
 		$query = $conn->query($sql);
-
+		$row = $query->fetch_assoc();
+		$verify = $row['verified_at'];
+		
 		if($query->num_rows < 1){
 			$_SESSION['error'] = 'Student ID does not exist';
+		}else
+		if($verify == NULL){
+			$_SESSION['verify'] = 'This account is not verified yet, please check your email. Thank You!';
 		}
 		else{
-			$row = $query->fetch_assoc();
+		
 			if(password_verify($password, $row['password'])){
 				$_SESSION['student'] = $row['student_id'];
 				$_SESSION['login'] = 'Welcome!&nbsp;&nbsp;&nbsp;&nbsp;'.$row['firstname'].'&nbsp;&nbsp;'.$row['lastname'].'';

@@ -6,8 +6,6 @@ if (!isset($_SESSION['student']) || trim($_SESSION['student']) == '') {
 
 $stuid = $_SESSION['student'];
 
-
-
 ?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -20,8 +18,8 @@ $stuid = $_SESSION['student'];
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Violations Record
+      <h1> 
+        Violations Record Record List
       </h1>
       
     </section>

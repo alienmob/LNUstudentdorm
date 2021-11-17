@@ -170,7 +170,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-rounded" name="add"><i class="fa fa-check"></i> Register</button>
+              <input type="submit" class="submit-btn btn btn-success btn-rounded" name="add" value="Register" />
               </form>
             </div>
         </div>
@@ -415,4 +415,14 @@
       $("#getUID").load("../UIDContainer.php");
     }, 600);
 	});
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function() {
+        $(".submit-btn").click(function() {
+            $(this).val('Please Wait...');
+        });
+    });
 </script>

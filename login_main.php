@@ -22,7 +22,8 @@
 <script type="text/javascript" src="admin/assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="admin/assets/js/all.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link href="admin/assets/css/varela_font.css" rel="stylesheet">
+
 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -30,7 +31,7 @@
 
 <style type="text/css">
 body {
-		font-family: 'Varela Round', sans-serif;
+		font-family: 'Loto', sans-serif;
 	}
 
   .center-lnu{
@@ -89,6 +90,16 @@ body {
           </div>
         ";
         unset($_SESSION['error']);
+       }
+
+       if(isset($_SESSION['verify'])){
+        echo "
+          <div class='alert alert-danger alert-dismissible'>
+            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+            <big><i class='fas fa-exclamation-triangle'></i>&nbsp;&nbsp;".$_SESSION['verify']."</big>
+          </div>
+        ";
+        unset($_SESSION['verify']);
        }
 
        if(isset($_SESSION['email_error'])){
@@ -163,24 +174,12 @@ body {
 	
 <?php include 'includes/scripts.php' ?>
 
-<!-- Footer -->
-<!-- <footer class="py-5" id="footer-main">
-    <div class="container">
-      <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
-          <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2021 <a href="https://www.lnu.edu.ph/" class="font-weight-bold ml-1" target="_blank">Leyte Normal University</a>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </footer> -->
 
   <!-- jQuery CDN -->
 <script type="text/javascript" src="admin/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="admin/assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="admin/assets/js/all.min.js"></script>
+
 </body>
 </html>
 

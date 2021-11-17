@@ -13,11 +13,117 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header bg-default text-white">REPORTS</li>
+      <!-- <li class="header bg-default text-white">REPORTS</li> -->
       <li class=""><a href="../pages/home.php" class="text-white"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       
-      <li class="header bg-default text-white">MANAGE</li>
+      <li class="header bg-default text-white">MAIN MENU</li>
       <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-refresh"></i>
+          <span>Transactions</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/pending.php"><i class="fa fa-circle-o"></i> Equipment Requests</a></li>
+        <li><a href="../pages/borrow.php"><i class="fa fa-circle-o"></i> Borrowed Eqt. Transaction</a></li>
+        <li><a href="../pages/return.php"><i class="fa fa-circle-o"></i> Returned Eqt. Transaction</a></li>
+        <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Student Payments</a></li>
+        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Student Paid Record</a></li>     
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-tasks"></i>
+          <span>Dormitory Management</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/student.php"><i class="fa fa-circle-o"></i> Student Management</a></li>
+        <li><a href="../pages/event.php"><i class="fa fa-circle-o"></i> Event Management</a></li>  
+        <li><a href="../pages/room_m.php"><i class="fa fa-circle-o"></i> Room Management</a></li> 
+        <li><a href="../pages/equipment_u.php"><i class="fa fa-circle-o"></i> Equipment Management</a></li>
+        <li><a href="../pages/transient.php"><i class="fa fa-circle-o"></i> Transient Management</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-clipboard"></i>
+          <span>Records</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/room.php"><i class="fa fa-circle-o"></i> Room Record</a></li>
+        <li><a href="../pages/equipment.php"><i class="fa fa-circle-o"></i> Equipment Record</a></li>
+        <li><a href="../pages/violation.php"><i class="fa fa-circle-o"></i> Violations Record</a></li>
+        <li><a href="../pages/complaint.php"><i class="fa fa-circle-o"></i> Complaints Record</a></li>
+        <li><a href="../pages/timein.php"><i class="fa fa-circle-o"></i> Time In Record</a></li>
+        <li><a href="../pages/timeout.php"><i class="fa fa-circle-o"></i> Time Out Record</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-desktop"></i>
+          <span>Monitoring</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/student_stat.php"><i class="fa fa-circle-o"></i> Student Status</a></li>
+        <li><a href="../pages/log.php"><i class="fa fa-circle-o"></i> Student Log Book</a></li>
+        <li><a href="../pages/event_a.php"><i class="fa fa-circle-o"></i> Student Attendance</a></li>
+        <li><a href="../pages/checkin.php"><i class="fa fa-circle-o"></i> Transient Check In Status</a></li>
+          <li><a href="../pages/checkout.php"><i class="fa fa-circle-o"></i> Transient Check Out Status</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-book"></i>
+          <span>Reports</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/room_reports.php"><i class="fa fa-circle-o"></i> Room Reports</a></li>
+        <li><a href="../pages/equipment_reports.php"><i class="fa fa-circle-o"></i> Equipment Reports</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-list"></i>
+          <span>Category Management</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/eventcat.php"><i class="fa fa-circle-o"></i> Event Category</a></li>
+        <li><a href="../pages/floor_category.php"><i class="fa fa-circle-o"></i> Floor Category</a></li>
+          <li><a href="../pages/room_category.php"><i class="fa fa-circle-o"></i> Room Category</a></li>
+          <li><a href="../pages/category.php"><i class="fa fa-circle-o"></i> Equipment Category</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#setting" class="text-white" data-toggle="modal">
+          <i class="fa fa-cogs"></i>
+          <span>RFID Settings</span>
+        </a>
+      </li>
+      
+      <!-- <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-graduation-cap"></i>
           <span>Students</span>
@@ -28,9 +134,11 @@
         <ul class="treeview-menu">
           <li><a href="../pages/student.php"><i class="fa fa-circle-o"></i> Student List</a></li>
           <li><a href="../pages/violation.php"><i class="fa fa-circle-o"></i> Violations</a></li>
+          <li><a href="../pages/complaint.php"><i class="fa fa-circle-o"></i> Complaints</a></li>
           <li><a href="../pages/course.php"><i class="fa fa-circle-o"></i> Courses</a></li>
         </ul>
       </li>
+
 
       <li class="treeview">
         <a href="#" class="text-white">
@@ -44,12 +152,10 @@
           <li><a href="../pages/student_stat.php"><i class="fa fa-circle-o"></i> Status</a></li>
           <li><a href="../pages/log.php"><i class="fa fa-circle-o"></i> Log Book</a></li>
           <li><a href="../pages/timein.php"><i class="fa fa-circle-o"></i> Time In Record</a></li>
-          <li><a href="../pages/timeout.php"><i class="fa fa-circle-o"></i> Time Out Record</a></li>
-          
-          
-          <!-- <li><a href="log.php"><i class="fa fa-circle-o"></i> Log Record</a></li> -->
+          <li><a href="../pages/timeout.php"><i class="fa fa-circle-o"></i> Time Out Record</a></li>    
         </ul>
       </li>
+
 
       <li class="treeview">
         <a href="#" class="text-white">
@@ -66,6 +172,8 @@
           
         </ul>
       </li>
+
+
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-table"></i>
@@ -76,11 +184,11 @@
         </a>
         <ul class="treeview-menu">
         <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Unpaid Record</a></li>
-        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Paid Record</a></li>
-          <!-- <li><a href="promissory.php"><i class="fa fa-circle-o"></i> Promissory Status</a></li> -->
-          
+        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Paid Record</a></li>     
         </ul>
       </li>
+
+
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-newspaper-o"></i>
@@ -114,6 +222,7 @@
         </ul>
       </li>
 
+
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-briefcase"></i>
@@ -127,8 +236,7 @@
           
           <li><a href="../pages/equipment_u.php"><i class="fa fa-circle-o"></i> Qty. Management</a></li>
           <li><a href="../pages/equipment_reports.php"><i class="fa fa-circle-o"></i> Reports</a></li>
-          <li><a href="../pages/category.php"><i class="fa fa-circle-o"></i> Equipment Category</a></li>
-          
+          <li><a href="../pages/category.php"><i class="fa fa-circle-o"></i> Equipment Category</a></li>    
         </ul>
       </li>
 
@@ -154,7 +262,7 @@
           <i class="fa fa-cogs"></i>
           <span>RFID Settings</span>
         </a>
-      </li>    
+      </li>     -->
       
     </ul>
     

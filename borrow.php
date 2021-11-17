@@ -27,7 +27,7 @@ if (isset($_GET['action'])) {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      Borrowed Equipments
+      Borrowed Equipment Record List
       </h1>
       
     </section>

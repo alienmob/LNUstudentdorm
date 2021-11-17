@@ -22,11 +22,11 @@
 <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../assets/js/all.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link href="../assets/css/varela_font.css" rel="stylesheet">
 
 <style type="text/css">
 body {
-		font-family: 'Varela Round', sans-serif;
+		font-family: 'Loto', sans-serif;
 	}
 </style>
 

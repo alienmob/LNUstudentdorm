@@ -18,7 +18,7 @@
 <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../assets/js/all.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link href="../assets/css/varela_font.css" rel="stylesheet">
 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -26,8 +26,15 @@
 
 <style type="text/css">
 body {
-		font-family: 'Varela Round', sans-serif;
+		font-family: 'Loto', sans-serif;
 	}
+  .center-lnu{
+    position: absolute;
+    top: -10%;
+    padding-top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
 
 </head>
@@ -38,8 +45,7 @@ body {
       <div class="header-body text-center mb-9">
         <div class="row justify-content-center">
           <div class="col-xl-5 col-lg-6 col-md-8 px-5 mt-5">
-            <!-- <h1 class="text-white">Leyte Normal University</h1>
-            <p class="text-lead text-white">Student Dormitory</p> -->
+
           </div>
         </div>
       </div>
@@ -62,10 +68,10 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
   $token = $_GET["token"];
   $email = $_GET["email"];
   $curDate = date("Y-m-d H:i:s");
-  $sql = "SELECT * FROM `password_reset` WHERE `token`='".$token."' and `email`='".$email."'";
+  $sql = "SELECT * FROM `password_reset` WHERE `token`='$token' AND `email`='$email'";
   $query = $conn->query($sql);
   if($query->num_rows < 1){
-   $_SESSION['expired'] = 'Password reset doesn\'t exist';
+   $_SESSION['expired'] = 'Password reset does not exist';
   } 
   else {
    $query = $conn->query($sql);
@@ -86,9 +92,6 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
           <div class="card bg-secondary border-0 mb-0">
 
             <div class="card-body px-lg-5">
-            <!-- <img src="assets/img/logo.png" class="centerL"> -->
-        
-
               <div class="text-center text-muted mb-4">
               <strong><big>Reset Your Password</big></strong>
               </div>
@@ -190,8 +193,10 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
         <div class='card bg-secondary border-0 mb-0'>
 
           <div class='card-body px-lg-5'>
-          <img src='../assets/img/logo.png' class='centerL'>
-      
+          
+          <div class='pb-8'>
+          <img src='../assets/img/logo.png' class='center-lnu'>
+      </div>
 
             <div class='alert alert-danger text-center'>
             <h3><i class='fas fa-exclamation-triangle'></i> Error!</h3>
@@ -220,7 +225,10 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
         <div class='card bg-secondary border-0 mb-0'>
 
           <div class='card-body px-lg-5'>
-          <img src='../assets/img/logo.png' class='centerL'>
+          <div class='pb-8'>
+          <img src='../assets/img/logo.png' class='center-lnu'>
+      </div>
+          
       
 
 
@@ -254,8 +262,9 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
         <div class='card bg-secondary border-0 mb-0'>
 
           <div class='card-body px-lg-5'>
-          <img src='../assets/img/logo.png' class='centerL'>
-      
+          <div class='pb-8'>
+          <img src='../assets/img/logo.png' class='center-lnu'>
+      </div>
 
             <div class='alert alert-success text-center'>
             <h3><i class='fas fa-check'></i> Success!</h3>
@@ -278,19 +287,7 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
 
 <?php include '../includes/scripts.php' ?>
 
-<!-- Footer -->
-<!-- <footer class="py-5" id="footer-main">
-    <div class="container">
-      <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
-          <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2021 <a href="https://www.lnu.edu.ph/" class="font-weight-bold ml-1" target="_blank">Leyte Normal University</a>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </footer> -->
+
 
   <!-- jQuery CDN -->
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>

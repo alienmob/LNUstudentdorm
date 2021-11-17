@@ -43,7 +43,8 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
       <li><a href='admin/index.php'> <strong>Admin</strong></a></li>
-      <li><a href='login_main.php'> <strong>Students</strong></a></li>  
+      <li><a href='login_main.php'> <strong>Students</strong></a></li>
+      <li><a href='register.php'> <strong>Register</strong></a></li>  
       </ul>
     </div>
 

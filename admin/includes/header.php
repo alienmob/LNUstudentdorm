@@ -31,22 +31,18 @@
     <link href="../assets/css/fullcalendar@5.8.0/main.css" rel="stylesheet">
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  	<!--[if lt IE 9]>
-  	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  	<![endif]-->
+  
     <link href="../assets/css/varela_font.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel='stylesheet' href='../assets/css/nprogress.css'/>
+
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  
     <link rel="stylesheet" href="../assets/css/2bootstrap.min.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  
     <script src="../assets/js/jquery.min.js"></script>
 
-<!-- Newww -->
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" href="../assets/css/jquery.dataTables.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css"> -->
+  
     <link rel="stylesheet" href="../assets/css/buttons.dataTables.min.css">
 
 
@@ -54,15 +50,14 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css">
 
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
-<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/> -->
+
 <link href="../assets/css/toastr.css" rel="stylesheet"/>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script> -->
+
 <script src="../assets/js/toastr.js"></script>
 
   	<style type="text/css">
       body {
-		font-family: 'Varela Round', sans-serif;
+		font-family: 'Loto', sans-serif;
 	}
   		.mt20{
   			margin-top:20px;

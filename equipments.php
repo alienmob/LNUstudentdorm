@@ -18,7 +18,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Equipment
+        Equipment Record List
       </h1>
       
     </section>
