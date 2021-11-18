@@ -37,39 +37,27 @@
 }
 </style>
       <?php
-        if(isset($_SESSION['error'])){
-          // echo "
-          //   <div class='alert alert-danger alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-warning'></i> Error!</h4>
-          //     ".$_SESSION['error']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
-          unset($_SESSION['error']);
-        }
-        if(isset($_SESSION['success'])){
-          // echo "
-          //   <div class='alert alert-success alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-check'></i> Success!</h4>
-          //     ".$_SESSION['success']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
-          unset($_SESSION['success']);
-        }
-        if(isset($_SESSION['login'])){
-          // echo "
-          //   <div class='alert alert-success alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-check'></i> Success!</h4>
-          //     ".$_SESSION['success']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.info('&nbsp;&nbsp;".$_SESSION['login']."')</script>";
-          unset($_SESSION['login']);
-        }
+       if(isset($_SESSION['error'])){
+        echo "<script type='text/javascript'>
+                toastr.error('".$_SESSION['error']."', 'Error!')
+              </script>";
+        unset($_SESSION['error']);
+      }
+  
+      if(isset($_SESSION['success'])){
+        echo "<script type='text/javascript'>
+                toastr.success('".$_SESSION['success']."', 'Success!')
+              </script>";
+        unset($_SESSION['success']);
+      }
+
+      if(isset($_SESSION['login'])){
+        echo "<script type='text/javascript'>
+                toastr.info('".$_SESSION['login']."', 'Welcome!')
+              </script>";
+        unset($_SESSION['login']);
+      }
+  
       ?>
       <!-- Small boxes (Stat box) -->
       <div class="row">
@@ -248,7 +236,7 @@
 
       <div class="row">
 
-      <div class="col-xs-6 pull-left">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <div class="box">
               
             <div class="box-body">
@@ -260,7 +248,7 @@
         </div>
 
 
-        <div class="col-xs-6 pull-right">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Paid & Unpaid Status Report</h3>

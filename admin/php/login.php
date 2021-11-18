@@ -22,7 +22,7 @@
 			if(password_verify($password, $row['password'])){
 				$_SESSION['admin'] = $row['id'];
 				
-				$_SESSION['login'] = 'Welcome!&nbsp;&nbsp;&nbsp;&nbsp;'.$row['firstname'].'&nbsp;&nbsp;'.$row['lastname'].'';
+				$_SESSION['login'] = ''.$row['firstname'].'&nbsp;&nbsp;'.$row['lastname'].'';
 
 
 	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";

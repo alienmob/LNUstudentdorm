@@ -45,6 +45,7 @@
   
     <link rel="stylesheet" href="../assets/css/buttons.dataTables.min.css">
 
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
 
     
     
@@ -52,12 +53,12 @@
 
 
 <link href="../assets/css/toastr.css" rel="stylesheet"/>
-
 <script src="../assets/js/toastr.js"></script>
+
 
   	<style type="text/css">
       body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
   		.mt20{
   			margin-top:20px;
@@ -191,5 +192,17 @@
     background-color: rgba(83, 97, 243, .9) !important;
 }
 
+.lb-data .lb-caption {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1em;
+    text-align: center !important;
+}
+
+.lb-data .lb-details {
+    width: 100% !important;
+    text-align: center !important;
+    line-height: 1.1em;
+}
   	</style>
 </head>

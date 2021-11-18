@@ -27,7 +27,7 @@
 
 <style type="text/css">
 body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
   .center-lnu{
     position: absolute;
@@ -206,7 +206,7 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
 
             <div class='alert alert-danger text-center'>
             <h3><i class='fas fa-exclamation-triangle'></i> Error!</h3>
-            <big>".$_SESSION['expired']."</big><br><br><h2><a href='index.php'>Retry</a></h2>","
+            <big>".$_SESSION['expired']."</big><br><br><h2><a href='login_main.php'>Retry</a></h2>","
           </div>
 
 
@@ -243,7 +243,7 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
 
     <div class='alert alert-danger text-center'>
       <h3><i class='fas fa-exclamation-triangle'></i> Error!</h3>
-      <big>".$_SESSION['password_match_error']."</big><br><br><h2><a href='index.php'>Retry</a></h2>","
+      <big>".$_SESSION['password_match_error']."</big><br><br><h2><a href='login_main.php'>Retry</a></h2>","
     </div>
 
 
@@ -282,7 +282,7 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
 
             <div class='alert alert-success text-center'>
             <h3><i class='fas fa-check'></i> Success!</h3>
-            <big>".$_SESSION['success']."</big><br><br><h2><a href='index.php'>Login</a></h2>","
+            <big>".$_SESSION['success']."</big><br><br><h2><a href='login_main.php'>Login</a></h2>","
           </div>
 
     </div>
@@ -298,8 +298,6 @@ if (isset($_GET["token"]) && isset($_GET["email"]) && isset($_GET["action"]) && 
   unset($_SESSION['success']);
 }
  ?>
-
-<?php include 'includes/scripts.php' ?>
 
 
   <!-- jQuery CDN -->

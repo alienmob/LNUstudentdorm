@@ -376,13 +376,13 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title text-center"><b><span class="del_stu"></span></b></h4>
+              <h4 class="modal-title text-center col-sm-12"><b><span class="del_stu"></span></b></h4>
             </div>
             <div class="modal-body">
             
 
-<div class="col-md-12">
-   <img src="" id="display_photo" width="300px" height="300px" style="border: 2px solid; margin-left: 116px; margin-bottom: 15px;" alt="Image Here">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   <img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="" id="display_photo" width="300px" height="500px" style="border: 2px solid; margin-bottom: 15px;" alt="Image Here">
   </div>
 
 

@@ -30,8 +30,16 @@
 
 <style type="text/css">
 body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
+
+  .center-lnu{
+    position: absolute;
+    top: -10%;
+    padding-top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
 
 </head>
@@ -63,10 +71,10 @@ body {
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
           
-          <div class="card bg-secondary border-0 mb-0">
+          <div class="card bg-secondary border-0 mb-0 pt-8">
 
             <div class="card-body px-lg-5">
-            <img src="admin/assets/img/logo.png" class="centerL">
+            <img src="admin/assets/img/logo.png" class="center-lnu">
         
 
               <div class="text-center text-muted mb-4">

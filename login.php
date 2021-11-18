@@ -21,7 +21,7 @@
 		
 			if(password_verify($password, $row['password'])){
 				$_SESSION['student'] = $row['student_id'];
-				$_SESSION['login'] = 'Welcome!&nbsp;&nbsp;&nbsp;&nbsp;'.$row['firstname'].'&nbsp;&nbsp;'.$row['lastname'].'';
+				$_SESSION['login'] = ''.$row['firstname'].'&nbsp;&nbsp;'.$row['lastname'].'';
 			}
 			else{
 				$_SESSION['error'] = 'Password is Incorrect';

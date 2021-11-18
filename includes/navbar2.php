@@ -1,3 +1,17 @@
+<style>
+  .btn-warning {
+    color: #fff !important;
+    background-color: #f0ad4e !important;
+    border-color: #eea236 !important;
+}
+
+.btn-danger {
+    color: #fff !important;
+    background-color: #d9534f !important;
+    border-color: #d43f3a !important;
+}
+  </style>
+
 <header class="main-header">
   <!-- Logo -->
   <a href="#" class="logo bg-gradient-defwarn2">

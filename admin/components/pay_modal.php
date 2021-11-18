@@ -41,10 +41,8 @@
          
               <input type="hidden" class="form-control upload2" id="upload2" name="upload2">
             
-          <div class="col-md-12">
-          <img src="" id="upload" width="540px" height="600px" style="border: 2px solid;" alt="Image Here">
-          <hr>
-          </div>
+          <img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="" id="upload" width="550px" height="650px" style="border: 2px solid; margin-bottom: 4px;" alt="Image Here">
+
           
       </div>
       
@@ -66,22 +64,20 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="name_id"></span></b></h4>
+              <h4 class="modal-title text-center col-sm-12"><b><span class="id_id"></span></b></h4>
+              <br>
+              <h4 class="modal-title text-center col-sm-12"><b><span class="name_id"></span></b></h4>
             </div>
             <div class="modal-body">
-            <!-- <h4><b><span class="res"></span></b></h4> -->
+            <h4><b><span class="text-center col-sm-12 res"></span></b></h4>
 
-           
+   <img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="" id="display_img" width="550px" height="650px" style="border: 2px solid; margin-bottom: 4px;" alt="Image Here">
 
-<div class="col-md-12">
-   <img src="" id="display_img" width="540px" height="700px" style="border: 2px solid;" alt="Image Here">
-   <hr>
-  </div>
 
             </div>
             <div class="modal-footer">
  
-            <div class="form-group">
+            <!-- <div class="form-group">
             <div class="form-row">
             
             <label for="from" class="col-sm control-label"></label>
@@ -89,15 +85,15 @@
               <text type="date" class="form-control" id="from" name="from"></text>
             </div>
 
-          
             <label for="to" class="col-sm-1 control-label">to</label>
             <div class="col-sm-3">
               <text type="date" class="form-control" id="to" name="to"></text>
             </div>
 
+              </div>
+              </div> -->
+
               <button type="button" class="btn btn-default btn-rounded pull-right" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              </div>
-              </div>
               </form>
             </div>
         </div>

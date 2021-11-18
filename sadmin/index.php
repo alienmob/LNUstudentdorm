@@ -26,7 +26,7 @@
 
 <style type="text/css">
 body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
 
 
@@ -154,8 +154,6 @@ body {
       </div>
   
 </div>
-	
-<?php include 'includes/scripts.php' ?>
 
 
 

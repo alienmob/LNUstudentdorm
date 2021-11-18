@@ -23,25 +23,16 @@
     <section class="content">
     <?php
         if(isset($_SESSION['error'])){
-          // echo "
-          //   <div class='alert alert-danger alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-warning'></i> Error!</h4>
-          //     ".$_SESSION['error']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
+          echo "<script type='text/javascript'>
+                  toastr.error('".$_SESSION['error']."', 'Error!')
+                </script>";
           unset($_SESSION['error']);
         }
+    
         if(isset($_SESSION['success'])){
-          // echo "
-          //   <div class='alert alert-success alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-check'></i> Success!</h4>
-          //     ".$_SESSION['success']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
+          echo "<script type='text/javascript'>
+                  toastr.success('".$_SESSION['success']."', 'Success!')
+                </script>";
           unset($_SESSION['success']);
         }
       ?>
@@ -75,13 +66,17 @@
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       $photo = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+                      $stud_id = $row['student_id'];
+                      $fname = $row['firstname'];
+                      $lname = $row['lastname'];
                       echo "
                         <tr>
                           
-                          <td>
-                            <img src='".$photo."' width='30px' height='30px'>
-                            
-                          </td>
+                        <td>
+                        <a href='".$photo."' data-lightbox='img' 
+                        data-title='Student Number: ".$stud_id."<br>Name: ".$lname." ".$fname."'>
+                        <img src='".$photo."' width='60px' height='60px'></a>
+                       </td>
                           <td>".$row['student_id']."</td>
                           <td>".$row['firstname']."</td>
                           <td>".$row['lastname']."</td>

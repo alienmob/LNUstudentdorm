@@ -11,19 +11,35 @@
 
 				<!-- Main content -->
 				<section class="content">
-				<?php
+	<?php
         if(isset($_SESSION['error'])){
-
-		echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
-          unset($_SESSION['error']);
-        }
-
-
-        if(isset($_SESSION['success'])){
-
-		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
-          unset($_SESSION['success']);
-        }
+			echo "<script type='text/javascript'>
+					toastr.error('".$_SESSION['error']."', 'Error!')
+				  </script>";
+			unset($_SESSION['error']);
+		  }
+	  
+		  if(isset($_SESSION['success'])){
+			echo "<script type='text/javascript'>
+					toastr.success('".$_SESSION['success']."', 'Success!')
+				  </script>";
+			unset($_SESSION['success']);
+		  }
+  
+  
+		  if(isset($_SESSION['email_error'])){
+			echo "<script type='text/javascript'>
+					toastr.error('".$_SESSION['email_error']."', 'Error!')
+				  </script>";
+			unset($_SESSION['email_error']);
+		  }
+	  
+		  if(isset($_SESSION['reset_success'])){
+			echo "<script type='text/javascript'>
+					toastr.success('".$_SESSION['reset_success']."', 'Success!')
+				  </script>";
+			unset($_SESSION['reset_success']);
+		  }
       ?>
 		
 		<?php

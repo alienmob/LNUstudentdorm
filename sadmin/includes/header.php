@@ -38,6 +38,8 @@
     
     <script src="../admin/assets/js/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="../admin/assets/css/lightbox.css">
+
     <link rel="stylesheet" href="../admin/assets/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="../admin/assets/css/buttons.dataTables.min.css">
@@ -48,7 +50,7 @@
 
   	<style type="text/css">
             body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
   		.mt20{
   			margin-top:20px;
@@ -180,6 +182,19 @@
 .bg-translucent-primary
 {
     background-color: rgba(83, 97, 243, .9) !important;
+}
+
+.lb-data .lb-caption {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1em;
+    text-align: center !important;
+}
+
+.lb-data .lb-details {
+    width: 100% !important;
+    text-align: center !important;
+    line-height: 1.1em;
 }
   	</style>
 </head>

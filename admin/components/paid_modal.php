@@ -91,10 +91,7 @@
           
               <input type="hidden" class="form-control upload2" id="upload2" name="upload2" disabled>
            
-          <div class="col-md-12">
-          <img src="" id="upload" width="540px" height="600px" style="border: 2px solid;" alt="Image Here">
-          <hr>
-          </div>
+              <img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="" id="upload" width="550px" height="650px" style="border: 2px solid; margin-bottom: 4px;" alt="Image Here">
           
       </div>
       

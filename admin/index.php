@@ -13,16 +13,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Admin | LNU Dormitory</title>
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/main.css" type="text/css">
   <!-- Icons -->
-  <link rel="stylesheet" href="assets/css/all.min.css" />
-  <link rel="icon" href="assets/img/logo.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/logo.css" type="text/css">
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="assets/js/all.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/all.min.css" />
+  <link rel="icon" href="./assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="./assets/css/logo.css" type="text/css">
+<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./assets/js/all.min.js"></script>
 
-<link href="assets/css/varela_font.css" rel="stylesheet">
+<link href="./assets/css/varela_font.css" rel="stylesheet">
 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -30,7 +30,7 @@
 
 <style type="text/css">
 body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
 
   .center-lnu{
@@ -160,14 +160,12 @@ body {
       </div>
       
 </div>
-	
-<?php include 'includes/scripts.php' ?>
 
 
   <!-- jQuery CDN -->
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="assets/js/all.min.js"></script>
+<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./assets/js/all.min.js"></script>
 </body>
 </html>
 

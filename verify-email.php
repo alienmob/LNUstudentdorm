@@ -27,7 +27,7 @@
 
 <style type="text/css">
 body {
-		font-family: 'Loto', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
     .center-lnu{
     position: absolute;
@@ -37,6 +37,7 @@ body {
     transform: translate(-50%, -50%);
   }
 </style>
+
 
 </head>
 <body class="bg-default hold-transition login-page">
@@ -214,9 +215,6 @@ if(isset($_SESSION['expired'])){
       </div>
   </div>
     ";
-  
-    echo "'<script type='text/javascript'>toastr.error('Error!".$_SESSION['password_match_error']."')</script>';";
-  
     unset($_SESSION['error']);
    }
   	?>

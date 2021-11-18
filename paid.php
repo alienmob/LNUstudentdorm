@@ -39,54 +39,34 @@ if (isset($_GET['action'])) {
 }
 </style>
 <?php
-        if(isset($_SESSION['error'])){
-        //   echo "
-        //     <div class='alert alert-danger alert-dismissible'>
-        //       <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        //       <h4><i class='icon fa fa-warning'></i> Error!</h4>
-        //       ".$_SESSION['error']."
-        //     </div>
-			
-        //   ";
-		echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
-          unset($_SESSION['error']);
-        }
+       if(isset($_SESSION['error'])){
+        echo "<script type='text/javascript'>
+                toastr.error('".$_SESSION['error']."', 'Error!')
+              </script>";
+        unset($_SESSION['error']);
+      }
+  
+      if(isset($_SESSION['success'])){
+        echo "<script type='text/javascript'>
+                toastr.success('".$_SESSION['success']."', 'Success!')
+              </script>";
+        unset($_SESSION['success']);
+      }
 
-        if(isset($_SESSION['email_error'])){
-        //   echo "
-        //     <div class='alert alert-danger alert-dismissible'>
-        //       <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        //       <h4><i class='icon fa fa-warning'></i> Error!</h4>
-        //       ".$_SESSION['email_error']."
-        //     </div>
-        //   ";
-		  echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['email_error']."')</script>";
-          unset($_SESSION['email_error']);
-        }
 
-        if(isset($_SESSION['reset_success'])){
-        //   echo "
-        //     <div class='alert alert-success alert-dismissible'>
-        //       <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        //       <h4><i class='icon fa fa-check'></i> Success!</h4>
-        //       ".$_SESSION['reset_success']."
-        //     </div>
-        //   ";
-		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['reset_success']."')</script>";
-          unset($_SESSION['reset_success']);
-        }
-
-        if(isset($_SESSION['success'])){
-        //   echo "
-        //     <div class='alert alert-success alert-dismissible'>
-        //       <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        //       <h4><i class='icon fa fa-check'></i> Success!</h4>
-        //       ".$_SESSION['success']."
-        //     </div>
-        //   ";
-		echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
-          unset($_SESSION['success']);
-        }
+      if(isset($_SESSION['email_error'])){
+        echo "<script type='text/javascript'>
+                toastr.error('".$_SESSION['email_error']."', 'Error!')
+              </script>";
+        unset($_SESSION['email_error']);
+      }
+  
+      if(isset($_SESSION['reset_success'])){
+        echo "<script type='text/javascript'>
+                toastr.success('".$_SESSION['reset_success']."', 'Success!')
+              </script>";
+        unset($_SESSION['reset_success']);
+      }
       ?>
       <br>
       
@@ -105,9 +85,10 @@ if (isset($_GET['action'])) {
 									<table class="table table-bordered table-striped" id="example">
 										<thead>
 											<th class="hidden"></th>
-                                            <th>Date Paid</th>
+                      <th>Date Paid</th>
 											<th>Valid Through</th>
 											<th>Status</th>
+                      <th>Receipt</th>
 					
 										</thead>
 										<tbody>
@@ -115,19 +96,27 @@ if (isset($_GET['action'])) {
 $sql = "SELECT *, paid.status AS status FROM paid  WHERE student_id = '$stuid' ORDER BY date_paid DESC";			
 											$query = $conn->query($sql);
 											while ($row = $query->fetch_assoc()) {
+                        $receipt = (!empty($row['receipt'])) ? 'img/'.$row['receipt'] : 'img/receipt.png';
 												if ($row['status']) {
 													$status = '<span class="label label-success">Paid</span>';
 												  } else {
 													$status = '<span class="label label-danger">Unpaid</span>';
 												  }
 												$date = (isset($_GET['action'])) ? 'date_paid' : 'date_unpaid';
-												echo "
+												$date_paid = $row['date_paid'];
+                        $date_from = $row['date_from'];
+                        $date_to = $row['date_to'];
+                        echo "
 			        						<tr>
-			        							<td class='hidden'></td>
-                                                <td>" . date('M d, Y', strtotime($row['date_paid'])) . "</td>
-                                                <td>" . date('M d, Y', strtotime($row['date_from'])) . ' - ' . date('M d, Y', strtotime($row['date_to'])) . "</td>
-												<td>" . $status . "</td>
-											
+			        						<td class='hidden'></td>
+                          <td>" . date('M d, Y', strtotime($row['date_paid'])) . "</td>
+                          <td>" . date('M d, Y', strtotime($row['date_from'])) . ' - ' . date('M d, Y', strtotime($row['date_to'])) . "</td>
+												  <td>" . $status . "</td>
+                          <td>
+                          <a href='".$receipt."' data-lightbox='img' 
+                          data-title='Date Paid: ".date('M d, Y', strtotime($date_paid))."<br>".date('M d, Y', strtotime($date_from))." - ".date('M d, Y', strtotime($date_to))."'>
+                          <img src='".$receipt."' width='60px' height='60px'></a>
+                         </td>
 			        						</tr>
 			        					";
 											}

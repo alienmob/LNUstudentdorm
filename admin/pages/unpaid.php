@@ -24,25 +24,16 @@
       <section class="content">
       <?php
         if(isset($_SESSION['error'])){
-          // echo "
-          //   <div class='alert alert-danger alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-warning'></i> Error!</h4>
-          //     ".$_SESSION['error']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
+          echo "<script type='text/javascript'>
+                  toastr.error('".$_SESSION['error']."', 'Error!')
+                </script>";
           unset($_SESSION['error']);
         }
+    
         if(isset($_SESSION['success'])){
-          // echo "
-          //   <div class='alert alert-success alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-check'></i> Success!</h4>
-          //     ".$_SESSION['success']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
+          echo "<script type='text/javascript'>
+                  toastr.success('".$_SESSION['success']."', 'Success!')
+                </script>";
           unset($_SESSION['success']);
         }
       ?>
@@ -100,6 +91,12 @@
                         $status = '<span class="label label-info">DEADLINE TODAY</span>';
                       }
                       
+                      $stud_id = $row['student_id'];
+                      $fname = $row['firstname'];
+                      $lname = $row['lastname'];
+
+                      $date_from = $row['date_from'];
+                      $date_to = $row['date_to'];
                       
                       echo "
                         <tr>
@@ -112,9 +109,10 @@
                           <td>" . $status . "</td>
                           <td>" . date('M d, Y', strtotime($row['deadline'])) . "</td>
                           <td>
-                            <img src='".$receipt."' width='60px' height='60px'>
-                            <a href=#upload_photo data-toggle='modal' class='pull-right receipt' data-id='".$row['ID']."'><span class='fa fa-eye'></span></a>
-                          </td>
+                          <a href='".$receipt."' data-lightbox='img' 
+                          data-title='Student Number: ".$stud_id."<br>Name: ".$lname." ".$fname."<br>".date('M d, Y', strtotime($date_from))." - ".date('M d, Y', strtotime($date_to))."'>
+                          <img src='".$receipt."' width='60px' height='60px'></a>
+                         </td>
                           <td>
                           <center>
                           <button data-toggle='modal'  class='pay btn btn-success btn-sm btn-rounded' data-id='" . $row['ID'] . "'><i class='fa fa-check'></i></button>
@@ -191,7 +189,8 @@ getRow(id);
           $('#upload2').val(response.receipt);
           $('#upload').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
           $('#display_img').attr("src", response.receipt ? '../../img/' + response.receipt : '../../img/receipt.png');
-          $('.name_id').html(response.firstname+' '+response.lastname+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student ID:'+response.student_id);
+          $('.name_id').html(response.firstname+' '+response.lastname);
+          $('.id_id').html(response.student_id);
           $('.res').html(response.date_from+'&nbsp; - &nbsp; '+response.date_to);
           $('#from').html(response.date_from);
           $('#to').html(response.date_to);

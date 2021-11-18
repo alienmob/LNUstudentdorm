@@ -24,25 +24,16 @@
       <section class="content">
       <?php
         if(isset($_SESSION['error'])){
-          // echo "
-          //   <div class='alert alert-danger alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-warning'></i> Error!</h4>
-          //     ".$_SESSION['error']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.error('Error!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['error']."')</script>";
+          echo "<script type='text/javascript'>
+                  toastr.error('".$_SESSION['error']."', 'Error!')
+                </script>";
           unset($_SESSION['error']);
         }
+    
         if(isset($_SESSION['success'])){
-          // echo "
-          //   <div class='alert alert-success alert-dismissible'>
-          //     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-          //     <h4><i class='icon fa fa-check'></i> Success!</h4>
-          //     ".$_SESSION['success']."
-          //   </div>
-          // ";
-          echo "<script type='text/javascript'>toastr.success('Success!&nbsp;&nbsp;&nbsp;&nbsp;".$_SESSION['success']."')</script>";
+          echo "<script type='text/javascript'>
+                  toastr.success('".$_SESSION['success']."', 'Success!')
+                </script>";
           unset($_SESSION['success']);
         }
       ?>
@@ -62,20 +53,28 @@
                     <th>Name</th>
                     <th>Privilege</th>
                     <th>Valid Through</th>
+                    
                     <th>Status</th>
-                    <th>View</th>
+                    <th>Receipt</th>
                   </thead>
                   <tbody>
                     <?php
                     $sql = "SELECT *, paid.id AS ID, paid.status AS pstat FROM paid LEFT JOIN students ON students.student_id=paid.student_id ORDER BY paid.date_paid DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
-                       $receipt = (!empty($row['receipt'])) ? '../../img/'.$row['receipt'] : '../../img/logo.png';
+                       $receipt = (!empty($row['receipt'])) ? '../../img/'.$row['receipt'] : '../../img/receipt.png';
                       if ($row['pstat']) {
                         $status = '<span class="label label-success">Paid</span>';
                       } else {
                         $status = '<span class="label label-danger">Unpaid</span>';
                       }
+
+                      $stud_id = $row['student_id'];
+                      $fname = $row['firstname'];
+                      $lname = $row['lastname'];
+
+                      $date_from = $row['date_from'];
+                      $date_to = $row['date_to'];
                       echo "
                         <tr>
                           <td class='hidden'>" . $row['ID'] . "</td>
@@ -84,14 +83,13 @@
                           <td>" . $row['firstname'] . ' ' . $row['lastname'] . "</td>
                           <td>" . $row['privilege'] . "</td>
                           <td>" . date('M d, Y', strtotime($row['date_from'])) . ' - ' . date('M d, Y', strtotime($row['date_to'])) . "</td>
+                         
                           <td>" . $status . "</td>
-                          
                           <td>
-                          <center>
-                          <button data-toggle='modal'  class='view btn btn-info btn-sm btn-rounded' data-id='" . $row['ID'] . "'><i class='fa fa-eye'></i></button>
-                          </center>
-                          </td>
-
+                          <a href='".$receipt."' data-lightbox='img' 
+                          data-title='Student Number: ".$stud_id."<br>Name: ".$lname." ".$fname."<br>".date('M d, Y', strtotime($date_from))." - ".date('M d, Y', strtotime($date_to))."'>
+                          <img src='".$receipt."' width='60px' height='60px'></a>
+                         </td>
                         </tr>
                       ";
                     }
