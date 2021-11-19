@@ -36,7 +36,7 @@
    
     <link rel="stylesheet" href="../admin/assets/css/2bootstrap.min.css">
     
-    <script src="../admin/assets/js/jquery.min.js"></script>
+    
 
     <link rel="stylesheet" href="../admin/assets/css/lightbox.css">
 
@@ -44,8 +44,8 @@
 
     <link rel="stylesheet" href="../admin/assets/css/buttons.dataTables.min.css">
 
+<script src="../admin/assets/js/jquery.min.js"></script>
 <link href="../admin/assets/css/toastr.css" rel="stylesheet"/>
-
 <script src="../admin/assets/js/toastr.js"></script>
 
   	<style type="text/css">

@@ -17,22 +17,7 @@
       <li class=""><a href="../pages/home.php" class="text-white"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       
       <li class="header bg-default text-white">MAIN MENU</li>
-      <li class="treeview">
-        <a href="#" class="text-white">
-          <i class="fa fa-refresh"></i>
-          <span>Transactions</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-        <li><a href="../pages/pending.php"><i class="fa fa-circle-o"></i> Equipment Requests</a></li>
-        <li><a href="../pages/borrow.php"><i class="fa fa-circle-o"></i> Borrowed Eqt. Transaction</a></li>
-        <li><a href="../pages/return.php"><i class="fa fa-circle-o"></i> Returned Eqt. Transaction</a></li>
-        <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Student Payments</a></li>
-        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Student Paid Record</a></li>     
-        </ul>
-      </li>
+      
 
       <li class="treeview">
         <a href="#" class="text-white">
@@ -48,6 +33,25 @@
         <li><a href="../pages/room_m.php"><i class="fa fa-circle-o"></i> Room Management</a></li> 
         <li><a href="../pages/equipment_u.php"><i class="fa fa-circle-o"></i> Equipment Management</a></li>
         <li><a href="../pages/transient.php"><i class="fa fa-circle-o"></i> Transient Management</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-refresh"></i>
+          <span>Transactions</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/register.php"><i class="fa fa-circle-o"></i> Student Registration</a></li>
+        <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Student Payments</a></li>
+        <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Student Paid Record</a></li>
+        <li><a href="../pages/pending.php"><i class="fa fa-circle-o"></i> Equipment Requests</a></li>
+        <li><a href="../pages/borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipments</a></li>
+        <li><a href="../pages/return.php"><i class="fa fa-circle-o"></i> Returned Equipments</a></li>
+             
         </ul>
       </li>
 

@@ -32,26 +32,22 @@
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   
-    <link href="../assets/css/varela_font.css" rel="stylesheet">
-    <link rel='stylesheet' href='../assets/css/nprogress.css'/>
-
+ 
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
   
     <link rel="stylesheet" href="../assets/css/2bootstrap.min.css">
   
-    <script src="../assets/js/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="../assets/css/jquery.dataTables.min.css">
   
     <link rel="stylesheet" href="../assets/css/buttons.dataTables.min.css">
 
+    <link href="../assets/css/varela_font.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <link rel='stylesheet' href='../assets/css/nprogress.css'/>
 
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css">
-
-
+<script src="../assets/js/jquery.min.js"></script>
 <link href="../assets/css/toastr.css" rel="stylesheet"/>
 <script src="../assets/js/toastr.js"></script>
 

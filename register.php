@@ -22,7 +22,7 @@ include 'includes/conn.php';
 <script type="text/javascript" src="admin/assets/js/all.min.js"></script>
 
 <link href="admin/assets/css/varela_font.css" rel="stylesheet">
-
+<link rel='stylesheet' href='admin/assets/css/nprogress.css'/>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="admin/assets/css/toastr.css" rel="stylesheet"/>
 <script type="text/javascript" src="admin/assets/js/toastr.js"></script>
@@ -323,8 +323,11 @@ body {
    </div>
 
           <div class="form-group text-center">
-					  <input type="submit" class="btn btn-warning btn-md rounded-3 mt-4" name="register" value="Register">  
+					  <input type="submit" class="btn btn-warning btn-md rounded-3" name="register" value="Register">
+            <!-- <input type="submit" class="submit-btn btn btn-warning btn-rounded" name="register" value="Register" />   -->
       		</div>
+
+          <div class="text-center"><a href="index.php"><i class="fa fa-book"></i> Log Book</a></div>
               </form>
   	</div>
           </div>    
@@ -341,6 +344,15 @@ body {
 
 
 <?php include 'includes/scripts.php' ?>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function() {
+        $(".submit-btn").click(function() {
+            $(this).val('Please Wait...');
+        });
+    });
+</script>
 
   <!-- jQuery CDN -->
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>

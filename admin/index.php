@@ -15,7 +15,7 @@
   <title>Admin | LNU Dormitory</title>
     <link rel="stylesheet" href="./assets/css/main.css" type="text/css">
   <!-- Icons -->
-  <link rel="stylesheet" href="./assets/css/all.min.css" />
+
   <link rel="icon" href="./assets/img/logo.png" type="image/png">
   <link rel="stylesheet" href="./assets/css/logo.css" type="text/css">
 <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
@@ -23,8 +23,8 @@
 <script type="text/javascript" src="./assets/js/all.min.js"></script>
 
 <link href="./assets/css/varela_font.css" rel="stylesheet">
+<link rel='stylesheet' href='./assets/css/nprogress.css'/>
 
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
@@ -161,7 +161,7 @@ body {
       
 </div>
 
-
+<script type="text/javascript" src='./assets/js/nprogress.js'></script>
   <!-- jQuery CDN -->
 <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="./assets/js/bootstrap.bundle.min.js"></script>

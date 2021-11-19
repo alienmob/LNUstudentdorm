@@ -21,7 +21,7 @@
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../assets/js/all.min.js"></script>
-
+<link rel='stylesheet' href='../assets/css/nprogress.css'/>
 <link href="../assets/css/varela_font.css" rel="stylesheet">
 
 <style type="text/css">

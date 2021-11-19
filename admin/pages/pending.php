@@ -1,6 +1,6 @@
 <?php include '../includes/session.php'; ?>
 <?php include '../includes/header.php'; ?>
-<title>LNU Dormitory | Pending Requests</title>
+<title>LNU Dormitory | Equipment Requests</title>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -12,7 +12,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Student Request Record List
+          Equipment Request Record List
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>

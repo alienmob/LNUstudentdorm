@@ -1,6 +1,4 @@
 
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.js"></script> -->
 <script type="text/javascript" src="../assets/js/fullcalendar@5.8.0/main.js"></script>
 <!-- jQuery 3 -->
 <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
@@ -12,10 +10,7 @@
 <script type="text/javascript" src="../../bower_components/moment/moment.js"></script>
 
 <!-- DataTables -->
-<!-- <script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script> -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+
 <script type="text/javascript" src="../assets/js/dataTables/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../assets/js/dataTables/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="../assets/js/dataTables/jszip.min.js"></script>
@@ -24,9 +19,7 @@
 <script type="text/javascript" src="../assets/js/dataTables/buttons.html5.min.js"></script>
 <script type="text/javascript" src="../assets/js/dataTables/buttons.print.min.js"></script>
 
-<script type="text/javascript" src='../assets/js/nprogress.js'></script>
 
-<script type="text/javascript" src='../assets/js/lightbox.js'></script>
 <!-- ChartJS -->
 <script type="text/javascript" src="../../bower_components/chart.js/Chart.js"></script>
 <!-- daterangepicker -->
@@ -43,7 +36,9 @@
 <!-- AdminLTE App -->
 <script type="text/javascript" src="../../dist/js/adminlte.min.js"></script>
 
+<script type="text/javascript" src='../assets/js/nprogress.js'></script>
 
+<script type="text/javascript" src='../assets/js/lightbox.js'></script>
 <!-- Active Script -->
 
 <script>

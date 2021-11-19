@@ -19,7 +19,7 @@
 		$gcontact = $_POST['gcontact'];
 
 		if(!empty($filename)){
-			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
+			move_uploaded_file($_FILES['photo']['tmp_name'], 'images/'.$filename);	
 		}
 
         $sql = "SELECT * FROM students WHERE student_id = '$student_id'";
@@ -29,7 +29,7 @@
 			$_SESSION['error'] = 'Student ID "' .$row['student_id']. '" Is already in the Database';
 		}
 		else {
-			$sql = "INSERT INTO register (student_id, lname, fname, mname, bdate, gender, course, contact, privilege, email, photo, address, guardian, gcontact) VALUES 
+			$sql = "INSERT INTO register (student_id, lname, fname, mname, bdate, gender, course_id, contact, privilege, email, photo, address, guardian, gcontact) VALUES 
 			('$student_id', '$lname', '$fname', '$mname', '$bdate', '$gender', '$course', '$contact', '$privilege', '$email', '$filename', '$address', '$guardian', '$gcontact')";
 			if($conn->query($sql)){
 				$_SESSION['success'] = 'Registration sumbitted successfully and pending for approval!';
