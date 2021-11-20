@@ -9,14 +9,16 @@
  include '../../includes/session.php';
 
 	if(isset($_POST['add'])){
-
+		$id = $_POST['id'];
 		$student_id = $_POST['student_id'];
 		$rfid = $_POST['getUID'];
 		$password = $_POST['student_id'];
 		$password = password_hash($password, PASSWORD_DEFAULT);
-		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
+		$firstname = $_POST['firstname'];
+		$middlename = $_POST['middlename'];
 		$privilege = $_POST['privilege'];
+		$bdate = $_POST['bdate'];
 		$gender = $_POST['gender'];
 		$address = $_POST['address'];
 		$contact = $_POST['contact'];
@@ -26,6 +28,7 @@
 		$floors = $_POST['floor'];
 		$rooms = $_POST['room'];
 		$course = $_POST['course'];
+		$photo = $_POST['photo'];
 		$filename = $_FILES['photo']['name'];
 		
 		if(!empty($filename)){
@@ -70,10 +73,13 @@
 				$row = $query->fetch_assoc();
 				$room_id = $row['ID'];
 
-				$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, privilege, gender, address, contact, email, guardian, guardian_contact, floor_id, room_id, actualroom_id, course_id, photo) 
-				VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floors', '$rooms', '$room_id', '$course', '$filename')";
+				$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, middlename, bdate, privilege, gender, address, contact, email, guardian, guardian_contact, floor_id, room_id, actualroom_id, course_id, photo) 
+				VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$middlename', '$bdate', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floors', '$rooms', '$room_id', '$course', '$photo')";
 
 				if($conn->query($sql)){
+
+					$sql = "DELETE FROM register WHERE id = '$id'";
+					$conn->query($sql);	
 
 					$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
 					$conn->query($sql);							

@@ -3,7 +3,7 @@
 
 	if(isset($_POST['id'])){
 		$id = $_POST['id'];
-		$sql = "SELECT * FROM register LEFT JOIN course ON course.id=students.course_id WHERE register.id = '$id'";
+		$sql = "SELECT *, register.id AS reg_id FROM register LEFT JOIN course ON course.id=register.course_id WHERE register.id = '$id'";
 		$query = $conn->query($sql);
 		$row = $query->fetch_assoc();
 

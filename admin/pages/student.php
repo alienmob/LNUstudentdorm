@@ -83,10 +83,11 @@ if (isset($_GET['rooms'])) {
 
               <table id="example" class="table table-bordered table-striped">
                 <thead>
-                  
+                  <th class="hidden"></th>
                   <th>Photo</th>
                   <th>Student ID</th>
-                  <th>Name</th>
+                  <th>FullName</th>
+                  <th>Birth Date</th>
                   <th>Privilege</th>
                   <th>Gender</th>
                   <th>Address</th>
@@ -102,7 +103,7 @@ if (isset($_GET['rooms'])) {
                   <?php
  
                     $sql = "SELECT *, students.student_id AS studid FROM students LEFT JOIN course ON course.id=students.course_id 
-                    LEFT JOIN floor_category ON floor_category.id=students.floor_id LEFT JOIN room_category ON room_category.id=students.room_id $where ORDER BY created_at DESC";
+                    LEFT JOIN floor_category ON floor_category.id=students.floor_id LEFT JOIN room_category ON room_category.id=students.room_id $where ORDER BY students.created_at DESC";
                     
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
@@ -112,7 +113,7 @@ if (isset($_GET['rooms'])) {
                       $lname = $row['lastname'];
                       echo "
                         <tr>
-                          
+                        <td class='hidden'>".$row['created_at']."</td>
        
                           <td>
                           <a href='".$photo."' data-lightbox='img' 
@@ -121,7 +122,8 @@ if (isset($_GET['rooms'])) {
                          </td>
 
                           <td>".$row['student_id']."</td>
-                          <td>".$row['firstname']. ' ' .$row['lastname']."</td>
+                          <td>".$row['lastname']. ' , ' .$row['firstname']. ' ' .$row['middlename']."</td>
+                          <td>" . date('M d, Y', strtotime($row['bdate'])) . "</td>
                           <td>".$row['privilege']."</td>
                           <td>".$row['gender']."</td>
                           <td>".$row['address']."</td>
