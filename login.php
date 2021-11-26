@@ -15,7 +15,7 @@
 			$_SESSION['error'] = 'Student ID does not exist';
 		}else
 		if($verify == NULL){
-			$_SESSION['verify'] = 'This account is not verified yet, please check your email. Thank You!';
+			$_SESSION['verify'] = 'This account is not yet verified, please check your email. Thank You!';
 		}
 		else{
 		

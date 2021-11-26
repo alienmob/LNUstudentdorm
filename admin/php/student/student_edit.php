@@ -4,8 +4,10 @@
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
 		$student_id = $_POST['student_id'];
-		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
+		$firstname = $_POST['firstname'];
+		$middlename = $_POST['middlename'];
+		$bdate = $_POST['bdate'];
 		$privilege = $_POST['privilege'];
 		$gender = $_POST['gender'];
 		$address = $_POST['address'];
@@ -76,7 +78,8 @@
 			$room_id = $row['ID'];
 
 
-		$sql = "UPDATE students SET student_id = '$student_id', firstname = '$firstname', lastname = '$lastname', privilege = '$privilege', gender = '$gender', address = '$address', contact = '$contact', email = '$email', guardian = '$guardian', 
+		$sql = "UPDATE students SET student_id = '$student_id', lastname = '$lastname', firstname = '$firstname', middlename = '$middlename', bdate = '$bdate', privilege = '$privilege', 
+		gender = '$gender', address = '$address', contact = '$contact', email = '$email', guardian = '$guardian', 
 		guardian_contact = '$guardian_contact', floor_id = '$floors', room_id = '$rooms', actualroom_id = '$room_id', course_id = '$course' 
 		WHERE student_id = '$id'";
 		if($conn->query($sql)){

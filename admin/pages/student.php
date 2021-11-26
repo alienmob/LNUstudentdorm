@@ -50,9 +50,10 @@ if (isset($_GET['rooms'])) {
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a>
+              <!-- <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a> -->
               <!-- <a href="student_print.php" target="_blank" class="btn btn-info btn-sm btn-rounded"><i class="fa fa-print"></i></a> -->
-
+<br>
+<br>
               <div class="box-tools pull-right">
                   <form class="form-inline">
                     <div class="form-group">
@@ -201,6 +202,8 @@ function getRow(id){
       $('#edit_student_id').val(response.student_id);
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
+      $('#edit_middlename').val(response.middlename);
+      $('#edit_bdate').val(response.bdate);
       $('#edit_gender').val(response.gender);
       $('#edit_privilege').val(response.privilege);
       $('#edit_address').val(response.address);

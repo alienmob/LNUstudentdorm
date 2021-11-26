@@ -81,6 +81,7 @@ $stuid = $_SESSION['student'];
                 <thead>
                     <th>Date</th>
                     <th>Violation</th>
+                    <th>Punishment</th>
 					
                     </thead>
                     <tbody>
@@ -94,7 +95,7 @@ $stuid = $_SESSION['student'];
                         <tr>
                           <td>" . date('M d, Y | h:ia', strtotime($row['date'])) . "</td>
                           <td>" . $row['violation'] . "</td>
-                          
+                          <td>" . $row['punishment'] . "</td>
                         </tr>
                       ";
                     }

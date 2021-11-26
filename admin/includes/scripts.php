@@ -19,6 +19,9 @@
 <script type="text/javascript" src="../assets/js/dataTables/buttons.html5.min.js"></script>
 <script type="text/javascript" src="../assets/js/dataTables/buttons.print.min.js"></script>
 
+<script type="text/javascript" src="../assets/js/dataTables/dateTime.min.js"></script>
+<script type="text/javascript" src="../assets/js/moment.min.js"></script>
+
 
 <!-- ChartJS -->
 <script type="text/javascript" src="../../bower_components/chart.js/Chart.js"></script>

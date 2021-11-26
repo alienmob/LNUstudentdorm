@@ -87,7 +87,7 @@
 						$eventid = $rowrfid['event_id'];
 
 						$sql = "SELECT *, event.id AS eventid FROM `event` LEFT JOIN event_category ON event_category.id = event.event_category_id
-						WHERE event.date <= '$date'";
+						WHERE event.date = '$date'";
 						$query = $conn->query($sql);
 						while($row = $query->fetch_array()){
 							if($row['status'] == NULL){
@@ -101,9 +101,7 @@
 			</div>
 			</div>
 			
-		
-			
-
+	
 								<div class="box-body">
 				  				  <div class="table-responsive">
 									<table class="table table-bordered table-striped">

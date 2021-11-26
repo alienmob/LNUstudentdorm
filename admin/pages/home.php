@@ -61,6 +61,28 @@
       ?>
       <!-- Small boxes (Stat box) -->
       <div class="row">
+
+      <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-green">
+            <div class="inner">
+              <?php
+                $sql = "SELECT * FROM register";
+                $query = $conn->query($sql);
+
+                echo "<h3>".$query->num_rows."</h3>";
+              ?>
+             
+              <p>Pending Registrations</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-list-alt"></i>
+            </div>
+            <a href="register.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
       <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-gradient-info">
@@ -92,7 +114,7 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>Total Pending Requests</p>
+              <p>Total Equipment Requests</p>
             </div>
             <div class="icon">
               <i class="fa fa-clock-o"></i>
@@ -101,27 +123,8 @@
           </div>
         </div>
         <!-- ./col -->
-        
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-gradient-green">
-            <div class="inner">
-              <?php
-                $sql = "SELECT * FROM returns";
-                $query = $conn->query($sql);
 
-                echo "<h3>".$query->num_rows."</h3>";
-              ?>
-             
-              <p>Returned Equipments</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-mail-reply"></i>
-            </div>
-            <a href="return.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+        
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-gradient-danger">
@@ -142,11 +145,16 @@
           </div>
         </div>
         <!-- ./col -->
+        
+        
+       
       </div>
       <!-- /.row -->
 
 <!-- Small boxes (Stat box) -->
 <div class="row">
+
+
 <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-gradient-primary">

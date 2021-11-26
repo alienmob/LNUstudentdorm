@@ -139,6 +139,26 @@ $studid = $_SESSION['student'];
             <a href="borrow.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
 
+		  		  <!-- small box -->
+		<div class="small-box bg-gradient-purple">
+            <div class="inner">
+              <?php
+                $sql = "SELECT * FROM violations WHERE student_id = '$studid'";
+                $query = $conn->query($sql);
+
+                echo "<h3>".$query->num_rows."</h3>";
+              ?>
+          
+              <p>Violations</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-exclamation-triangle"></i>
+            </div>
+            <a href="violation.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+
+		 
+
         </div>
 
 		<div class="col-lg-3 col-xs-6 pull-left">
@@ -200,6 +220,25 @@ $studid = $_SESSION['student'];
             <a href="paid.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
 
+		
+		     <!-- small box -->
+		<div class="small-box bg-translucent-primary">
+            <div class="inner">
+              <?php
+                $sql = "SELECT * FROM complaints WHERE student_id = '$studid'";
+                $query = $conn->query($sql);
+
+                echo "<h3>".$query->num_rows."</h3>";
+              ?>
+          
+              <p>Complaints</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-question-circle"></i>
+            </div>
+            <a href="complaint.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+
         </div>
       
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 pull-right">
@@ -218,138 +257,7 @@ $studid = $_SESSION['student'];
 
 
 
-	        <!-- <div class="col-xs-7 pull-right">
-	  <div class="box">
-          
-		  <div class="box-body">
-		  
-
-			
-			<div class="box-header with-border">
-		  <h3 class="box-title">LNU Dormitory Events</h3>
-		  </div>
-			 
-
-			  <div class="table-responsive">
-							<table class="table table-bordered table-striped" id="example">
-								<thead>
-									<th>Event Title</th>
-									<th>Description</th>
-									<th>Location</th>
-									<th>Scheduled Date</th>
-									<th>Start</th>
-									<th>End</th>
-									<th>Status</th>
-								</thead>
-								<tbody>
-								<?php
-									$sql = "SELECT * FROM event LEFT JOIN event_category ON event_category.id=event.event_category_id $where";
-									$query = $conn->query($sql);
-									while($row = $query->fetch_assoc()){
-									// 	if ($row['status']) {
-									// 		$status = '<span class="label label-danger">Cancelled</span>';
-									// } else {
-									// 		$status = '<span class="label label-success"></span>';
-									// }
-										echo "
-											<tr>
-												
-												<td>".$row['event_name']."</td>
-												<td>".$row['description']."</td>
-												<td>".$row['location']."</td>
-												<td>" . date('M d, Y', strtotime($row['date'])) . "</td>
-												<td>" . date('h:ia', strtotime($row['time_start'])) . "</td>
-												<td>" . date('h:ia', strtotime($row['time_end'])) . "</td>
-												<td><span class='label label-danger'>". $row['status'] ."</span></td>
-											</tr>
-										";
-									}
-								?>
-								</tbody>
-							</table>
-						</div>
-		  </div>
-</div>
-
-
-
-
-	  </div> -->
-
-
-
-		  <!-- <div class="box">
-		  <div class="box-header with-border">
-		  <h3 class="box-title">LNU Dormitory Events</h3>
-		  </div>
-			  <div class="box-header with-border">
-				  <div class="input-group col-sm-3 pull-right">
-					  <input type="text" class="form-control input-md" id="searchBox" placeholder="Search...">
-					  <span class="input-group-btn">
-						  <button type="button" class="btn btn-primary btn-rounded btn-md"><i class="fa fa-search"></i> </button>
-					  </span>
-				  </div>
-				  <div class="input-group col-sm-3">
-					  <span class="input-group-addon">Category:</span>
-					  <select class="form-control" id="eventlist">
-						  <option value=0>ALL</option>
-						  <?php
-							//   $sql = "SELECT * FROM event_category";
-							//   $query = $conn->query($sql);
-							//   while($eventrow = $query->fetch_assoc()){
-							// 	  $selected = ($eventid == $eventrow['id']) ? " selected" : "";
-							// 	  echo "
-							// 		  <option value='".$eventrow['id']."' ".$selected.">".$eventrow['event_name']."</option>
-							// 	  ";
-							//   }
-						  ?>
-					  </select>
-				   </div>
-			  </div>
-			  <div class="box-body">
-				  <div class="table-responsive">
-							<table class="table table-bordered table-striped" id="booklist">
-								<thead>
-									<th>Event Title</th>
-									<th>Description</th>
-									<th>Location</th>
-									<th>Scheduled Date</th>
-									<th>Start</th>
-									<th>End</th>
-									<th>Status</th>
-								</thead>
-								<tbody>
-								<?php
-									// $sql = "SELECT * FROM event LEFT JOIN event_category ON event_category.id=event.event_category_id $where";
-									// $query = $conn->query($sql);
-									// while($row = $query->fetch_assoc()){
-									// 	if ($row['status']) {
-									// 		$status = '<span class="label label-danger">Cancelled</span>';
-									// } else {
-									// 		$status = '<span class="label label-success"></span>';
-									// }
-									// 	echo "
-									// 		<tr>
-												
-									// 			<td>".$row['event_name']."</td>
-									// 			<td>".$row['description']."</td>
-									// 			<td>".$row['location']."</td>
-									// 			<td>" . date('M d, Y', strtotime($row['date'])) . "</td>
-									// 			<td>" . date('h:ia', strtotime($row['time_start'])) . "</td>
-									// 			<td>" . date('h:ia', strtotime($row['time_end'])) . "</td>
-									// 			<td>".$status."</td>
-									// 		</tr>
-									// 	";
-									// }
-								?>
-								</tbody>
-							</table>
-						</div>
-			  </div>
-			
-		  </div> -->
-
-		  
+	      
 
 </section>
 		</div>

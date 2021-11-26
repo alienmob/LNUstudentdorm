@@ -201,19 +201,37 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
-
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="edit_firstname" name="firstname" required>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
 
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="edit_lastname" name="lastname" required>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="edit_firstname" name="firstname" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit_middlename" class="col-sm-3 control-label">Middlename</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="edit_middlename" name="middlename" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit_bdate" class="col-sm-3 control-label">Birth Date</label>
+
+                    <div class="col-sm-8">
+                      <input type="date" class="form-control" id="edit_bdate" name="bdate" required>
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="edit_privilege" class="col-sm-3 control-label">Privilege</label>
 

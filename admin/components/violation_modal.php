@@ -31,6 +31,12 @@
                       <textarea name="violation" id="violation" class="form-control" placeholder="Specify Violation" rows="4" required></textarea>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="punishment" class="col-sm-3 control-label">Punishment</label>
+                    <div class="col-sm-7">
+                      <textarea name="punishment" id="punishment" class="form-control" placeholder="Specify Punishment" rows="3" required></textarea>
+                    </div>
+                </div>
 
                 
                
@@ -116,6 +122,12 @@
                       <textarea name="view_violation" id="view_violation" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="view_punishment" class="col-sm-3 control-label">Punishment</label>
+                    <div class="col-sm-7">
+                      <textarea name="view_punishment" id="view_punishment" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
                 
               
             </div>
@@ -143,6 +155,7 @@
                 <div class="text-center">
                     Name:<h2 class="del_name bold"></h2>
                     Violation:<h3 class="del_vio bold"></h3>
+                    Punishment:<h3 class="del_pun bold"></h3>
                 </div>
             </div>
             <div class="modal-footer">

@@ -17,18 +17,18 @@ include 'includes/conn.php';
   <link rel="stylesheet" href="admin/assets/css/all.min.css" />
   <link rel="icon" href="admin/assets/img/logo.png" type="image/png">
   <link rel="stylesheet" href="admin/assets/css/logo.css" type="text/css">
-<script type="text/javascript" src="admin/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="admin/assets/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="admin/assets/js/all.min.js"></script>
+  <script type="text/javascript" src="admin/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="admin/assets/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="admin/assets/js/all.min.js"></script>
 
-<link href="admin/assets/css/varela_font.css" rel="stylesheet">
-<link rel='stylesheet' href='admin/assets/css/nprogress.css'/>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<link href="admin/assets/css/toastr.css" rel="stylesheet"/>
-<script type="text/javascript" src="admin/assets/js/toastr.js"></script>
+  <link href="admin/assets/css/varela_font.css" rel="stylesheet">
+  <link rel='stylesheet' href='admin/assets/css/nprogress.css'/>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <link href="admin/assets/css/toastr.css" rel="stylesheet"/>
+  <script type="text/javascript" src="admin/assets/js/toastr.js"></script>
 
 <style type="text/css">
-body {
+  body {
 		font-family: 'Roboto', sans-serif;
 	}
 

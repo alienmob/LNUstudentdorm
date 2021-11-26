@@ -4,6 +4,7 @@
 	if(isset($_POST['add'])){
 		$student_id = $_POST['student_id'];
 		$violation = $_POST['violation'];
+		$punishment = $_POST['punishment'];
 		$date = $_POST['date'];
 		
 	$sql = "SELECT * FROM students WHERE student_id = '$student_id'";
@@ -16,7 +17,7 @@
 	} else {
 
 
-		$sql = "INSERT INTO violations (student_id, date, violation) VALUES ('$student_id', '$date', '$violation')";
+		$sql = "INSERT INTO violations (student_id, date, violation, punishment) VALUES ('$student_id', '$date', '$violation' , '$punishment')";
 		if($conn->query($sql)){
 
 			// Activity log

@@ -52,8 +52,8 @@
                     <th>Student ID</th>
                     <th>Name</th>
                     <th>Privilege</th>
-                    <th>Valid Through</th>
-                    
+                    <th>Valid From</th>
+                    <th>Valid To</th>
                     <th>Status</th>
                     <th>Receipt</th>
                   </thead>
@@ -82,8 +82,8 @@
                           <td>" . $row['student_id'] . "</td>
                           <td>" . $row['firstname'] . ' ' . $row['lastname'] . "</td>
                           <td>" . $row['privilege'] . "</td>
-                          <td>" . date('M d, Y', strtotime($row['date_from'])) . ' - ' . date('M d, Y', strtotime($row['date_to'])) . "</td>
-                         
+                          <td>" . date('M d, Y', strtotime($row['date_from'])) . "</td>
+                          <td>" . date('M d, Y', strtotime($row['date_to'])) . "</td>
                           <td>" . $status . "</td>
                           <td>
                           <a href='".$receipt."' data-lightbox='img' 
@@ -98,6 +98,24 @@
                   </tbody>
                 </table>
               </div>
+
+
+              <div class="" style="display: flex; flex-direction: column;">
+
+              <label class="control-label">Filter :</label>
+              <div class="row">
+                <div class="col-xs-5 col-sm-5 col-md-2 col-lg-2">
+                  <label for="date_from" class="control-label">Date From</label>
+                  <input type="date" class="form-control" id="date_from" name="date_from" required>
+                </div>
+
+                <div class="col-xs-5 col-sm-5 col-md-2 col-lg-2">
+                  <label for="date_to" class="control-label">Date To</label>
+                  <input type="date" class="form-control" id="date_to" name="date_to" required>
+                </div>
+              </div>
+              </div>
+              
               </div>
             </div>
           </div>
@@ -140,6 +158,48 @@
         }
       });
     }
+
+    $(document).ready(function() {
+        // Create date inputs
+        var minDate, maxDate;
+        // console.log(minDate, maxDate)
+        
+        // Custom filtering function which will search data in column four between two values
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+             
+             
+              var min = $('#date_from').val() ? moment($('#date_from').val()) : null
+              var max = $('#date_to').val() ? moment($('#date_to').val()) : null
+              var date_from = moment(new Date(data[5]));
+              var date_to = moment(new Date(data[6]));
+       
+                if (
+                    ( min === null && max === null ) ||
+                    ( min <= date_from && max === null ) ||
+                    ( min === null && date_to <= max ) ||
+                    ( min === null && max <= date_to ) ||
+                    ( min <= date_from  && date_to <= max )
+                ) {
+                  console.log(`Min Date: ${min} - Date From: ${date_from}`)
+                  console.log(min >= date_from  && max <= date_to)
+                  return true;
+                }
+                console.log(min >= date_from)
+                return false;
+            }
+        );
+    
+        // DataTables initialisation
+        var table = $('#example').DataTable();
+    
+        // Refilter the table
+        $('#date_from, #date_to').on('change', function () {
+         
+          table.draw();
+        });
+    });
+
   </script>
 </body>
 

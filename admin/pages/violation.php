@@ -60,6 +60,7 @@
                     <th>Room</th>
                     <th>Course</th>
                     <th>Violation</th>
+                    <th>Punishment</th>
                     <th>Date</th>
                     <th>Actions</th>
                   </thead>
@@ -81,6 +82,7 @@
                           <td>" . $row['floor_name'] .'&nbsp;-&nbsp;'. $row['room_name'] . "</td>
                           <td>" . $row['code'] . "</td>
                           <td>" . $row['violation'] . "</td>
+                          <td>" . $row['punishment'] . "</td>
                           <td>" . date('M d, Y', strtotime($row['date'])) . "</td>
                           <td>
                             <button class='btn btn-info btn-sm view btn-rounded' data-id='" . $row['id'] . "'><i class='fa fa-eye'></i></button>
@@ -144,9 +146,11 @@
           $('#selroom').val(response.room_category_id).html(response.room_name);
           $('#course').val(response.title);
           $('#view_violation').val(response.violation);
+          $('#view_punishment').val(response.punishment);
           $('#view_date').val(response.date);
           $('.del_name').html(response.firstname+' '+response.lastname);
           $('.del_vio').html(response.violation);
+          $('.del_pun').html(response.punishment);
         }
       });
     }
