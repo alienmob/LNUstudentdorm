@@ -13,7 +13,7 @@ require_once '../../includes/config.php';
 
 if (isset($_POST['add'])) {
 
-	$added2 = 1;
+	$added2 = 0;
 	$query = $conn->query($sql);
 	if ($query->num_rows > 0) {
 
@@ -36,8 +36,11 @@ if (isset($_POST['add'])) {
 
 		$sql = "INSERT INTO unpaid (student_id, date_from, date_to, deadline) VALUES ('$student_id','$date_from','$date_to','$deadline')";
 		if ($conn->query($sql)) {
-			$added2--;
+			
 			$sql = "UPDATE unpaid SET status = $added2 WHERE student_id = '$student_id'";
+			$conn->query($sql);
+
+			$sql = "UPDATE students SET unpaid_total = unpaid_total + 1 WHERE student_id = '$student_id'";
 			$conn->query($sql);
 
 		} else {

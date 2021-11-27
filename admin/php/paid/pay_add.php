@@ -30,6 +30,9 @@ if (isset($_POST['pay'])) {
 			$conn->query($sql);
 			// $sql = "UPDATE promissory SET status = $added WHERE student_id = '$student_id'";
 			// $conn->query($sql);
+			$sql = "UPDATE students SET unpaid_total = unpaid_total - 1 WHERE student_id = '$student_id'";
+			$conn->query($sql);
+
             $sql = "DELETE FROM `unpaid` WHERE id = '$uid'";
 			$conn->query($sql);
 			// $sql = "DELETE FROM `promissory` WHERE status = 1";
