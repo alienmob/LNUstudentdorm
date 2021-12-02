@@ -26,8 +26,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="admin.php"><i class="fa fa-circle-o"></i> Admin List</a></li>
-          <li><a href="logs.php"><i class="fa fa-circle-o"></i> Activity Logs</a></li>
+          <li><a href="admin.php"><i class="fa fa-circle-o"></i> Dorm Admin List</a></li>
+          <li><a href="logs.php"><i class="fa fa-circle-o"></i> Dorm Admin Activity Logs</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -40,7 +40,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="student.php"><i class="fa fa-circle-o"></i> Student List</a></li>
-          <li><a href="course.php"><i class="fa fa-circle-o"></i> Courses</a></li>
+          <li><a href="course.php"><i class="fa fa-circle-o"></i> Course List</a></li>
         </ul>
       </li>
 

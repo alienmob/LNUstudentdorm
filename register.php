@@ -222,7 +222,7 @@ include 'includes/conn.php';
                 <div class="input-group-prepend"> 
                 <span class="input-group-text"><i class="fa fa-phone"></i></span>    
                 </div>
-                <input class="form-control" name="contact" id="contact" minlength="11" placeholder="09XXXXXXXXX" type="number" required>
+                <input class="form-control" name="contact" id="contact" maxlength="11" placeholder="09XXXXXXXXX" type="number" required>
               </div>
               <p class="col-form-label text-gray">Contact Number</p>
               </div>
@@ -313,7 +313,7 @@ include 'includes/conn.php';
         <div class="input-group-prepend"> 
         <span class="input-group-text"><i class="fa fa-phone"></i></span>    
         </div>
-        <input class="form-control" name="gcontact" id="gcontact" minlength="11" placeholder="09XXXXXXXXX" type="number" required>
+        <input class="form-control" name="gcontact" id="gcontact" maxlength="11" placeholder="09XXXXXXXXX" type="number" required>
       </div>
       <p class="col-form-label text-gray">Guardian's Contact#</p>
       </div>

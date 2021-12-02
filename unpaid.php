@@ -95,7 +95,7 @@ if (isset($_GET['action'])) {
 										</thead>
 										<tbody>
 											<?php
-$sql = "SELECT *, unpaid.id AS ID, unpaid.student_id AS studid FROM unpaid  WHERE student_id = '$stuid' ORDER BY date_unpaid DESC";			
+$sql = "SELECT *, unpaid.id AS ID, unpaid.student_id AS studid FROM unpaid  WHERE student_id = '$stuid' ORDER BY deadline DESC";			
 											$query = $conn->query($sql);
 											while ($row = $query->fetch_assoc()) {
                         $receipt = (!empty($row['receipt'])) ? 'img/'.$row['receipt'] : 'img/receipt.png';

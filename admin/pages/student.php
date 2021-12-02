@@ -84,7 +84,7 @@ if (isset($_GET['rooms'])) {
 
               <table id="example" class="table table-bordered table-striped">
                 <thead>
-                  <th class="hidden"></th>
+                 
                   <th>Photo</th>
                   <th>Student ID</th>
                   <th>FullName</th>
@@ -104,7 +104,7 @@ if (isset($_GET['rooms'])) {
                   <?php
  
                     $sql = "SELECT *, students.student_id AS studid FROM students LEFT JOIN course ON course.id=students.course_id 
-                    LEFT JOIN floor_category ON floor_category.id=students.floor_id LEFT JOIN room_category ON room_category.id=students.room_id $where ORDER BY students.created_at DESC";
+                    LEFT JOIN floor_category ON floor_category.id=students.floor_id LEFT JOIN room_category ON room_category.id=students.room_id $where";
                     
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
@@ -114,8 +114,6 @@ if (isset($_GET['rooms'])) {
                       $lname = $row['lastname'];
                       echo "
                         <tr>
-                        <td class='hidden'>".$row['created_at']."</td>
-       
                           <td>
                           <a href='".$photo."' data-lightbox='img' 
                           data-title='Student Number: ".$stud_id."<br>Name: ".$lname." ".$fname."'>

@@ -16,7 +16,7 @@
       <!-- <li class="header bg-orange">REPORTS</li> -->
       <li class=""><a href="home.php" class="text-white"><i class="fa fa-home"></i> <span>Home</span></a></li>
       <li class=""><a href="announcements.php" class="text-white"><i class="fa fa-newspaper-o"></i> <span>Announcements</span></a></li>
-      <li class=""><a href="equipments.php" class="text-white"><i class="fa fa-cube"></i> <span>Equipment</span></a></li>
+      <li class=""><a href="equipments.php" class="text-white"><i class="fa fa-cube"></i> <span>Equipment List</span></a></li>
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-refresh"></i>
@@ -26,9 +26,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pending.php"><i class="fa fa-circle-o"></i> Requests</a></li>
-          <li><a href="borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipments</a></li>
-          <li><a href="return.php"><i class="fa fa-circle-o"></i> Returned Equipments</a></li>
+          <li><a href="pending.php"><i class="fa fa-circle-o"></i> Equipment Requests</a></li>
+          <li><a href="borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipment</a></li>
+          <li><a href="return.php"><i class="fa fa-circle-o"></i> Returned Equipment</a></li>
           
           
         </ul>

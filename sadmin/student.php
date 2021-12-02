@@ -47,11 +47,13 @@
                   
                   <th>Photo</th>
                   <th>Student ID</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
+                  <th>FullName</th>
+                  <th>Birth Date</th>
+                  <th>Privilege</th>
                   <th>Gender</th>
                   <th>Address</th>
                   <th>Contact No.</th>
+                  <th>Email</th>
                   <th>Name of Guardian</th>
                   <th>Contact# of Guardian</th>
                   <th>Room</th>
@@ -77,16 +79,18 @@
                         data-title='Student Number: ".$stud_id."<br>Name: ".$lname." ".$fname."'>
                         <img src='".$photo."' width='60px' height='60px'></a>
                        </td>
-                          <td>".$row['student_id']."</td>
-                          <td>".$row['firstname']."</td>
-                          <td>".$row['lastname']."</td>
-                          <td>".$row['gender']."</td>
-                          <td>".$row['address']."</td>
-                          <td>".$row['contact']."</td>
-                          <td>".$row['guardian']."</td>
-                          <td>".$row['guardian_contact']."</td>
-                          <td>".$row['floor_name'].'-'.$row['room_name']."</td>
-                          <td>".$row['code']."</td>
+                       <td>".$row['student_id']."</td>
+                       <td>".$row['lastname']. ' , ' .$row['firstname']. ' ' .$row['middlename']."</td>
+                       <td>" . date('M d, Y', strtotime($row['bdate'])) . "</td>
+                       <td>".$row['privilege']."</td>
+                       <td>".$row['gender']."</td>
+                       <td>".$row['address']."</td>
+                       <td>".$row['contact']."</td>
+                       <td>".$row['email']."</td>
+                       <td>".$row['guardian']."</td>
+                       <td>".$row['guardian_contact']."</td>
+                       <td>".$row['floor_name'].'-'.$row['room_name']."</td>
+                       <td>".$row['code']."</td>
                         
                         </tr>
                       ";
@@ -103,7 +107,6 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/student_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>

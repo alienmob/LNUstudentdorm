@@ -27,7 +27,14 @@
         if ($query->num_rows > 0) {
 			$row = $query->fetch_assoc();
 			$_SESSION['error'] = 'Student ID "' .$row['student_id']. '" Is already in the Database';
+		}else{
+		$sql = "SELECT * FROM students WHERE email = '$email'";
+        $query = $conn->query($sql);
+        if ($query->num_rows > 0) {
+			$row = $query->fetch_assoc();
+			$_SESSION['error'] = 'Email "' .$row['email']. '" Is already in the Database';
 		}
+	
 		else {
 			$sql = "INSERT INTO register (student_id, lname, fname, mname, bdate, gender, course_id, contact, privilege, email, photo, address, guardian, gcontact) VALUES 
 			('$student_id', '$lname', '$fname', '$mname', '$bdate', '$gender', '$course', '$contact', '$privilege', '$email', '$filename', '$address', '$guardian', '$gcontact')";
@@ -35,7 +42,7 @@
 				$_SESSION['success'] = 'Registration sumbitted successfully and pending for approval!';
 			}
 		}
-
+	}
     }
 	else{
 		$_SESSION['error'] = 'Fill up add form first';

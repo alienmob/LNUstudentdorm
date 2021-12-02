@@ -83,21 +83,21 @@
 </div>
 
 <!-- Delete -->
-<div class="modal fade" id="delete">
+<!-- <div class="modal fade" id="delete">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                   <br>
-              <h4 class="modal-title text-center"><b>Delete Student Violation?</b></h4>
+              <h4 class="modal-title text-center"><b>Delete Student Complaint?</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="../php/violation/violation_delete.php">
                 <input type="hidden" class="studid" name="id">
                 <div class="text-center">
                     Name:<h2 class="del_name bold"></h2>
-                    Violation:<h3 class="del_vio bold"></h3>
+                    Complaint:<h3 class="del_com bold"></h3>
                 </div>
             </div>
             <div class="modal-footer">
@@ -107,4 +107,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

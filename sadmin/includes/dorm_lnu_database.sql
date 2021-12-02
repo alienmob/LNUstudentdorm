@@ -1,5 +1,91 @@
 
 
+CREATE TABLE `activity_logs` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `admin_id` int(15) NOT NULL,
+  `date_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `details` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `admin_id` (`admin_id`),
+  CONSTRAINT `activity_logs_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=557 DEFAULT CHARSET=latin1;
+
+INSERT INTO activity_logs VALUES("484","1","2021-12-02 21:20:19","Added ``Lavinia Holcomb`` to the Student record.");
+INSERT INTO activity_logs VALUES("485","1","2021-12-02 21:20:51","Added ``Virginia Singleton Ann Ortega`` to the Student record.");
+INSERT INTO activity_logs VALUES("486","1","2021-12-02 21:22:20","Set Payment for the month of Dec 01, 2021 to Dec 31, 2021");
+INSERT INTO activity_logs VALUES("487","1","2021-12-02 21:26:41","Deleted Virginia Singleton Ann Ortega`s Student record.");
+INSERT INTO activity_logs VALUES("488","1","2021-12-02 21:39:01","Added ``Amela Patton`` to the Student record.");
+INSERT INTO activity_logs VALUES("489","1","2021-12-02 21:39:22","Added ``Aileen Garza`` to the Student record.");
+INSERT INTO activity_logs VALUES("490","1","2021-12-02 21:39:42","Added ``Zenia Hurley`` to the Student record.");
+INSERT INTO activity_logs VALUES("491","1","2021-12-02 21:40:01","Added ``Caesar Warren`` to the Student record.");
+INSERT INTO activity_logs VALUES("492","1","2021-12-02 21:40:17","Added ``Signe Delaney`` to the Student record.");
+INSERT INTO activity_logs VALUES("493","1","2021-12-02 21:40:34","Added ``Uriel Cote`` to the Student record.");
+INSERT INTO activity_logs VALUES("494","1","2021-12-02 21:50:48","Added ``Clean Up Drive | Dec 02, 2021`` as an event in Event Management Record.");
+INSERT INTO activity_logs VALUES("495","1","2021-12-02 21:52:38","Deleted Osborn Kim`s Student record.");
+INSERT INTO activity_logs VALUES("496","1","2021-12-02 21:52:44","Deleted Atkinson Keelie`s Student record.");
+INSERT INTO activity_logs VALUES("497","1","2021-12-02 21:52:49","Deleted Uriel Cote`s Student record.");
+INSERT INTO activity_logs VALUES("498","1","2021-12-02 21:52:54","Deleted Signe Delaney`s Student record.");
+INSERT INTO activity_logs VALUES("499","1","2021-12-02 21:53:06","Deleted Amela Patton`s Student record.");
+INSERT INTO activity_logs VALUES("500","1","2021-12-02 21:53:37","Set Payment for the month of Dec 01, 2021 to Dec 31, 2021");
+INSERT INTO activity_logs VALUES("501","1","2021-12-02 21:54:48","Added Violation Record for ``Jeremiah Embana``.");
+INSERT INTO activity_logs VALUES("502","1","2021-12-02 22:06:19","Confirmed Lynette Pomasin`s Unpaid Payment Record.");
+INSERT INTO activity_logs VALUES("503","1","2021-12-02 22:06:27","Confirmed Gia Nila Pantas`s Unpaid Payment Record.");
+INSERT INTO activity_logs VALUES("504","1","2021-12-02 22:06:34","Confirmed Magee Everett Julie Gould`s Unpaid Payment Record.");
+INSERT INTO activity_logs VALUES("505","1","2021-12-02 22:06:42","Confirmed Leach Kai`s Unpaid Payment Record.");
+INSERT INTO activity_logs VALUES("506","1","2021-12-02 22:07:10","Set Payment for the month of Nov 01, 2021 to Nov 30, 2021");
+INSERT INTO activity_logs VALUES("507","1","2021-12-02 22:15:47","Sent ``Deadline Today`` Email Notification to All Registered Students.");
+INSERT INTO activity_logs VALUES("508","1","2021-12-02 22:15:56","Sent Email Notification to All Late Unpaid Students.");
+INSERT INTO activity_logs VALUES("509","1","2021-12-02 22:22:59","Signed Out");
+INSERT INTO activity_logs VALUES("510","1","2021-12-02 23:05:38","Signed In");
+INSERT INTO activity_logs VALUES("511","1","2021-12-02 23:05:45","Sent ``Deadline Today`` Email Notification to All Registered Students.");
+INSERT INTO activity_logs VALUES("512","1","2021-12-02 23:06:19","Sent Email Notification to All Late Unpaid Students.");
+INSERT INTO activity_logs VALUES("513","1","2021-12-02 23:12:12","Changed RFID Function to ``Event Attendance Mode``");
+INSERT INTO activity_logs VALUES("514","1","2021-12-02 23:12:21","Changed RFID Function to ``Log Book Mode``");
+INSERT INTO activity_logs VALUES("515","1","2021-12-02 23:12:27","Changed RFID Function to ``Event Attendance Mode``");
+INSERT INTO activity_logs VALUES("516","1","2021-12-02 23:12:32","Changed RFID Function to ``Log Book Mode``");
+INSERT INTO activity_logs VALUES("517","1","2021-12-02 23:12:41","Changed RFID Function to ``Event Attendance Mode``");
+INSERT INTO activity_logs VALUES("518","1","2021-12-02 23:12:54","Changed RFID Function to ``Log Book Mode``");
+INSERT INTO activity_logs VALUES("519","1","2021-12-02 23:13:00","Changed RFID Function to ``Event Attendance Mode``");
+INSERT INTO activity_logs VALUES("520","1","2021-12-02 23:14:09","Changed RFID Function to ``Log Book Mode``");
+INSERT INTO activity_logs VALUES("521","1","2021-12-02 23:23:03","Confirmed Jeremiah Embana`s Unpaid Payment Record.");
+INSERT INTO activity_logs VALUES("522","1","2021-12-02 23:39:14","Signed Out");
+INSERT INTO activity_logs VALUES("523","1","2021-12-02 23:39:29","Signed In");
+INSERT INTO activity_logs VALUES("524","1","2021-12-02 23:39:42","Deleted Jeremiah Embana`s Student record.");
+INSERT INTO activity_logs VALUES("525","1","2021-12-02 23:50:11","Added ``Jeremiah Embana`` to the Student record.");
+INSERT INTO activity_logs VALUES("526","1","2021-12-02 23:52:53","Approved Jeremiah Embana`s borrow request for Blanket.");
+INSERT INTO activity_logs VALUES("527","1","2021-12-02 23:54:19","Returned Jeremiah Embana`s borrowed Blanket.");
+INSERT INTO activity_logs VALUES("528","1","2021-12-02 23:56:24","Set Payment for the month of Dec 01, 2021 to Jan 31, 2022");
+INSERT INTO activity_logs VALUES("529","1","2021-12-02 23:59:11","Confirmed Jeremiah Embana`s Unpaid Payment Record.");
+INSERT INTO activity_logs VALUES("530","1","2021-12-03 00:02:06","Added Violation Record for ``Jeremiah Embana``.");
+INSERT INTO activity_logs VALUES("531","1","2021-12-03 00:02:54","Deleted Violation Record of ``Jeremiah Embana``.");
+INSERT INTO activity_logs VALUES("532","1","2021-12-03 00:03:14","Added Violation Record for ``Jeremiah Embana``.");
+INSERT INTO activity_logs VALUES("533","1","2021-12-03 00:08:26","Added ``Meeting | Dec 03, 2021`` as an event in Event Management Record.");
+INSERT INTO activity_logs VALUES("534","1","2021-12-03 00:09:47","Changed RFID Function to ``Event Attendance Mode``");
+INSERT INTO activity_logs VALUES("535","1","2021-12-03 00:11:02","Changed RFID Function to ``Log Book Mode``");
+INSERT INTO activity_logs VALUES("536","1","2021-12-03 00:11:24","Signed Out");
+INSERT INTO activity_logs VALUES("537","1","2021-12-03 00:11:36","Signed In");
+INSERT INTO activity_logs VALUES("538","1","2021-12-03 00:18:58","Added ``Clean Up Drive | Dec 06, 2021`` as an event in Event Management Record.");
+INSERT INTO activity_logs VALUES("539","1","2021-12-03 00:19:25","Cancelled ``Clean Up Drive | Dec 06, 2021`` event in Event Management Record.");
+INSERT INTO activity_logs VALUES("540","1","2021-12-03 00:21:28","Cleared All Cancelled events in Event Management Record.");
+INSERT INTO activity_logs VALUES("541","1","2021-12-03 00:22:20","Increased occupancy for 1st Floor - Room 2 in Room Management.");
+INSERT INTO activity_logs VALUES("542","1","2021-12-03 00:22:33","Decreased occupancy for 1st Floor - Room 2 in Room Management.");
+INSERT INTO activity_logs VALUES("543","1","2021-12-03 00:23:14","Modified status for 1st Floor - Room 2 to Unavailable in Room Management.");
+INSERT INTO activity_logs VALUES("544","1","2021-12-03 00:26:32","Added ``Jasmine Young`` to the Transient record.");
+INSERT INTO activity_logs VALUES("545","1","2021-12-03 00:27:05","Checked-Out Jasmine Young.");
+INSERT INTO activity_logs VALUES("546","1","2021-12-03 00:29:24","Sent Email Notification to All Late Unpaid Students.");
+INSERT INTO activity_logs VALUES("547","1","2021-12-03 00:31:37","Modified status for 1st Floor - Room 2 to Available in Room Management.");
+INSERT INTO activity_logs VALUES("548","1","2021-12-03 00:36:41","Increased occupancy for 1st Floor - Room 2 in Room Management.");
+INSERT INTO activity_logs VALUES("549","1","2021-12-03 00:37:44","Modified status for 2nd Floor - Room 1 to Unavailable in Room Management.");
+INSERT INTO activity_logs VALUES("550","1","2021-12-03 00:37:50","Modified status for 2nd Floor - Room 1 to Available in Room Management.");
+INSERT INTO activity_logs VALUES("551","1","2021-12-03 00:47:31","Set Payment for the month of Dec 01, 2021 to Jan 31, 2022");
+INSERT INTO activity_logs VALUES("552","1","2021-12-03 00:48:32","Deleted Leach Kai`s Student record.");
+INSERT INTO activity_logs VALUES("553","1","2021-12-03 00:48:38","Deleted Caesar Warren`s Student record.");
+INSERT INTO activity_logs VALUES("554","1","2021-12-03 00:48:45","Deleted Aileen Garza`s Student record.");
+INSERT INTO activity_logs VALUES("555","1","2021-12-03 00:49:02","Deleted Magee Everett Julie Gould`s Student record.");
+INSERT INTO activity_logs VALUES("556","1","2021-12-03 00:49:23","Deleted Lavinia Holcomb`s Student record.");
+
+
+
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
@@ -30,7 +116,7 @@ CREATE TABLE `borrow` (
   KEY `equipment_id` (`equipment_id`),
   CONSTRAINT `borrow_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `borrow_ibfk_2` FOREIGN KEY (`equipment_id`) REFERENCES `equipments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=latin1;
 
 
 
@@ -39,7 +125,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 INSERT INTO category VALUES("1","Appliances");
 INSERT INTO category VALUES("4","Furniture");
@@ -64,8 +150,9 @@ CREATE TABLE `checkin` (
   CONSTRAINT `checkin_ibfk_1` FOREIGN KEY (`transient_id`) REFERENCES `transient` (`transient_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `checkin_ibfk_2` FOREIGN KEY (`floor_id`) REFERENCES `floor_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `checkin_ibfk_3` FOREIGN KEY (`room_id`) REFERENCES `room_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
+INSERT INTO checkin VALUES("60","GKF9168","4","5","2021-12-02","14:55:00","2021-12-03","14:56:00","");
 
 
 
@@ -86,21 +173,24 @@ CREATE TABLE `checkout` (
   CONSTRAINT `checkout_ibfk_1` FOREIGN KEY (`transient_id`) REFERENCES `transient` (`transient_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `checkout_ibfk_2` FOREIGN KEY (`floor_id`) REFERENCES `floor_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `checkout_ibfk_3` FOREIGN KEY (`room_id`) REFERENCES `room_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
-INSERT INTO checkout VALUES("18","UON1059","1","2","1994-03-27","02:59:00","1999-08-18","11:29:00","0");
-INSERT INTO checkout VALUES("20","UON1059","1","2","1997-02-05","22:20:00","2016-06-23","02:42:00","0");
-INSERT INTO checkout VALUES("21","GDZ0829","1","2","2011-04-24","02:52:00","2003-01-05","07:20:00","0");
-INSERT INTO checkout VALUES("22","GDZ0829","1","2","1980-07-05","07:16:00","2021-05-29","19:34:00","0");
-INSERT INTO checkout VALUES("23","GDZ0829","1","2","1997-05-25","06:51:00","1977-09-30","22:02:00","0");
-INSERT INTO checkout VALUES("24","GDZ0829","1","2","2003-12-19","15:33:00","2003-12-22","16:31:00","0");
-INSERT INTO checkout VALUES("25","GDZ0829","1","2","2016-08-15","15:59:00","2010-09-01","22:14:00","0");
-INSERT INTO checkout VALUES("26","GDZ0829","1","2","1992-05-17","02:43:00","1978-12-12","09:10:00","0");
-INSERT INTO checkout VALUES("27","GDZ0829","1","2","1996-10-10","21:04:00","1973-01-02","14:38:00","0");
-INSERT INTO checkout VALUES("28","GDZ0829","1","2","2015-06-25","07:14:00","2019-11-15","19:35:00","0");
-INSERT INTO checkout VALUES("29","GDZ0829","1","2","2018-05-30","00:24:00","2011-11-15","06:47:00","0");
-INSERT INTO checkout VALUES("30","GKF9168","3","3","2012-11-10","18:07:00","2002-11-26","22:26:00","");
-INSERT INTO checkout VALUES("31","GKF9168","1","3","2021-11-09","01:45:00","2021-11-11","01:45:00","");
+INSERT INTO checkout VALUES("44","GKF9168","4","5","2021-12-02","14:48:00","2021-12-03","14:48:00","1");
+INSERT INTO checkout VALUES("45","KRF5062","2","2","2007-05-09","00:57:00","2008-04-16","19:25:00","1");
+
+
+
+CREATE TABLE `complaints` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `student_id` int(15) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `complaint` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_id` (`student_id`),
+  CONSTRAINT `complaints_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+INSERT INTO complaints VALUES("8","1800649","2021-12-03 00:03:48","i lost my wallet");
 
 
 
@@ -132,27 +222,11 @@ CREATE TABLE `equipments` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `equipments_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
-INSERT INTO equipments VALUES("20","S06","5","Mattress/Foam","10","0","10","0","10","0");
-INSERT INTO equipments VALUES("21","P28","5","Pillow","10","0","10","0","10","0");
-INSERT INTO equipments VALUES("22","K56","5","Blanket","10","0","10","0","10","0");
-INSERT INTO equipments VALUES("23","D58","5","Bed Sheet","10","0","10","5","15","0");
-INSERT INTO equipments VALUES("24","N34","1","Electric Fan","10","0","10","0","10","0");
-
-
-
-CREATE TABLE `equipments_u` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(20) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `title` text NOT NULL,
-  `quantity` bigint(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `category_id` (`category_id`),
-  CONSTRAINT `equipments_u_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+INSERT INTO equipments VALUES("21","P28","5","Pillow","10","0","10","10","20","0");
+INSERT INTO equipments VALUES("22","K56","5","Blanket","10","0","10","5","15","0");
+INSERT INTO equipments VALUES("23","D58","5","Bed Sheet","15","0","15","5","20","0");
 
 
 
@@ -165,15 +239,36 @@ CREATE TABLE `event` (
   `time_start` time NOT NULL,
   `time_end` time NOT NULL,
   `status` varchar(50) DEFAULT NULL,
-  `attendance` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `event_category_id` (`event_category_id`),
   CONSTRAINT `event_ibfk_1` FOREIGN KEY (`event_category_id`) REFERENCES `event_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
-INSERT INTO event VALUES("40","1","Ipsa et nihil ut et","Ullam quo iure eos ","2010-11-18","15:49:00","02:43:00","","fdgdf");
-INSERT INTO event VALUES("49","2","lorem","LNU Dorm Grounds","2021-11-09","09:00:00","10:00:00","Cancelled!","");
-INSERT INTO event VALUES("50","1","Dolor minus non dese","Pariatur Minim duci","2001-01-05","13:42:00","05:30:00","","");
+INSERT INTO event VALUES("52","2","clean clean","LNU Dorm Building","2021-11-14","20:57:00","20:57:00","");
+INSERT INTO event VALUES("55","1","meeting meeting ","LNU Dorm Grounds","2021-11-15","16:30:00","17:30:00","");
+INSERT INTO event VALUES("62","2","Monthly Pintakasi","LNU Dorm Grounds","2021-12-02","21:44:00","22:44:00","");
+INSERT INTO event VALUES("63","1","Vel nostrum et incid","LNU Dorm Building","2021-12-03","00:07:00","01:07:00","");
+
+
+
+CREATE TABLE `event_attendance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rfid_id` varchar(100) NOT NULL,
+  `event_id` int(15) NOT NULL,
+  `event_date` varchar(100) NOT NULL,
+  `time_in` varchar(100) NOT NULL,
+  `time_out` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rfid_id` (`rfid_id`),
+  KEY `event_attendance_ibfk_2` (`event_id`),
+  CONSTRAINT `event_attendance_ibfk_1` FOREIGN KEY (`rfid_id`) REFERENCES `students` (`rfid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `event_attendance_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+
+INSERT INTO event_attendance VALUES("21","0435A012","62","2021-12-02","11:13 pm","11:13 pm");
+INSERT INTO event_attendance VALUES("22","9AB00DBF","62","2021-12-02","11:13 pm","11:13 pm");
+INSERT INTO event_attendance VALUES("23","09DF60B8","62","2021-12-02","11:13 pm","11:13 pm");
+INSERT INTO event_attendance VALUES("24","FADEEEBE","63","2021-12-03","12:10 am","12:10 am");
 
 
 
@@ -181,7 +276,7 @@ CREATE TABLE `event_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 INSERT INTO event_category VALUES("1","Meeting");
 INSERT INTO event_category VALUES("2","Clean Up Drive");
@@ -193,7 +288,7 @@ CREATE TABLE `floor_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `floor_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 INSERT INTO floor_category VALUES("1","1st Floor");
 INSERT INTO floor_category VALUES("2","2nd Floor");
@@ -211,13 +306,12 @@ CREATE TABLE `log_book` (
   PRIMARY KEY (`id`),
   KEY `log_book_ibfk_1` (`rfid_id`),
   CONSTRAINT `log_book_ibfk_1` FOREIGN KEY (`rfid_id`) REFERENCES `students` (`rfid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=195 DEFAULT CHARSET=latin1;
 
-INSERT INTO log_book VALUES("154","0435A012","2021-10-18","10:10 pm","10:11 pm");
-INSERT INTO log_book VALUES("155","FADEEEBE","2021-10-18","10:10 pm","10:11 pm");
-INSERT INTO log_book VALUES("156","9AB00DBF","2021-10-18","10:10 pm","10:11 pm");
-INSERT INTO log_book VALUES("165","9AB00DBF","2021-11-08","10:30 pm","10:31 pm");
-INSERT INTO log_book VALUES("166","D541EC2D","2021-11-11","11:19 am","11:20 am");
+INSERT INTO log_book VALUES("190","09DF60B8","2021-12-02","11:10 pm","11:11 pm");
+INSERT INTO log_book VALUES("191","9AB00DBF","2021-12-02","11:10 pm","11:11 pm");
+INSERT INTO log_book VALUES("192","0435A012","2021-12-02","11:11 pm","11:11 pm");
+INSERT INTO log_book VALUES("194","FADEEEBE","2021-12-03","12:05 am","12:06 am");
 
 
 
@@ -232,9 +326,11 @@ CREATE TABLE `paid` (
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   CONSTRAINT `paid_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=latin1;
 
-INSERT INTO paid VALUES("220","1800123","2021-11-04","2021-11-30","2021-11-11 11:31:18","1","minato.png");
+INSERT INTO paid VALUES("283","1800728","2021-12-01","2022-01-31","2021-12-02 23:56:24","1","");
+INSERT INTO paid VALUES("285","1800649","2021-12-01","2022-01-31","2021-12-02 23:59:11","1","Dorm Receipt.jpg");
+INSERT INTO paid VALUES("287","1800728","2021-12-01","2022-01-31","2021-12-03 00:47:31","1","");
 
 
 
@@ -244,7 +340,7 @@ CREATE TABLE `password_reset` (
   `token` varchar(100) NOT NULL,
   `expDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
 
 
 
@@ -263,25 +359,34 @@ CREATE TABLE `pending` (
   KEY `equipment_id` (`equipment_id`),
   CONSTRAINT `pending_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `pending_ibfk_2` FOREIGN KEY (`equipment_id`) REFERENCES `equipments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=204 DEFAULT CHARSET=latin1;
 
-INSERT INTO pending VALUES("148","1800123","21","Impedit cupiditate ","Enim laborum recusan","","2021-11-11 11:22:51","1");
+INSERT INTO pending VALUES("203","1800649","22","Eum deleniti ipsa o","Voluptate quisquam v","","2021-12-02 23:52:12","1");
 
 
 
-CREATE TABLE `promissory` (
+CREATE TABLE `register` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `student_id` int(11) NOT NULL,
-  `date_from` date NOT NULL,
-  `date_to` date NOT NULL,
-  `pnote` varchar(255) NOT NULL,
-  `date_promissory` timestamp NOT NULL DEFAULT current_timestamp(),
-  `deadline` date NOT NULL,
-  `status` int(1) NOT NULL,
+  `student_id` int(15) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `mname` varchar(100) NOT NULL,
+  `bdate` date NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `course_id` int(15) NOT NULL,
+  `contact` varchar(50) NOT NULL,
+  `privilege` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `photo` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `guardian` varchar(100) NOT NULL,
+  `gcontact` varchar(50) NOT NULL,
+  `status` int(1) DEFAULT 0,
+  `curr_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
-  KEY `student_id` (`student_id`),
-  CONSTRAINT `promissory_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+  KEY `course` (`course_id`),
+  CONSTRAINT `register_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 
 
@@ -292,26 +397,11 @@ CREATE TABLE `reports` (
   `equipment_reports` varchar(100) NOT NULL,
   `details` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
-INSERT INTO reports VALUES("10","2021-09-21 18:10:33","Pillow","Added 5 Pillow as Serviceable Equipment");
-INSERT INTO reports VALUES("11","2021-09-21 18:10:44","Electric Fan","Marked 1 Electric Fan as Unerviceable Equipment");
-INSERT INTO reports VALUES("12","2021-09-21 18:10:54","Blanket","Marked 2 Blanket as Unerviceable Equipment");
-INSERT INTO reports VALUES("13","2021-09-21 20:12:44","Bed Sheet","Added 5 Bed Sheet as Serviceable Equipment");
-INSERT INTO reports VALUES("14","2021-09-21 20:13:01","Mattress/Foam","Marked 1 Mattress/Foam as Unerviceable Equipment");
-INSERT INTO reports VALUES("16","2021-10-17 22:00:20","Mattress/Foam","Marked 13 Mattress/Foam as Unserviceable Equipment");
-INSERT INTO reports VALUES("17","2021-10-17 22:03:57","Mattress/Foam","Added 1 Mattress/Foam as Serviceable Equipment");
-INSERT INTO reports VALUES("18","2021-10-17 22:09:16","Mattress/Foam","Added 1 Mattress/Foam as Serviceable Equipment");
-INSERT INTO reports VALUES("19","2021-10-17 22:28:24","Mattress/Foam","Added 1 Mattress/Foam as Serviceable Equipment");
-INSERT INTO reports VALUES("20","2021-10-17 23:17:59","Bed Sheet","Added 10 Bed Sheet as Serviceable Equipment");
-INSERT INTO reports VALUES("21","2021-10-17 23:18:26","Bed Sheet","Marked 5 Bed Sheet as Unserviceable Equipment");
-INSERT INTO reports VALUES("22","2021-10-17 23:18:39","Bed Sheet","Added 5 Bed Sheet as Serviceable Equipment");
-INSERT INTO reports VALUES("23","2021-10-17 23:24:02","Blanket","Added 10 Blanket as Serviceable Equipment");
-INSERT INTO reports VALUES("24","2021-10-17 23:24:07","Electric Fan","Added 10 Electric Fan as Serviceable Equipment");
-INSERT INTO reports VALUES("25","2021-10-17 23:24:12","Mattress/Foam","Added 10 Mattress/Foam as Serviceable Equipment");
-INSERT INTO reports VALUES("26","2021-10-17 23:24:17","Pillow","Added 10 Pillow as Serviceable Equipment");
-INSERT INTO reports VALUES("27","2021-11-08 01:42:59","qaaq","Added 5 qaaq as Serviceable Equipment");
-INSERT INTO reports VALUES("28","2021-11-08 01:43:08","qaaq","Marked 5 qaaq as Unserviceable Equipment");
+INSERT INTO reports VALUES("40","2021-12-02 14:49:38","Pillow","Marked 5 Pillow as Unserviceable Equipment");
+INSERT INTO reports VALUES("41","2021-12-02 14:49:49","Pillow","Added 5 Pillow as Serviceable Equipment");
+INSERT INTO reports VALUES("42","2021-12-02 14:50:01","Blanket","Marked 5 Blanket as Unserviceable Equipment");
 
 
 
@@ -325,34 +415,25 @@ CREATE TABLE `returns` (
   KEY `equipment_id` (`equipment_id`),
   CONSTRAINT `returns_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `returns_ibfk_2` FOREIGN KEY (`equipment_id`) REFERENCES `equipments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=latin1;
 
-INSERT INTO returns VALUES("104","1800649","23","2021-10-17 23:23:30");
-INSERT INTO returns VALUES("105","1800649","23","2021-10-17 23:23:33");
-INSERT INTO returns VALUES("106","1800649","24","2021-11-02 21:07:20");
-INSERT INTO returns VALUES("107","1800649","20","2021-11-02 21:07:26");
-INSERT INTO returns VALUES("108","1800649","21","2021-11-02 21:07:30");
-INSERT INTO returns VALUES("109","1800567","22","2021-11-05 22:34:56");
-INSERT INTO returns VALUES("110","1800649","21","2021-11-05 22:35:02");
-INSERT INTO returns VALUES("111","1800649","23","2021-11-07 23:35:48");
-INSERT INTO returns VALUES("112","1800649","23","2021-11-07 23:39:03");
-INSERT INTO returns VALUES("113","1800649","23","2021-11-07 23:43:09");
-INSERT INTO returns VALUES("114","1800649","20","2021-11-07 23:49:36");
-INSERT INTO returns VALUES("115","1800649","23","2021-11-07 23:49:39");
-INSERT INTO returns VALUES("117","1800123","21","2021-11-11 11:24:26");
+INSERT INTO returns VALUES("137","1800649","22","2021-12-02 23:54:19");
 
 
 
 CREATE TABLE `rfid_setting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `setting_id` int(1) NOT NULL,
+  `event_id` int(15) DEFAULT NULL,
   `status` int(1) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `setting_id` (`setting_id`),
-  CONSTRAINT `rfid_setting_ibfk_1` FOREIGN KEY (`setting_id`) REFERENCES `setting` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `event_id` (`event_id`),
+  CONSTRAINT `rfid_setting_ibfk_1` FOREIGN KEY (`setting_id`) REFERENCES `setting` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `rfid_setting_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-INSERT INTO rfid_setting VALUES("1","1","0");
+INSERT INTO rfid_setting VALUES("1","1","","0");
 
 
 
@@ -360,13 +441,22 @@ CREATE TABLE `room_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `room_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 INSERT INTO room_category VALUES("1","Room 1");
 INSERT INTO room_category VALUES("2","Room 2");
 INSERT INTO room_category VALUES("3","Room 3");
 INSERT INTO room_category VALUES("4","Room 4");
 INSERT INTO room_category VALUES("5","Room 5");
+
+
+
+CREATE TABLE `room_equipment` (
+  `room_id` int(15) NOT NULL,
+  `equipment_id` int(15) NOT NULL,
+  `quantity` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 
@@ -379,19 +469,21 @@ CREATE TABLE `room_report` (
   PRIMARY KEY (`id`),
   KEY `room_id` (`room_id`),
   CONSTRAINT `room_report_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
 
-INSERT INTO room_report VALUES("34","2021-10-21 01:34:43","2","Marked as Available","dfsdf");
-INSERT INTO room_report VALUES("35","2021-10-21 01:34:49","2","Occupancy decreased by 1","sdfsdf");
-INSERT INTO room_report VALUES("36","2021-10-21 01:34:56","2","Occupancy increased by 1","sdfsdf");
-INSERT INTO room_report VALUES("37","2021-10-21 01:35:01","2","Marked as Unavailable","sdfsdf");
-INSERT INTO room_report VALUES("38","2021-10-21 01:35:05","2","Marked as Available","sdfsdf");
-INSERT INTO room_report VALUES("39","2021-10-21 01:37:54","2","Marked as Unavailable","dsfsdf");
-INSERT INTO room_report VALUES("40","2021-10-22 17:08:25","2","Occupancy increased by 1","asf");
-INSERT INTO room_report VALUES("41","2021-10-25 11:26:58","1","Occupancy decreased by 1","Voluptates veniam d");
-INSERT INTO room_report VALUES("42","2021-10-25 11:27:13","1","Occupancy increased by 1","Et repellendus Reru");
-INSERT INTO room_report VALUES("43","2021-10-25 11:27:34","1","Marked as Unavailable","Eligendi aliquid qui");
-INSERT INTO room_report VALUES("44","2021-11-05 00:13:36","1","Marked as Available","dfs");
+INSERT INTO room_report VALUES("60","2021-11-28 01:52:37","2","Occupancy decreased by 4","tyhyh");
+INSERT INTO room_report VALUES("61","2021-11-28 01:53:39","2","Occupancy increased by 4","fdf");
+INSERT INTO room_report VALUES("62","2021-11-28 01:59:38","2","Occupancy decreased by 1","dfsfdf");
+INSERT INTO room_report VALUES("63","2021-11-28 01:59:43","2","Occupancy increased by 1","sdfsdfs");
+INSERT INTO room_report VALUES("64","2021-11-28 01:59:51","2","Occupancy decreased by 3","sdfsdf");
+INSERT INTO room_report VALUES("65","2021-11-28 02:00:04","2","Occupancy increased by 3","fdffds");
+INSERT INTO room_report VALUES("66","2021-12-03 00:22:20","2","Occupancy increased by 1","Nam quos ab adipisic");
+INSERT INTO room_report VALUES("67","2021-12-03 00:22:33","2","Occupancy decreased by 1","Sed est nulla esse ");
+INSERT INTO room_report VALUES("68","2021-12-03 00:23:14","2","Marked as Unavailable","Aut alias tenetur eu");
+INSERT INTO room_report VALUES("69","2021-12-03 00:31:37","2","Marked as Available","75utr");
+INSERT INTO room_report VALUES("70","2021-12-03 00:36:41","2","Occupancy increased by 5","Lorem");
+INSERT INTO room_report VALUES("71","2021-12-03 00:37:44","6","Marked as Unavailable","fgdgf");
+INSERT INTO room_report VALUES("72","2021-12-03 00:37:50","6","Marked as Available","fdfgdfg");
 
 
 
@@ -408,19 +500,19 @@ CREATE TABLE `rooms` (
   KEY `room_category_id` (`room_category_id`),
   CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`floor_category_id`) REFERENCES `floor_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `rooms_ibfk_2` FOREIGN KEY (`room_category_id`) REFERENCES `room_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=latin1;
 
-INSERT INTO rooms VALUES("1","1-1","1","1","1","15","0");
-INSERT INTO rooms VALUES("2","1-2","1","2","0","5","1");
-INSERT INTO rooms VALUES("3","1-3","1","3","1","16","0");
+INSERT INTO rooms VALUES("1","1-1","1","1","2","15","0");
+INSERT INTO rooms VALUES("2","1-2","1","2","0","9","0");
+INSERT INTO rooms VALUES("3","1-3","1","3","0","16","0");
 INSERT INTO rooms VALUES("4","1-4","1","4","0","16","0");
 INSERT INTO rooms VALUES("5","1-5","1","5","0","16","0");
 INSERT INTO rooms VALUES("6","2-1","2","1","0","15","0");
 INSERT INTO rooms VALUES("7","2-2","2","2","1","16","0");
-INSERT INTO rooms VALUES("8","2-3","2","3","0","16","0");
+INSERT INTO rooms VALUES("8","2-3","2","3","1","16","0");
 INSERT INTO rooms VALUES("9","2-4","2","4","0","16","0");
 INSERT INTO rooms VALUES("10","2-5","2","5","0","16","0");
-INSERT INTO rooms VALUES("11","3-1","3","1","0","16","0");
+INSERT INTO rooms VALUES("11","3-1","3","1","1","16","0");
 INSERT INTO rooms VALUES("12","3-2","3","2","0","16","0");
 INSERT INTO rooms VALUES("13","3-3","3","3","0","16","0");
 INSERT INTO rooms VALUES("14","3-4","3","4","0","16","0");
@@ -439,8 +531,8 @@ CREATE TABLE `setting` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-INSERT INTO setting VALUES("1","Log Book");
-INSERT INTO setting VALUES("2","Event Attendance");
+INSERT INTO setting VALUES("1","Log Book MODE");
+INSERT INTO setting VALUES("2","Event Attendance MODE");
 
 
 
@@ -449,7 +541,9 @@ CREATE TABLE `students` (
   `rfid` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `firstname` varchar(50) NOT NULL,
+  `middlename` varchar(100) NOT NULL,
   `lastname` varchar(50) NOT NULL,
+  `bdate` date NOT NULL,
   `gender` varchar(100) NOT NULL,
   `address` varchar(255) NOT NULL,
   `contact` varchar(20) NOT NULL,
@@ -462,8 +556,10 @@ CREATE TABLE `students` (
   `guardian_contact` varchar(20) NOT NULL,
   `photo` varchar(200) DEFAULT NULL,
   `course_id` int(11) NOT NULL,
+  `unpaid_total` int(15) DEFAULT 0,
   `status` int(1) DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `verified_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`student_id`),
   UNIQUE KEY `rfid_id` (`rfid`),
   KEY `course_id` (`course_id`),
@@ -476,10 +572,11 @@ CREATE TABLE `students` (
   CONSTRAINT `students_ibfk_5` FOREIGN KEY (`actualroom_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO students VALUES("1800123","D541EC2D","$2y$10$Wdc7k4c7xmsoGBHI.Hg29uWqwoHjcxf3n4XVoNx27vTz/md/8d2hW","Polano","SurnamePol","Male","Aut enim vel volupta","+630909090909","2","2","7","jeremiahembana22@gmail.com","Athlete","Father Name sample","0965345345565","","2","1","2021-11-11 11:19:33");
-INSERT INTO students VALUES("1800234","0435A012","$2y$10$uOEprdOjqZAKH5qEImdJYuCyFGg.BC89YsiCGRvGqJb5zy2hV0Wx6","Lynette","Pomasin","Female","Samar","+633653653445","1","1","1","pomasin@gmail.com","Athlete","Mrs. Pomasin","09123232233","","2","1","2021-07-08 23:30:17");
-INSERT INTO students VALUES("1800567","9AB00DBF","$2y$10$diKHkQssg.oilu6jmSMHcuiK/WxQ22kRMFSbLakRcwhQ3s43IWLjm","Gia Nila","Pantas","Female","Tacloban City","+633653653445","1","3","3","embanaj@gmail.com","Non-Athlete","Gil Pantas","09123456789","profile.jpg","2","1","2021-07-07 15:04:32");
-INSERT INTO students VALUES("1800649","FADEEEBE","$2y$10$Tvu759EE1vXNKh4b5gWUUeWZ0b6LR8k18PRrzjrTd1vEgwuPQCzD6","Jeremiah","Embana","Male","Brgy. 76 Fatima Village Tacloban City, Leyte","+639613057822","4","5","20","jeremiahembana22@gmail.com","Athlete","Jeany Embana","09063774018","ID PIC.png","2","1","2021-06-12 20:30:31");
+INSERT INTO students VALUES("1800234","09DF60B8","$2y$10$OIoMrdl6H43NnARzfb0ytebRuDD4FmmQsda1jxk9Zf88boyBXvVmu","Jalyne","L","Terrora","2000-01-01","Female","Brgy. 89 Jaro, Leyte","09876543210","2","2","7","terrorajalyne@gmail.com","Non-Athlete","Mr. Terrora","09876357267","jalyne.jpg","2","1","1","2021-12-02 21:15:10","");
+INSERT INTO students VALUES("1800567","9AB00DBF","$2y$10$CHyGpXl/.o2lEGY/1CYgNuMNpfouYQNkM6pddgCAjDhIX8e0VIbVu","Gia Nila","Pore","Pantas","2000-03-15","Female","Brgy. 77 PC Village  Marasbaras Tacloban City, Leyte","09876545678","1","1","1","pantasgianila@gmail.com","Non-Athlete","Gil Pantas","097543567875","yang.jpg","2","1","1","2021-11-24 09:39:39","2021-11-24 02:41:24");
+INSERT INTO students VALUES("1800649","FADEEEBE","$2y$10$d9z8329rJauR73hS3Nl8GOPWwDcPUHxIJr8Y4/ZvQIV1Mrbv9fBNG","Jeremiah","Orpeza","Embana","1999-11-10","Male","Brgy. 76 Fatima Village Tacloban City, Leyte","09063774018","1","1","1","jeremiahembana22@gmail.com","Non-Athlete","Jeany Embana","09665325814","MAYA.png","2","1","1","2021-12-02 23:50:11","2021-12-02 16:50:56");
+INSERT INTO students VALUES("1800728","Sit laboris illo exp","$2y$10$OL1qXhs.a8JW3/HNUiA5l.RskMUKMU2/EcBobO8c1NTuWPPVpzi0W","Zenia","Douglas","Hurley","2021-04-09","Female","Expedita quasi non a","09827382739","3","1","11","zusa@mailinator.com","Athlete","Dolor voluptatem vol","09738462736","profile.jpg","2","0","0","2021-12-02 21:39:42","");
+INSERT INTO students VALUES("1800789","0435A012","$2y$10$M8ghePu1Jo2WdIZXRm3p/eRh155k6RiHDQ7KDddq96s7bgHQvz0Gu","Lynette","G","Pomasin","1999-02-02","Female","Brgy. 98 Samar","09872637481","2","3","8","lynettepomasin@gmail.com","Non-Athlete","Mrs. Pomasin","09273846127","profile.jpg","2","1","1","2021-12-02 21:15:50","");
 
 
 
@@ -510,8 +607,8 @@ CREATE TABLE `transient` (
   PRIMARY KEY (`transient_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO transient VALUES("GDZ0829","Kirby","Rhodes","Male","Qui magni nostrud su","714288424","0","2021-10-17 19:05:07");
-INSERT INTO transient VALUES("GKF9168","Ivor","Chandler","Male","Commodi ducimus et ","09099090","0","2021-11-08 01:44:53");
+INSERT INTO transient VALUES("GKF9168","Ivor","Chandler","Male","Commodi ducimus et ","09099090","1","2021-11-08 01:44:53");
+INSERT INTO transient VALUES("KRF5062","Jasmine","Young","Female","Architecto ducimus ","09765464433","0","2021-12-03 00:26:32");
 INSERT INTO transient VALUES("UON1059","Jeremiah","Embana","Male","Brgy. 76 Fatima Village Tacloban City, Leyte","09063774018","0","2021-06-29 09:32:19");
 
 
@@ -528,14 +625,47 @@ CREATE TABLE `unpaid` (
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   CONSTRAINT `unpaid_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=460 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=570 DEFAULT CHARSET=latin1;
 
-INSERT INTO unpaid VALUES("450","1800234","2021-11-01","2021-11-30","2021-11-08 20:22:56","2021-11-15","","");
-INSERT INTO unpaid VALUES("451","1800567","2021-11-01","2021-11-30","2021-11-08 20:22:56","2021-11-15","","");
-INSERT INTO unpaid VALUES("452","1800649","2021-11-01","2021-11-30","2021-11-08 20:22:56","2021-11-15","","");
-INSERT INTO unpaid VALUES("454","1800234","2021-11-04","2021-11-30","2021-11-11 11:26:53","2021-11-16","","");
-INSERT INTO unpaid VALUES("455","1800567","2021-11-04","2021-11-30","2021-11-11 11:26:53","2021-11-16","","");
-INSERT INTO unpaid VALUES("456","1800649","2021-11-04","2021-11-30","2021-11-11 11:26:53","2021-11-16","","");
+INSERT INTO unpaid VALUES("564","1800234","2021-12-01","2022-01-31","2021-12-03 00:47:31","2021-12-16","0","");
+INSERT INTO unpaid VALUES("567","1800567","2021-12-01","2022-01-31","2021-12-03 00:47:31","2021-12-16","0","");
+INSERT INTO unpaid VALUES("568","1800649","2021-12-01","2022-01-31","2021-12-03 00:47:31","2021-12-16","0","");
+INSERT INTO unpaid VALUES("569","1800789","2021-12-01","2022-01-31","2021-12-03 00:47:31","2021-12-16","0","");
+
+
+
+CREATE TABLE `verification` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+
+INSERT INTO verification VALUES("10","gowoqox@mailinator.com","768e78024aa8fdb9b8fe87be86f64745745ca4b50a");
+INSERT INTO verification VALUES("13","terrorajalyne@gmail.com","768e78024aa8fdb9b8fe87be86f64745dd032de013");
+INSERT INTO verification VALUES("14","cajomulynu@mailinator.com","768e78024aa8fdb9b8fe87be86f647458efa36675f");
+INSERT INTO verification VALUES("15","mabube@mailinator.com","768e78024aa8fdb9b8fe87be86f64745b362292a8d");
+INSERT INTO verification VALUES("16","fajipyh@mailinator.com","768e78024aa8fdb9b8fe87be86f647452415fc9a85");
+INSERT INTO verification VALUES("18","pajeruwome@mailinator.com","768e78024aa8fdb9b8fe87be86f647456b6216c799");
+INSERT INTO verification VALUES("19","tykudafa@mailinator.com","768e78024aa8fdb9b8fe87be86f6474546276e7e94");
+INSERT INTO verification VALUES("20","zujekavor@mailinator.com","768e78024aa8fdb9b8fe87be86f647454e3ab2452e");
+INSERT INTO verification VALUES("21","kamyxijuse@mailinator.com","768e78024aa8fdb9b8fe87be86f64745c235917106");
+INSERT INTO verification VALUES("22","rece@mailinator.com","768e78024aa8fdb9b8fe87be86f6474584cd9f97ee");
+INSERT INTO verification VALUES("23","hexymow@mailinator.com","768e78024aa8fdb9b8fe87be86f64745db23909286");
+INSERT INTO verification VALUES("24","terrorajalyne@gmail.com","768e78024aa8fdb9b8fe87be86f64745557af0f3d8");
+INSERT INTO verification VALUES("25","lynettepomasin@gmail.com","768e78024aa8fdb9b8fe87be86f647451a32d8bba4");
+INSERT INTO verification VALUES("26","netexek@mailinator.com","768e78024aa8fdb9b8fe87be86f64745a207988c2c");
+INSERT INTO verification VALUES("27","mofawyk@mailinator.com","768e78024aa8fdb9b8fe87be86f64745f782d61222");
+INSERT INTO verification VALUES("28","pujeresapa@mailinator.com","768e78024aa8fdb9b8fe87be86f647451b3b5b88c9");
+INSERT INTO verification VALUES("29","ziparikehi@mailinator.com","768e78024aa8fdb9b8fe87be86f647452a199b169b");
+INSERT INTO verification VALUES("30","qigice@mailinator.com","768e78024aa8fdb9b8fe87be86f64745e76c67d097");
+INSERT INTO verification VALUES("31","disevira@mailinator.com","768e78024aa8fdb9b8fe87be86f647454937255ca7");
+INSERT INTO verification VALUES("32","tajiwar@mailinator.com","768e78024aa8fdb9b8fe87be86f64745c865eb9db7");
+INSERT INTO verification VALUES("33","pehusiqyx@mailinator.com","768e78024aa8fdb9b8fe87be86f64745ee52f2406d");
+INSERT INTO verification VALUES("34","zusa@mailinator.com","768e78024aa8fdb9b8fe87be86f6474572806b01e1");
+INSERT INTO verification VALUES("35","qusobo@mailinator.com","768e78024aa8fdb9b8fe87be86f6474509e46260c4");
+INSERT INTO verification VALUES("36","xeful@mailinator.com","768e78024aa8fdb9b8fe87be86f647451723dc493d");
+INSERT INTO verification VALUES("37","namekytydi@mailinator.com","768e78024aa8fdb9b8fe87be86f64745065d9538e9");
 
 
 
@@ -543,11 +673,12 @@ CREATE TABLE `violations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(15) NOT NULL,
   `violation` varchar(255) NOT NULL,
+  `punishment` varchar(255) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   CONSTRAINT `violations_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
-INSERT INTO violations VALUES("14","1800649","Asperiores cillum il","2014-08-23");
+INSERT INTO violations VALUES("23","1800649","nangawat","expulsion","2021-12-01");
 

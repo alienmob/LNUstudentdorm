@@ -94,7 +94,7 @@ void sendRfidLog() {
     UIDresultSend = StrUID;
 
     String postData = "cardid=" + String(UIDresultSend) + "&action=insertRecord";
-    http.begin(wifiClient, "http://192.168.1.10/LNUstudentdorm/admin/urfid.php"); //Specify request destination
+    http.begin(wifiClient, "http://192.168.1.15/LNUstudentdorm/admin/urfid.php"); //Specify request destination
     http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
    
     int httpCode = http.POST(postData);   //Send the request

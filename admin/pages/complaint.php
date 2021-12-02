@@ -56,7 +56,7 @@
                     <th>Room</th>
                     <th>Course</th>
                     <th>Complaint</th>
-                    <th>Actions</th>
+                    <th><center>View</center></th>
                   </thead>
                   <tbody>
                     <?php
@@ -78,8 +78,9 @@
                           <td>" . $row['complaint'] . "</td>
                           
                           <td>
+                          <center>
                             <button class='btn btn-info btn-sm view btn-rounded' data-id='" . $row['id'] . "'><i class='fa fa-eye'></i></button>
-                            <button class='btn btn-danger btn-sm delete btn-rounded' data-id='" . $row['id'] . "'><i class='fa fa-trash'></i></button>
+                          </center>
                           </td>
                         </tr>
                       ";

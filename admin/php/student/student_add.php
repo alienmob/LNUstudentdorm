@@ -35,6 +35,20 @@
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 		}
 
+		$sql = "SELECT * FROM students WHERE student_id = '$student_id'";
+        $query = $conn->query($sql);
+        if ($query->num_rows > 0) {
+			$row = $query->fetch_assoc();
+			$_SESSION['error'] = 'Student ID "' .$row['student_id']. '" Is already in the Database';
+		} else {
+
+		$sql = "SELECT * FROM students WHERE rfid = '$rfid'";
+        $query = $conn->query($sql);
+        if ($query->num_rows > 0) {
+			$row = $query->fetch_assoc();
+			$_SESSION['error'] = 'RFID "' .$row['rfid']. '" Is already in the Database';
+		} else {
+
 		
 		$sql = "SELECT * FROM rooms WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
 				$query = $conn->query($sql);
@@ -145,6 +159,7 @@
        $_SESSION['verify_success'] = 'Verification link has been sent, Check your Email!';
       } catch (Exception $e) {
        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+	   $_SESSION['error'] = 'Email was not sent. Please Check your Internet Connection!';
       }
      }
      else {
@@ -156,19 +171,18 @@
 
 
 				}
-				else{
-			$sql = "SELECT * FROM students WHERE student_id = '$student_id'";
-			$query = $conn->query($sql);
+		// 		else{
+		// 	$sql = "SELECT * FROM students WHERE student_id = '$student_id'";
+		// 	$query = $conn->query($sql);
 		
-		$row = $query->fetch_array();
+		// $row = $query->fetch_array();
 
-		$_SESSION['error'] = 'Student ID "' .$row['student_id']. '" Is already in the Database';
+		// $_SESSION['error'] = 'Student ID "' .$row['student_id']. '" Is already in the Database';
 					
-					// $_SESSION['error'] = $conn->error;
-				}
+		// 		}
 
-
-
+			}
+		}
 			}
 	}	
 	else{

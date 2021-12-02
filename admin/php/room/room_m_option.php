@@ -13,6 +13,16 @@
         $unavailable = 'Marked as Unavailable';
 
 
+		$sql = "SELECT * FROM rooms WHERE id = '$room_option'";
+		$query = $conn->query($sql);
+		$row = $query->fetch_assoc();
+		$occupants = $row['occupants'];
+
+		if($occupants != 0){
+			$_SESSION['error'] = 'Selected Room is currently occupied.';
+		}
+		else{
+
 		if($status == 1){
 
             $sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$room_option', '$available', '$reason')";
@@ -71,7 +81,7 @@
         else{
             $_SESSION['error'] = $conn->error;
         }
-		
+	}
 	}	
 	else{
 		$_SESSION['error'] = 'Fill up add form first';
