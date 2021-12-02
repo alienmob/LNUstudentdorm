@@ -64,7 +64,7 @@
                     
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
-                        if ($row['outstat']) {
+                        if ($row['outstat'] == 0) {
                             $status = '<span class="label label-success">Checked In</span>';
                           } else {
                             $status = '<span class="label label-danger">Checked Out</span>';

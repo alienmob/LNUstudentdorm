@@ -106,26 +106,26 @@
                 <div class="form-group">
                     <label for="course" class="col-sm-3 control-label">Course</label>
                     <div class="col-sm-7">
-                      <textarea name="course" id="course" class="form-control" rows="2"></textarea>
+                      <textarea name="course" id="course" class="form-control" rows="2" disabled></textarea>
                     </div>
                 </div>
 <hr>
                 <div class="form-group">
                   	<label for="view_date" class="col-sm-3 control-label">Date</label>
                   	<div class="col-sm-4">
-                    	<input type="date" class="form-control" id="view_date" name="view_date">
+                    	<input type="date" class="form-control" id="view_date" name="view_date" disabled>
                   	</div>
                 </div>
                 <div class="form-group">
                     <label for="view_violation" class="col-sm-3 control-label">Violation</label>
                     <div class="col-sm-7">
-                      <textarea name="view_violation" id="view_violation" class="form-control" rows="3"></textarea>
+                      <textarea name="view_violation" id="view_violation" class="form-control" rows="3" disabled></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="view_punishment" class="col-sm-3 control-label">Punishment</label>
                     <div class="col-sm-7">
-                      <textarea name="view_punishment" id="view_punishment" class="form-control" rows="2"></textarea>
+                      <textarea name="view_punishment" id="view_punishment" class="form-control" rows="2" disabled></textarea>
                     </div>
                 </div>
                 

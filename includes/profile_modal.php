@@ -39,6 +39,13 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="middlename" class="col-sm-4 control-label">Middlename</label>
+
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="middlename" name="middlename" value="<?php echo $student['middlename']; ?>">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="lastname" class="col-sm-4 control-label">Lastname</label>
 
                     <div class="col-sm-6">
@@ -56,7 +63,7 @@
                     <label for="contact" class="col-sm-4 control-label">Contact No.</label>
 
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" id="contact" name="contact" value="<?php echo $student['contact']; ?>" required>
+                      <input type="number" class="form-control" id="contact" name="contact" value="<?php echo $student['contact']; ?>" required>
                     </div>
                 </div>
 

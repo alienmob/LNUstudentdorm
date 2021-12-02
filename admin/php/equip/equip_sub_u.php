@@ -24,6 +24,13 @@
 		$query = $conn->query($sql);
 		$row = $query->fetch_assoc();
 		$title2 = $row['title'];
+		$quantity = $row['quantity'];
+		$quantity_service = $row['quantity_service'];
+
+		if($quantity <= $quantity_unservice || $quantity_service <= $quantity_unservice){
+			$_SESSION['error'] = 'Given Quantity is Invalid';
+		}else{
+
 
 		$sql = "INSERT INTO reports (equipment_reports, details) VALUES ('$title2', '$added' '$quantity_unservice' ' ' '$title2' '$added2')";
 		if($conn->query($sql)){
@@ -46,6 +53,7 @@
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
+	}
 	}	
 	else{
 		$_SESSION['error'] = 'Fill up add form first';

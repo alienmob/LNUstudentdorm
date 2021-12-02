@@ -15,6 +15,17 @@
 		$added = "Occupancy decreased by";
 		$reason_minus = $_POST['reason_minus'];
 		
+		$sql = "SELECT * FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+		LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE rooms.id = '$room_m'";
+		$query = $conn->query($sql);
+		$row = $query->fetch_assoc();
+		$floor_name = $row['floor_name'];
+		$room_name = $row['room_name'];
+		$occupancy = $row['occupancy'];
+
+		if($occupancy <= $decrease){
+			$_SESSION['error'] = 'Given Quantity is Invalid';
+		}else{
 
 
 		$sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$room_m', '$added' ' ' '$decrease', '$reason_minus')";
@@ -24,12 +35,7 @@
 
 			$_SESSION['success'] = $added . ' ' . $decrease . '';
 
-		$sql = "SELECT * FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-		LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE rooms.id = '$room_m'";
-		$query = $conn->query($sql);
-		$row = $query->fetch_assoc();
-		$floor_name = $row['floor_name'];
-		$room_name = $row['room_name'];
+		
 
 	// Activity log
 	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
@@ -45,6 +51,7 @@
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
+	}
 	}	
 	else{
 		$_SESSION['error'] = 'Fill up add form first';

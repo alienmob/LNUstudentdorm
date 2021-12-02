@@ -12,6 +12,7 @@
 		$curr_password = $_POST['curr_password'];
 		$password = $_POST['password'];
 		$firstname = $_POST['firstname'];
+		$middlename = $_POST['middlename'];
 		$lastname = $_POST['lastname'];
 		$address = $_POST['address'];
 		$contact = $_POST['contact'];
@@ -32,7 +33,7 @@
 				$password = password_hash($password, PASSWORD_DEFAULT);
 			}
 
-			$sql = "UPDATE students SET password = '$password', firstname = '$firstname', lastname = '$lastname', address = '$address', contact = '$contact', photo = '$filename' WHERE student_id = '".$student['student_id']."'";
+			$sql = "UPDATE students SET password = '$password', firstname = '$firstname', middlename = '$middlename', lastname = '$lastname', address = '$address', contact = '$contact', photo = '$filename' WHERE student_id = '".$student['student_id']."'";
 			if($conn->query($sql)){
 				$_SESSION['success'] = 'Student profile updated successfully';
 			}
