@@ -27,6 +27,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="pending.php"><i class="fa fa-circle-o"></i> Equipment Requests</a></li>
+          <li><a href="pending_archive.php"><i class="fa fa-circle-o"></i> Equipment Req. Archive</a></li>
           <li><a href="borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipment</a></li>
           <li><a href="return.php"><i class="fa fa-circle-o"></i> Returned Equipment</a></li>
           

@@ -25,8 +25,9 @@
 		$email = $_POST['email'];
 		$guardian = $_POST['guardian'];
 		$guardian_contact = $_POST['guardian_contact'];
-		$floors = $_POST['floor'];
-		$rooms = $_POST['room'];
+		$floor_room = $_POST['floor_room'];
+		// $floors = $_POST['floor'];
+		// $rooms = $_POST['room'];
 		$course = $_POST['course'];
 		$photo = $_POST['photo'];
 		$filename = $_FILES['photo']['name'];
@@ -81,14 +82,14 @@
 					}
 			else{
 
-				$sql = "SELECT *, rooms.id AS ID FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-				LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
-				$query = $conn->query($sql);
-				$row = $query->fetch_assoc();
-				$room_id = $row['ID'];
+				// $sql = "SELECT *, rooms.id AS ID FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+				// LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
+				// $query = $conn->query($sql);
+				// $row = $query->fetch_assoc();
+				// $room_id = $row['ID'];
 
-				$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, middlename, bdate, privilege, gender, address, contact, email, guardian, guardian_contact, floor_id, room_id, actualroom_id, course_id, photo) 
-				VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$middlename', '$bdate', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floors', '$rooms', '$room_id', '$course', '$photo')";
+				$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, middlename, bdate, privilege, gender, address, contact, email, guardian, guardian_contact, actualroom_id, course_id, photo) 
+				VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$middlename', '$bdate', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floor_room', '$course', '$photo')";
 
 				if($conn->query($sql)){
 

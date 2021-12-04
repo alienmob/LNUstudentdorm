@@ -66,6 +66,7 @@
         <ul class="treeview-menu">
         <li><a href="../pages/room.php"><i class="fa fa-circle-o"></i> Room Record</a></li>
         <li><a href="../pages/equipment.php"><i class="fa fa-circle-o"></i> Equipment Record</a></li>
+        <li><a href="../pages/pending_archive.php"><i class="fa fa-circle-o"></i> Equipment Req. Archives</a></li>
         <li><a href="../pages/violation.php"><i class="fa fa-circle-o"></i> Violations Record</a></li>
         <li><a href="../pages/complaint.php"><i class="fa fa-circle-o"></i> Complaints Record</a></li>
         <li><a href="../pages/timein.php"><i class="fa fa-circle-o"></i> Time In Record</a></li>

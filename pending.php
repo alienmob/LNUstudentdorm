@@ -73,66 +73,96 @@ if (isset($_GET['action'])) {
       
       <div class="box">
 								
-								<div class="box-header with-border">
-									<h3 class="box-title">Equipment Requests</h3>
-							
-								</div>
-								
-								<div class="box-body">
-				  				  <div class="table-responsive">
-									<table class="table table-bordered table-striped" id="example">
-										<thead>
-											<th class="hidden"></th>
-											<th>Date</th>
-											<th>Equipment Code</th>
-											<th>Equipment Name</th>
-											
-											<th>Status</th>
-											<th>Note</th>
+				<div class="box-header with-border">
+					<h3 class="box-title">Equipment Requests</h3>
+			
+				</div>
+				
+				<div class="box-body">
+					<div class="table-responsive">
+					<table class="table table-bordered table-striped" id="example">
+						<thead>
+							<th class="hidden"></th>
+							<th>Date</th>
+							<th>Equipment Code</th>
+							<th>Equipment Name</th>
+							<th>Status</th>
+							<th><center>Request Note</center></th>
 
-										</thead>
-										<tbody>
-											<?php
-$sql = "SELECT *, pending.status AS barstat FROM pending LEFT JOIN equipments ON equipments.id=pending.equipment_id WHERE student_id = '$stuid' ORDER BY date_pending DESC";
-											$query = $conn->query($sql);
-											while ($row = $query->fetch_assoc()) {
-												if ($row['barstat']) {
-													$status = '<span class="label label-success">Approved</span>';
-												  } else {
-													$status = '<span class="label label-warning">Pending</span>';
-												  }
-												  if ($row['barstat'] == 2) {
-													$status = '<span class="label label-danger">Declined</span>';
-												  }
-												echo "
-			        						<tr>
-			        							<td class='hidden'></td>
-			        							<td>" . date('M d, Y', strtotime($row['date_pending'])) . "</td>
-			        							<td>" . $row['code'] . "</td>
-			        							<td>" . $row['title'] . "</td>
-												
-												<td>" . $status . "</td>
-												<td>" . $row['feedback'] . '' . $row['decline'] ."</td>
-
-			        						</tr>
-			        					";
-											}
-											?>
-										</tbody>
-									</table>
-								</div>
-								</div>
-							</div>
+						</thead>
+		<tbody>
+			<?php
+			$sql = "SELECT *, pending.id AS pid, pending.status AS barstat FROM pending 
+			LEFT JOIN equipments ON equipments.id=pending.equipment_id 
+			WHERE student_id = '$stuid' AND pending.status = 0 ORDER BY date_pending DESC";
+			$query = $conn->query($sql);
+			while ($row = $query->fetch_assoc()) {
+				if ($row['barstat']) {
+					$status = '<span class="label label-success">Approved</span>';
+					} else {
+					$status = '<span class="label label-warning">Pending</span>';
+					}
+					if ($row['barstat'] == 2) {
+					$status = '<span class="label label-danger">Declined</span>';
+					}
+				echo "
+			<tr>
+				<td class='hidden'></td>
+				<td>" . date('M d, Y', strtotime($row['date_pending'])) . "</td>
+				<td>" . $row['code'] . "</td>
+				<td>" . $row['title'] . "</td>
+				<td>" . $status . "</td>
+				<td>
+				<center>
+				<button class='btn btn-info btn-sm view btn-rounded' data-id='" . $row['pid'] . "'><i class='fa fa-eye'></i></button>
+				</center>
+				</td>
+			</tr>
+		";
+			}
+			?>
+		</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
 
 
 
 
 </section>
 		</div>
+		<?php include 'includes/pending_modal.php'; ?>
 </div>
   
 	<?php include 'includes/scripts.php'; ?>
-	
+	<script>
+    $(function() {
+
+      $(document).on('click', '.view', function(e) {
+        e.preventDefault();
+        $('#view').modal('show');
+        var id = $(this).data('id');
+        getRow(id);
+      });
+
+    });
+
+    function getRow(id) {
+      $.ajax({
+        type: 'POST',
+        url: 'pending_row.php',
+        data: {
+          id: id
+        },
+        dataType: 'json',
+        success: function(response) {
+          $('.studid').val(response.id);
+          $('#view_note').val(response.note).html(response.note);
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>

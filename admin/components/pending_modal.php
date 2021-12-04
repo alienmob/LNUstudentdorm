@@ -85,6 +85,14 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <label for="note" class="col-sm-3 control-label">Request Note</label>
+
+            <div class="col-sm-7">
+              <textarea type="text" class="form-control" id="note" name="note" rows="3" disabled></textarea>
+            </div>
+          </div>
+
           <hr>
                 <div class="form-group">
                     <label for="feedback" class="col-sm-3 control-label">Approval Note</label>
@@ -147,6 +155,14 @@
                 <option value="" selected id="decode2">- Select -</option>
                 
               </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dnote" class="col-sm-3 control-label">Request Note</label>
+
+            <div class="col-sm-7">
+              <textarea type="text" class="form-control" id="dnote" name="dnote" rows="3" disabled></textarea>
             </div>
           </div>
 

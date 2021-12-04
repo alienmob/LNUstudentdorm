@@ -1,23 +1,22 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-include '../../includes/session.php';
+include 'C:\xampp\htdocs\LNUstudentdorm\admin\includes\conn.php';
 
-require '../../phpmailer/vendor/autoload.php';
+require 'C:\xampp\htdocs\LNUstudentdorm\admin\phpmailer\vendor\autoload.php';
 
-include('../../includes/conn.php');
-
-require_once '../../includes/config.php';
+require_once 'C:\xampp\htdocs\LNUstudentdorm\admin\includes\config.php';
 
 
-
-if (isset($_POST['add'])) {
 
 	$added2 = 0;
-	
-		$date_from = $_POST['date_from'];
-		$date_to = $_POST['date_to'];
-		$deadline = $_POST['deadline'];
+
+        date_default_timezone_set('Asia/Manila');
+	    $date = date('Y-m-d');
+
+		$date_from = date('Y-m-d');
+		$date_to = date('Y-m-d', strtotime("+29 days"));
+		$deadline = date('Y-m-d', strtotime("+14 days"));
 
 		$sql = "SELECT * FROM students";
 		$query = $conn->query($sql);
@@ -49,18 +48,7 @@ if (isset($_POST['add'])) {
 		}
 	}
 }
-		
-// Activity log
-$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
-$query = $conn->query($sql);
-$row = $query->fetch_assoc();
-$admin = $row['id'];
-
-$sql = "INSERT INTO activity_logs (admin_id, details) VALUES 
-('$admin', 'Set Payment for the month of ". date('M d, Y', strtotime($date_from)) ." to ". date('M d, Y', strtotime($date_to)) ."')";
-$conn->query($sql);
-// End activity log	
-		
+				
 
 	// EMAIL
 
@@ -156,13 +144,9 @@ $email = $row['email'];
 
 
 
+
 	if ($added == 0) {
 		$equipments = ($added == 0) ? 'Unpaid' : 'Unpaids';
 		$_SESSION['success'] = $added . ' ' . $equipments . ' Students Recorded';
 	}
-}
-// } else {
-// 	$_SESSION['error'] = 'Fill up add form first';
-// }
 
-header('location: ../../pages/unpaid.php');

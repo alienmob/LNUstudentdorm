@@ -17,7 +17,7 @@
         <div class="form-group">
             <label for="code" class="col-sm-4 control-label">Equipment Name</label>
 
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               <select class="form-control" id="code" name="code[]" required>
                 <option value="" selected>- Select -</option>
                 <?php
@@ -35,9 +35,9 @@
 
 <hr>
                  <div class="form-group">
-                    <label for="note" class="col-sm-4 control-label">Request Note</label>
+                    <label for="note" class="col-sm-3 control-label">Request Note</label>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                       <textarea class="form-control" name="note" id="note" rows="4" placeholder="Enter Your Request Note here..." required></textarea>
                     </div>
                 </div>

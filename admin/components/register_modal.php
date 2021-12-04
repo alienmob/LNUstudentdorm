@@ -165,41 +165,26 @@
                <input type="hidden" class="photo" name="photo">
 
                 <div class="form-group">
-                <div class="form-row">
+                    <label for="floor_room" class="col-sm-4 control-label">Floor & Room</label>
 
-                    <label for="floor&room" class="col-sm-3 control-label">Room No.</label>
-
-                    <div class="col-sm-4">
-                      <select class="form-control" id="floor" name="floor" required>
-                        <option value="" selected>- Select Floor -</option>
+                    <div class="col-sm-6">
+                      <select class="form-control" id="floor_room" name="floor_room" required>
+                        <option value="" selected>- Select Floor & Room -</option>
                         <?php
-                          $sql = "SELECT * FROM floor_category";
+                          $sql = "SELECT * FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+                          LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE occupants != occupancy";
                           $query = $conn->query($sql);
                           while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['floor_name']."</option>
+                            if($row['status'] != 1){
+                              echo "
+                              <option value='".$row['id']."'>".$row['floor_name'].' - '.$row['room_name']."</option>
                             ";
+                            }       
                           }
                         ?>
                       </select>
                     </div>
 
-                    <div class="col-sm-4">
-                      <select class="form-control" id="room" name="room" required>
-                        <option value="" selected>- Select Room -</option>
-                        <?php
-                          $sql = "SELECT * FROM room_category";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['room_name']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
-                    </div>
-
-                    </div>
                 </div>
 
 
