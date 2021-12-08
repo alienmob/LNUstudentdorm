@@ -15,48 +15,44 @@
 		$email = $_POST['email'];
 		$guardian = $_POST['guardian'];
 		$guardian_contact = $_POST['guardian_contact'];
-		$floors = $_POST['floor'];
-		$rooms = $_POST['room'];
+
+		$floor_room = $_POST['floor_room'];
+		// $floors = $_POST['floor'];
+		// $rooms = $_POST['room'];
 		$course = $_POST['course'];
 
 		
 
-		$sql = "SELECT * FROM rooms WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
+		$sql = "SELECT * FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+		LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE rooms.id = '$floor_room'";
 		$query = $conn->query($sql);
 			$brow = $query->fetch_assoc();
 			$occupants = $brow['occupants'];
 			$occupancy = $brow['occupancy'];
 			$status = $brow['status'];
 
+			$floor_name = $brow['floor_name'];
+			$room_name = $brow['room_name'];
+
+			$floor_id = $brow['floor_category_id'];
+			$room_id = $brow['room_category_id'];
+
+
 			if ($status == 1) {
-				$sql = "SELECT * FROM floor_category WHERE id = '$floors'";
-				$floor_query = $conn->query($sql);
-				$floor_row = $floor_query->fetch_assoc();
+				
+				$_SESSION['error'] = '"' .$floor_name. '&nbsp;-&nbsp;' .$room_name. '" Is Unavailable';	
 
-				$sql = "SELECT * FROM room_category WHERE id = '$rooms'";
-				$room_query = $conn->query($sql);
-				$room_row = $room_query->fetch_assoc();
-				$_SESSION['error'] = '"' .$floor_row['floor_name']. '&nbsp;-&nbsp;' .$room_row['room_name']. '" Is Unavailable';	
+				}else 
 
-				}else if ($occupants == $occupancy) {
-			
-			$sql = "SELECT * FROM floor_category WHERE id = '$floors'";
-				$floor_query = $conn->query($sql);
-				$floor_row = $floor_query->fetch_assoc();
-
-				$sql = "SELECT * FROM room_category WHERE id = '$rooms'";
-				$room_query = $conn->query($sql);
-				$room_row = $room_query->fetch_assoc();
-    
-				$_SESSION['error'] = '"' .$floor_row['floor_name']. '&nbsp;-&nbsp;' .$room_row['room_name']. '" Is Full';
-
-
+			if ($occupants == $occupancy) {
+		
+				$_SESSION['error'] = '"' .$floor_name. '&nbsp;-&nbsp;' .$room_name. '" Is Full';
 				
 
 	}else{
 
-		$sql = "SELECT *, students.student_id AS stud_id FROM students LEFT JOIN rooms ON rooms.floor_category_id=students.floor_id 
-		AND rooms.room_category_id=students.room_id WHERE students.student_id = '$id'";
+		$sql = "SELECT * FROM students 
+		LEFT JOIN rooms ON rooms.id=students.actualroom_id WHERE students.student_id = '$id'";
 			$query = $conn->query($sql);
 			$brow = $query->fetch_assoc();
 			$occupants = $brow['occupants'];
@@ -66,23 +62,25 @@
 			$sql = "UPDATE rooms SET occupants = '$occupants'- 1 WHERE id = '$bid'";
 			$conn->query($sql);
 
-			$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
+			$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE id = '$floor_room'";
 			$conn->query($sql);
 		
 		
-			$sql = "SELECT *, rooms.id AS ID FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-			LEFT JOIN room_category ON room_category.id=rooms.room_category_id 
-			WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
+			$sql = "SELECT * FROM rooms WHERE id = '$floor_room'";
 			$query = $conn->query($sql);
 			$row = $query->fetch_assoc();
-			$room_id = $row['ID'];
+			$floors = $row['floor_category_id'];
+			$rooms = $row['room_category_id'];
 
 
 		$sql = "UPDATE students SET student_id = '$student_id', lastname = '$lastname', firstname = '$firstname', middlename = '$middlename', bdate = '$bdate', privilege = '$privilege', 
 		gender = '$gender', address = '$address', contact = '$contact', email = '$email', guardian = '$guardian', 
-		guardian_contact = '$guardian_contact', floor_id = '$floors', room_id = '$rooms', actualroom_id = '$room_id', course_id = '$course' 
+		guardian_contact = '$guardian_contact', floor_id = '$floors', room_id = '$rooms', actualroom_id = '$floor_room', course_id = '$course' 
 		WHERE student_id = '$id'";
 		if($conn->query($sql)){
+
+			$sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$floor_room', 'Changed Assignment of floor and room number for `".$student_id."` ".$firstname." ".$lastname."','Updated Student Record')";
+			$conn->query($sql);
 
 			// Activity Log
 			$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";

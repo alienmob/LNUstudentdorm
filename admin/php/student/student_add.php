@@ -51,34 +51,31 @@
 		} else {
 
 		
-		$sql = "SELECT * FROM rooms WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
-				$query = $conn->query($sql);
+		$sql = "SELECT * FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+		LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE rooms.id = '$floor_room'";
+		$query = $conn->query($sql);
 				
-					$brow = $query->fetch_assoc();
-					$occupants = $brow['occupants'];
-					$occupancy = $brow['occupancy'];
-					$status = $brow['status'];
-					$bid = $brow['id'];
+		$brow = $query->fetch_assoc();
+		$occupants = $brow['occupants'];
+		$occupancy = $brow['occupancy'];
+		$status = $brow['status'];
+		$bid = $brow['id'];
+		$floor_name = $brow['floor_name'];
+		$room_name = $brow['room_name'];
 
-				$sql = "SELECT * FROM floor_category WHERE id = '$floors'";
-				$floor_query = $conn->query($sql);
-				$floor_row = $floor_query->fetch_assoc();
-
-				$sql = "SELECT * FROM room_category WHERE id = '$rooms'";
-				$room_query = $conn->query($sql);
-				$room_row = $room_query->fetch_assoc();
-
-					
+		$floor_id = $brow['floor_category_id'];
+		$room_id = $brow['room_category_id'];
+				
 
 			if ($occupants == $occupancy) {
 
 	
-			$_SESSION['error'] = '"' .$floor_row['floor_name']. '&nbsp;-&nbsp;' .$room_row['room_name']. '" Is Full';
+			$_SESSION['error'] = '"' .$floor_name. '&nbsp;-&nbsp;' .$room_name. '" Is Full';
 
 			
 			}else
 				if ($status == 1) {
-					$_SESSION['error'] = '"' .$floor_row['floor_name']. '&nbsp;-&nbsp;' .$room_row['room_name']. '" Is Unavailable';		
+					$_SESSION['error'] = '"' .$floor_name. '&nbsp;-&nbsp;' .$room_name. '" Is Unavailable';		
 					}
 			else{
 
@@ -88,15 +85,18 @@
 				// $row = $query->fetch_assoc();
 				// $room_id = $row['ID'];
 
-				$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, middlename, bdate, privilege, gender, address, contact, email, guardian, guardian_contact, actualroom_id, course_id, photo) 
-				VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$middlename', '$bdate', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floor_room', '$course', '$photo')";
+				$sql = "INSERT INTO students (student_id, rfid, password, firstname, lastname, middlename, bdate, privilege, gender, address, contact, email, guardian, guardian_contact, floor_id, room_id, actualroom_id, course_id, photo) 
+				VALUES ('$student_id', '$rfid', '$password', '$firstname', '$lastname', '$middlename', '$bdate', '$privilege', '$gender', '$address', '$contact', '$email', '$guardian', '$guardian_contact', '$floor_id', '$room_id', '$floor_room', '$course', '$photo')";
 
 				if($conn->query($sql)){
+
+					$sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$floor_room', 'Assignment of floor and room number for `".$student_id."` ".$firstname." ".$lastname."','Approved Student Registration')";
+					$conn->query($sql);
 
 					$sql = "DELETE FROM register WHERE id = '$id'";
 					$conn->query($sql);	
 
-					$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE floor_category_id = '$floors' AND room_category_id = '$rooms'";
+					$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE id = '$floor_room'";
 					$conn->query($sql);							
 			
 					// Activity Log

@@ -8,64 +8,29 @@ require 'C:\xampp\htdocs\LNUstudentdorm\admin\phpmailer\vendor\autoload.php';
 require_once 'C:\xampp\htdocs\LNUstudentdorm\admin\includes\config.php';
 
 
-
-	$added2 = 0;
+		// EMAIL
 
         date_default_timezone_set('Asia/Manila');
-	    $date = date('Y-m-d');
-
-		$date_from = date('Y-m-d');
-		$date_to = date('Y-m-d', strtotime("+29 days"));
-		$deadline = date('Y-m-d', strtotime("+14 days"));
-
-		$sql = "SELECT * FROM students";
-		$query = $conn->query($sql);
-		while($row = $query->fetch_assoc()){
-		$student_id = $row['student_id'];
-		$privilege = $row['privilege'];
-
-		if($privilege == 'Athlete'){
-
-		$sql = "INSERT INTO paid (student_id, date_from, date_to, status) VALUES ('$student_id','$date_from','$date_to','1')";
-		$conn->query($sql);
-		}else{
-
-
-		$sql = "INSERT INTO unpaid (student_id, date_from, date_to, deadline) VALUES ('$student_id','$date_from','$date_to','$deadline')";
-		if ($conn->query($sql)) {
-			
-			$sql = "UPDATE unpaid SET status = $added2 WHERE student_id = '$student_id'";
-			$conn->query($sql);
-
-			$sql = "UPDATE students SET unpaid_total = unpaid_total + 1 WHERE student_id = '$student_id'";
-			$conn->query($sql);
-
-		} else {
-			if (!isset($_SESSION['error'])) {
-				$_SESSION['error'] = array();
-			}
-			$_SESSION['error'][] = $conn->error;
-		}
-	}
-}
-				
-
-	// EMAIL
-
-$sql = "SELECT email FROM `students` WHERE privilege = 'Non-Athlete'";
+        $date = date('Y-m-d');
+$sql = "SELECT * FROM unpaid LEFT JOIN students ON students.student_id=unpaid.student_id WHERE deadline = '$date'";
 $query = $conn->query($sql);
 // $query = $conn->query($sql);
 // while ($row = $query->fetch_assoc()) {
  
 while ($row = $query->fetch_assoc()) {
 $email = $row['email'];
+
+
+
+
   $output='<p>Dear Students,</p>';
   $output.='<p>This is LNU Student Dormitory</p>';
-  $output.='<h3>Payment for this month is open, kindly pay and visit the Dormitory Manager to present your Receipt or upload it through the web page.</h3>';
-  $output.='<h4>Payment for '. date('M d, Y', strtotime($date_from)) .' to '. date('M d, Y', strtotime($date_to)) .'</h4>';
+  $output.='<p>Deadline Notice for LNU Student Dormitory Boarders</p>';
   $output.='<hr>';
-  $output.='<h4>Deadline will be '. date('M d, Y', strtotime($deadline)) .'</h4>';
-  $output.='<p>Thank You!.</p>';   	
+  $output.='<h3>ATTENTION! Today is the deadline of payment for the month of '.date('M d, Y', strtotime($row['date_from'])).' to '.date('M d, Y', strtotime($row['date_to'])).'</h3>';
+  $output.='<h4>Deadline Date: '.date('M d, Y', strtotime($row['deadline'])).'</h4>';
+
+  $output.='<h3>Thank You!</h3>';   	
   $output.='<p>LNU Dormitory Administrator</p>';
   $body = $output; 
  
@@ -95,13 +60,13 @@ $email = $row['email'];
   
 	 //Content
    $phpmailer->isHTML(true);                                  //Set email format to HTML
-   $phpmailer->Subject = 'LNU Dormitory Monthly Payment Notice';
+   $phpmailer->Subject = 'LNU Dormitory Deadline of Payment Notice';
    $phpmailer->Body    = $body;
 
    $phpmailer->send();
    
    echo 'Message has been sent';
-   $_SESSION['email_success'] = 'Payment Notification sent!';
+   $_SESSION['email_success'] = 'Notification sent!';
   } catch (Exception $e) {
    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
    $_SESSION['error'] = 'Email was not sent. Please Check your Internet Connection!';
@@ -114,12 +79,11 @@ $email = $row['email'];
 
 // END EMAIL
 
+if($conn->query($sql)){
+    $_SESSION['success'] = 'Notification Sent!';
+}
+else{
+    $_SESSION['error'] = $conn->error;
+}
 
-
-
-
-	if ($added == 0) {
-		$equipments = ($added == 0) ? 'Unpaid' : 'Unpaids';
-		$_SESSION['success'] = $added . ' ' . $equipments . ' Students Recorded';
-	}
 ?>

@@ -73,66 +73,111 @@ if (isset($_GET['action'])) {
       
       <div class="box">
 								
-								<div class="box-header with-border">
-									<h3 class="box-title">Equipment Requests</h3>
-							
-								</div>
-								
-								<div class="box-body">
-				  				  <div class="table-responsive">
-									<table class="table table-bordered table-striped" id="example">
-										<thead>
-											<th class="hidden"></th>
-											<th>Date</th>
-											<th>Equipment Code</th>
-											<th>Equipment Name</th>
-											
-											<th>Status</th>
-											<th>Note</th>
+		<div class="box-header with-border">
+			<h3 class="box-title">Equipment Requests</h3>
+	
+		</div>
+		
+		<div class="box-body">
+			<div class="table-responsive">
+			<table class="table table-bordered table-striped" id="example">
+				<thead>
+					<th class="hidden"></th>
+					<th>Date</th>
+					<th>Equipment Code</th>
+					<th>Equipment Name</th>
+					<th>Status</th>
+					<th><center>Response Note</center></th>
 
-										</thead>
-										<tbody>
-											<?php
-$sql = "SELECT *, pending.status AS barstat FROM pending LEFT JOIN equipments ON equipments.id=pending.equipment_id WHERE student_id = '$stuid' AND pending.status >= 1 ORDER BY date_pending DESC";
-											$query = $conn->query($sql);
-											while ($row = $query->fetch_assoc()) {
-												if ($row['barstat']) {
-													$status = '<span class="label label-success">Approved</span>';
-												  } else {
-													$status = '<span class="label label-warning">Pending</span>';
-												  }
-												  if ($row['barstat'] == 2) {
-													$status = '<span class="label label-danger">Declined</span>';
-												  }
-												echo "
-			        						<tr>
-			        							<td class='hidden'></td>
-			        							<td>" . date('M d, Y', strtotime($row['date_pending'])) . "</td>
-			        							<td>" . $row['code'] . "</td>
-			        							<td>" . $row['title'] . "</td>
-												
-												<td>" . $status . "</td>
-												<td>" . $row['feedback'] . '' . $row['decline'] ."</td>
+				</thead>
+				<tbody>
+					<?php
+					$sql = "SELECT *, pending.id AS pid, pending.status AS barstat FROM pending 
+					LEFT JOIN equipments ON equipments.id=pending.equipment_id 
+					WHERE student_id = '$stuid' AND pending.status >= 1 ORDER BY date_pending DESC";
+					$query = $conn->query($sql);
+					while ($row = $query->fetch_assoc()) {
+						if ($row['barstat']) {
+							$status = '<span class="label label-success">Approved</span>';
+							} else {
+							$status = '<span class="label label-warning">Pending</span>';
+							}
+							if ($row['barstat'] == 2) {
+							$status = '<span class="label label-danger">Declined</span>';
+							}
+							if ($row['feedback'] != NULL) {
+							$response = '<button class="btn btn-info btn-sm approve btn-rounded" data-id="' . $row['pid'] . '"><i class="fa fa-eye"></i></button>';
+							} else {
+							$response = '<button class="btn btn-info btn-sm decline btn-rounded" data-id="' . $row['pid'] . '"><i class="fa fa-eye"></i></button>';
+							}
+						echo "
+					<tr>
+						<td class='hidden'></td>
+						<td>" . date('M d, Y', strtotime($row['date_pending'])) . "</td>
+						<td>" . $row['code'] . "</td>
+						<td>" . $row['title'] . "</td>
+						<td>" . $status . "</td>
+						<td>
+						<center>
+						" . $response . "
+						</center>
+						</td>
 
-			        						</tr>
-			        					";
-											}
-											?>
-										</tbody>
-									</table>
-								</div>
-								</div>
-							</div>
+					</tr>
+					";
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
 
 
 
 
 </section>
 		</div>
+		<?php include 'includes/pending_modal.php'; ?>
 </div>
   
 	<?php include 'includes/scripts.php'; ?>
-	
+	<script>
+    $(function() {
+
+      $(document).on('click', '.approve', function(e) {
+        e.preventDefault();
+        $('#approve').modal('show');
+        var id = $(this).data('id');
+        getRow(id);
+      });
+
+	  $(document).on('click', '.decline', function(e) {
+        e.preventDefault();
+        $('#decline').modal('show');
+        var id = $(this).data('id');
+        getRow(id);
+      });
+
+    });
+
+    function getRow(id) {
+      $.ajax({
+        type: 'POST',
+        url: 'pending_row.php',
+        data: {
+          id: id
+        },
+        dataType: 'json',
+        success: function(response) {
+          $('.studid').val(response.id);
+          $('#view_note').val(response.note).html(response.note);
+		  $('#view_approve').val(response.feedback).html(response.feedback);
+		  $('#view_decline').val(response.decline).html(response.decline);
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>

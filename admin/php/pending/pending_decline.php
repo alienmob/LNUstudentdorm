@@ -17,11 +17,7 @@ if (isset($_POST['add'])) {
 	} else {
 		
 		$added = 0;
-		$pending_id = $_POST['id'];
-		$sql = "SELECT * FROM pending WHERE id = $pending_id AND status != 1";
-		$query = $conn->query($sql);
-		$prow = $query->fetch_assoc();
-		$pid = $prow['id'];
+		
 		
 		foreach ($_POST['code'] as $code) {
 			if (!empty($code)) {
@@ -35,7 +31,7 @@ if (isset($_POST['add'])) {
 					if ($conn->query($sql)) {
 						$added++;
 			
-						$sql = "UPDATE pending SET decline = '$decline', status = 2 WHERE id = '$pid' AND status != 1";
+						$sql = "UPDATE pending SET decline = '$decline', status = 2 WHERE id = '$id' AND status != 1";
 						$conn->query($sql);
 					
 

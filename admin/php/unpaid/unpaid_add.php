@@ -10,8 +10,14 @@ include('../../includes/conn.php');
 require_once '../../includes/config.php';
 
 
+function send($ip, $phone, $message)
+{
+	$send = json_decode(file_get_contents("http://{$ip}:8080?phone={$phone}&message={$message}"));
+	return $send->status == 200 ? true : false;
+}
 
 if (isset($_POST['add'])) {
+
 
 	$added2 = 0;
 	
@@ -64,23 +70,30 @@ $conn->query($sql);
 
 	// EMAIL
 
-$sql = "SELECT email FROM `students` WHERE privilege = 'Non-Athlete'";
+$sql = "SELECT email, contact FROM `students` WHERE privilege = 'Non-Athlete'";
 $query = $conn->query($sql);
 // $query = $conn->query($sql);
 // while ($row = $query->fetch_assoc()) {
  
 while ($row = $query->fetch_assoc()) {
 $email = $row['email'];
+$contact = $row['contact'];
+
+send("192.168.1.2", $contact, "This is LNU Student Dormitory, Payment for this month is open, kindly pay and visit the Dormitory Manager to present your Receipt.");
+
   $output='<p>Dear Students,</p>';
   $output.='<p>This is LNU Student Dormitory</p>';
   $output.='<h3>Payment for this month is open, kindly pay and visit the Dormitory Manager to present your Receipt.</h3>';
   $output.='<h4>Payment for '. date('M d, Y', strtotime($date_from)) .' to '. date('M d, Y', strtotime($date_to)) .'</h4>';
   $output.='<hr>';
-  $output.='<h4>Deadline will be '. date('M d, Y', strtotime($deadline)) .'</h4>';
+  $output.='<h4>Deadline will be on '. date('M d, Y', strtotime($deadline)) .'</h4>';
   $output.='<p>Thank You!.</p>';   	
   $output.='<p>LNU Dormitory Administrator</p>';
   $body = $output; 
  
+  
+  
+
   $phpmailer = new PHPMailer(true);
   try {
 	// $phpmailer->isSMTP();

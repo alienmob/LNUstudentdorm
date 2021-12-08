@@ -38,6 +38,27 @@ if (isset($_POST['add'])) {
 							$sql = "DELETE FROM `borrow` WHERE id = '$borrow_id'";
 							$conn->query($sql);
 
+						$sql = "SELECT * FROM equipments WHERE code = '$code'";
+						$query = $conn->query($sql);
+						$row = $query->fetch_assoc();
+						$e_id = $row['id'];
+						$available = $row['quantity'];
+						$being_used = $row['quantity_used'];
+						$eservice = $row['quantity_service'];
+						$unservice = $row['quantity_unservice'];
+						$equipment_total = $row['quantity_total'];
+
+						$sql = "INSERT INTO equipment_chart (equipment_id, available, being_used, eservice, unservice, equipment_total) VALUES ('$e_id', '$available', '$being_used', '$eservice', '$unservice', '$equipment_total')";
+						$conn->query($sql);
+
+						$sql = "SELECT * FROM students WHERE student_id = '$student_id'";
+						$query = $conn->query($sql);
+						$row = $query->fetch_assoc();
+						$firstname = $row['firstname'];
+						$lastname = $row['lastname'];
+						$sql = "INSERT INTO reports (equipment_reports, details) VALUES ('$title', '`".$student_id."` ".$firstname." ".$lastname." returned  1 ".$title."')";
+						$conn->query($sql);
+
 
 			// Activity log
 			$sqlname = "SELECT * FROM students WHERE student_id = '$student'";

@@ -178,8 +178,8 @@
 </div>
 
 
-<!-- Edit -->
-<div class="modal fade" id="edit">
+<!--Male Edit -->
+<div class="modal fade" id="edit_male">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -291,7 +291,7 @@
                 </div>
 
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                 <div class="form-row">
 
                     <label for="floor&room" class="col-sm-3 control-label">Room No.</label>
@@ -300,13 +300,13 @@
                       <select class="form-control" id="floor" name="floor" required>
                         <option value="" selected id="selfloor">- Select Floor -</option>
                         <?php
-                          $sql = "SELECT * FROM floor_category";
-                          $floor_query = $conn->query($sql);
-                          while($floor_row = $floor_query->fetch_array()){
-                            echo "
-                              <option value='".$floor_row['id']."'>".$floor_row['floor_name']."</option>
-                            ";
-                          }
+                          // $sql = "SELECT * FROM floor_category";
+                          // $floor_query = $conn->query($sql);
+                          // while($floor_row = $floor_query->fetch_array()){
+                          //   echo "
+                          //     <option value='".$floor_row['id']."'>".$floor_row['floor_name']."</option>
+                          //   ";
+                          // }
                         ?>
                       </select>
                     </div>
@@ -315,17 +315,52 @@
                       <select class="form-control" id="room" name="room" required>
                         <option value="" selected id="selroom">- Select Room -</option>
                         <?php
-                          $sql = "SELECT * FROM room_category";
-                          $room_query = $conn->query($sql);
-                          while($room_row = $room_query->fetch_array()){
-                            echo "
-                              <option value='".$room_row['id']."'>".$room_row['room_name']."</option>
-                            ";
-                          }
+                          // $sql = "SELECT * FROM room_category";
+                          // $room_query = $conn->query($sql);
+                          // while($room_row = $room_query->fetch_array()){
+                          //   echo "
+                          //     <option value='".$room_row['id']."'>".$room_row['room_name']."</option>
+                          //   ";
+                          // }
                         ?>
                       </select>
                     </div>
 
+                    </div>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="floor_room" class="col-sm-3 control-label">Floor & Room</label>
+
+                    <div class="col-sm-6">
+                      <select class="form-control" id="floor_room" name="floor_room" required>
+                        <option value="" selected id="selfloor_room">- Select Floor & Room -</option>
+                        <?php
+                          $floor_cat = 0;
+                          $sql = "SELECT *, rooms.id AS roomid FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+                          LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE occupants != occupancy AND gender = 'Male'";
+                          $query = $conn->query($sql);
+                          while($row = $query->fetch_array()){
+                            if($row['status'] != 1){
+                              if($floor_cat != $row['floor_category_id']){
+                                $floor_cat = $row['floor_category_id'];
+                                echo "
+                                <optgroup label='".$row['floor_name']."'>
+                              ";
+                              }
+                              echo "
+                             <option value='".$row['roomid']."'>".$row['room_name']."</option>
+                             ";
+                             if($floor_cat != $row['floor_category_id']){
+                              echo "
+                              </optgroup>
+                            ";
+                            
+                            }
+                            }       
+                          }
+                        ?>
+                      </select>
                     </div>
                 </div>
 
@@ -341,7 +376,228 @@
                           $query = $conn->query($sql);
                           while($row = $query->fetch_array()){
                             echo "
-                              <option value='".$row['id']."'>".$row['code']."</option>
+                              <option value='".$row['id']."'>".$row['title']."</option>
+                            ";
+                          }
+                        ?>
+                      </select>
+                    </div>
+                </div>
+                
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-rounded pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="submit" class="btn btn-warning btn-rounded" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--FeMale Edit -->
+<div class="modal fade" id="edit_female">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                  <br>
+              <h4 class="modal-title text-center"><b>Update Student Record</b></h4>
+            </div>
+            <div class="modal-body">
+              
+              <form class="form-horizontal" method="POST" action="../php/student/student_edit.php">
+                <input type="hidden" class="studid" name="id">
+                <div class="form-group">
+                    <label for="2edit_student_id" class="col-sm-3 control-label">Student ID</label>
+
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="2edit_student_id" name="student_id" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="2edit_lastname" class="col-sm-3 control-label">Lastname</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="2edit_lastname" name="lastname" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="2edit_firstname" class="col-sm-3 control-label">Firstname</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="2edit_firstname" name="firstname" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="2edit_middlename" class="col-sm-3 control-label">Middlename</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="2edit_middlename" name="middlename" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="2edit_bdate" class="col-sm-3 control-label">Birth Date</label>
+
+                    <div class="col-sm-8">
+                      <input type="date" class="form-control" id="2edit_bdate" name="bdate" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="2edit_privilege" class="col-sm-3 control-label">Privilege</label>
+
+                    <div class="col-sm-8">
+                      <select class="form-control" id="2edit_privilege" name="privilege" required>
+                        <option value="" selected>- Select -</option>
+                        <option value="Non-Athlete">Non-Athlete</option>
+                        <option value="Athlete">Athlete</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="2edit_gender" class="col-sm-3 control-label">Gender</label>
+
+                    <div class="col-sm-8">
+                      <select class="form-control" id="2edit_gender" name="gender" required>
+                        <option value="" selected>- Select -</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="2edit_address" class="col-sm-3 control-label">Address</label>
+
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control" id="2edit_address" name="address" rows="2" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="2edit_contact" class="col-sm-3 control-label">Contact No.</label>
+
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="2edit_contact" name="contact" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="2edit_email" class="col-sm-3 control-label">Email</label>
+
+                    <div class="col-sm-8">
+                      <input type="email" class="form-control" id="2edit_email" name="email" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="2edit_guardian" class="col-sm-3 control-label">Name of Guardian</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="2edit_guardian" name="guardian" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="2edit_guardian_contact" class="col-sm-3 control-label">Guardian's Contact No.</label>
+
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="2edit_guardian_contact" name="guardian_contact" required>
+                    </div>
+                </div>
+
+
+                <!-- <div class="form-group">
+                <div class="form-row">
+
+                    <label for="floor&room" class="col-sm-3 control-label">Room No.</label>
+
+                    <div class="col-sm-4">
+                      <select class="form-control" id="floor" name="floor" required>
+                        <option value="" selected id="selfloor">- Select Floor -</option>
+                        <?php
+                          // $sql = "SELECT * FROM floor_category";
+                          // $floor_query = $conn->query($sql);
+                          // while($floor_row = $floor_query->fetch_array()){
+                          //   echo "
+                          //     <option value='".$floor_row['id']."'>".$floor_row['floor_name']."</option>
+                          //   ";
+                          // }
+                        ?>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <select class="form-control" id="room" name="room" required>
+                        <option value="" selected id="selroom">- Select Room -</option>
+                        <?php
+                          // $sql = "SELECT * FROM room_category";
+                          // $room_query = $conn->query($sql);
+                          // while($room_row = $room_query->fetch_array()){
+                          //   echo "
+                          //     <option value='".$room_row['id']."'>".$room_row['room_name']."</option>
+                          //   ";
+                          // }
+                        ?>
+                      </select>
+                    </div>
+
+                    </div>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="floor_room" class="col-sm-3 control-label">Floor & Room</label>
+
+                    <div class="col-sm-6">
+                      <select class="form-control" id="floor_room" name="floor_room" required>
+                        <option value="" selected id="2selfloor_room">- Select Floor & Room -</option>
+                        <?php
+                          $floor_cat = 0;
+                          $sql = "SELECT *, rooms.id AS roomid FROM rooms LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+                          LEFT JOIN room_category ON room_category.id=rooms.room_category_id WHERE occupants != occupancy AND gender = 'Female'";
+                          $query = $conn->query($sql);
+                          while($row = $query->fetch_array()){
+                            if($row['status'] != 1){
+                              if($floor_cat != $row['floor_category_id']){
+                                $floor_cat = $row['floor_category_id'];
+                                echo "
+                                <optgroup label='".$row['floor_name']."'>
+                              ";
+                              }
+                              echo "
+                             <option value='".$row['roomid']."'>".$row['room_name']."</option>
+                             ";
+                             if($floor_cat != $row['floor_category_id']){
+                              echo "
+                              </optgroup>
+                            ";
+                            
+                            }
+                            }       
+                          }
+                        ?>
+                      </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="course" class="col-sm-3 control-label">Course</label>
+
+                    <div class="col-sm-8">
+                      <select class="form-control" id="course" name="course" required>
+                        <option value="" selected id="2selcourse"></option>
+                        <?php
+                          $sql = "SELECT * FROM course";
+                          $query = $conn->query($sql);
+                          while($row = $query->fetch_array()){
+                            echo "
+                              <option value='".$row['id']."'>".$row['title']."</option>
                             ";
                           }
                         ?>

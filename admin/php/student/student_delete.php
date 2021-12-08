@@ -9,6 +9,8 @@
 		$row = $query->fetch_assoc();
 		$occupants = $row['occupants'];
 		$rid = $row['id'];
+		$floor_room = $row['actualroom_id'];
+		$student_id = $row['student_id'];
 
 
 		// Activity Log
@@ -26,6 +28,9 @@
 		$sql = "INSERT INTO activity_logs (admin_id, details) VALUES ('$admin', 'Deleted ".$firstname." ".$lastname."`s Student record.')";
 		$conn->query($sql);
 		// end Activity log
+
+		$sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$floor_room', 'Removed `".$student_id."` ".$firstname." ".$lastname." from floor&room number','Deleted Student Record')";
+		$conn->query($sql);
 
 
 		$sql = "DELETE FROM students WHERE student_id = '$id'";

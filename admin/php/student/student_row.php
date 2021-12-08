@@ -4,7 +4,9 @@
 	if(isset($_POST['id'])){
 		$id = $_POST['id'];
 		$sql = "SELECT *, students.student_id AS studid FROM students LEFT JOIN course ON course.id=students.course_id 
-		LEFT JOIN floor_category ON floor_category.id=students.floor_id LEFT JOIN room_category ON room_category.id=students.room_id 
+		LEFT JOIN rooms ON rooms.id=students.actualroom_id
+		LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
+		LEFT JOIN room_category ON room_category.id=rooms.room_category_id 
 		WHERE students.student_id = '$id'";
 		$query = $conn->query($sql);
 		$row = $query->fetch_assoc();

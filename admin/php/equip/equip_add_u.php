@@ -27,6 +27,19 @@
 			$sql = "UPDATE equipments SET quantity = $quantity_service + quantity, quantity_service = $quantity_service + quantity_service, quantity_total = $quantity_service + quantity_total, status = 0 WHERE id = '$id'";
 			$conn->query($sql);
 
+			$sql = "SELECT * FROM equipments WHERE id = '$id'";
+			$query = $conn->query($sql);
+			$row = $query->fetch_assoc();
+			$e_id = $row['id'];
+			$available = $row['quantity'];
+			$being_used = $row['quantity_used'];
+			$eservice = $row['quantity_service'];
+			$unservice = $row['quantity_unservice'];
+			$equipment_total = $row['quantity_total'];
+
+			$sql = "INSERT INTO equipment_chart (equipment_id, available, being_used, eservice, unservice, equipment_total) VALUES ('$e_id', '$available', '$being_used', '$eservice', '$unservice', '$equipment_total')";
+			$conn->query($sql);
+
 			$_SESSION['success'] = $quantity_service . ' ' . $title . ' successfully added';
 
 

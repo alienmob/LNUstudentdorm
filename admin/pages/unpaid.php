@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
-              <div class="box-header with-border">
+              <!-- <div class="box-header with-border">
                 <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New Record</a>
 
                 <a href="#today" data-toggle="modal" class="btn btn-info btn-sm btn-rounded pull-right" style="margin:5px; margin-right:20px;"><i class="fa fa-bell"></i></a>
@@ -48,7 +48,7 @@
                 <a href="#late" data-toggle="modal" class="btn btn-warning btn-sm btn-rounded pull-right" style="margin:5px;"><i class="fa fa-bell"></i></a>
 
                 
-              </div>
+              </div> -->
 
               <div class="box-body">
             <div class="table-responsive">

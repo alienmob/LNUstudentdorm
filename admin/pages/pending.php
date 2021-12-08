@@ -133,7 +133,7 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.stud').val(response.stud);
+      $('.stud').val(response.pid);
       $('.student').val(response.student_id);
       $('#student').val(response.student_id).html(response.student_id);
       $('#edit_student').val(response.student_id).html(response.student_id);

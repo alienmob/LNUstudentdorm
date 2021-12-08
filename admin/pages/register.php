@@ -79,6 +79,12 @@
                       } else {
                         $status = '<span class="label label-success">Approved</span>';
                       }
+
+                      if ($row['gender'] == "Male") {
+                        $app = '<button class="btn btn-success btn-sm male btn-rounded" data-id="' . $row['reg_id'] . '"><i class="fa fa-check"></i></button>';
+                      } else {
+                        $app = '<button class="btn btn-success btn-sm female btn-rounded" data-id="' . $row['reg_id'] . '"><i class="fa fa-check"></i></button>';
+                      }
                       echo "
                         <tr>
                           
@@ -103,12 +109,13 @@
 
                           <td>
                           <button class='btn btn-info btn-sm view btn-rounded' data-id='" . $row['reg_id'] . "'><i class='fa fa-eye'></i></button>
-                          <button class='btn btn-success btn-sm approve btn-rounded' data-id='" . $row['reg_id'] . "'><i class='fa fa-check'></i></button>
+                          " . $app . "
                           </td>
                         </tr>
                       ";
                     }
                     ?>
+                    <!-- <button class='btn btn-success btn-sm approve btn-rounded' data-gender='".$row['gender']."' data-id='" . $row['reg_id'] . "'><i class='fa fa-check'></i></button> -->
                   </tbody>
                 </table>
               </div>
@@ -127,9 +134,31 @@
 
 
     $(function(){
-  $(document).on('click', '.approve', function(e){
+  // $(document).on('click', '.approve', function(e){
+  //   e.preventDefault();
+  //   const gender = $(this).data('gender');
+
+  //   if(gender == 'Male'){
+  //     $('#approveMale').modal('show');
+  //   }
+  //   else {
+  //     $('#approveFemale').modal('show');
+  //   }
+
+  //   var id = $(this).data('id');
+  //   getRow(id);
+  // });
+
+  $(document).on('click', '.male', function(e){
     e.preventDefault();
-    $('#approve').modal('show');
+    $('#male').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $(document).on('click', '.female', function(e){
+    e.preventDefault();
+    $('#female').modal('show');
     var id = $(this).data('id');
     getRow(id);
   });

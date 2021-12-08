@@ -103,7 +103,7 @@ if (isset($_GET['rooms'])) {
                 <tbody>
                   <?php
  
-                    $sql = "SELECT *, students.student_id AS studid FROM students LEFT JOIN course ON course.id=students.course_id 
+                    $sql = "SELECT *, students.student_id AS studid, students.gender AS gen FROM students LEFT JOIN course ON course.id=students.course_id 
                     LEFT JOIN floor_category ON floor_category.id=students.floor_id LEFT JOIN room_category ON room_category.id=students.room_id $where";
                     
                     $query = $conn->query($sql);
@@ -112,6 +112,12 @@ if (isset($_GET['rooms'])) {
                       $stud_id = $row['student_id'];
                       $fname = $row['firstname'];
                       $lname = $row['lastname'];
+
+                      if ($row['gen'] == "Male") {
+                        $app = '<button class="btn btn-sm btn-warning edit_male btn-rounded" data-id="'.$row['studid'].'"><i class="fa fa-edit"></i></button>';
+                      } else {
+                        $app = '<button class="btn btn-sm btn-warning edit_female btn-rounded" data-id="'.$row['studid'].'"><i class="fa fa-edit"></i></button>';
+                      }
                       echo "
                         <tr>
                           <td>
@@ -133,7 +139,7 @@ if (isset($_GET['rooms'])) {
                           <td>".$row['floor_name'].'-'.$row['room_name']."</td>
                           <td>".$row['code']."</td>
                           <td>
-                            <button class='btn btn-sm btn-warning edit btn-rounded' data-id='".$row['studid']."'><i class='fa fa-edit'></i></button>
+                          ".$app."
                             <button class='btn btn-sm btn-danger delete btn-rounded' data-id='".$row['studid']."'><i class='fa fa-trash'></i></button>
                           </td>
                         </tr>
@@ -167,9 +173,16 @@ $(function(){
         }
       });
 
-  $(document).on('click', '.edit', function(e){
+  $(document).on('click', '.edit_male', function(e){
     e.preventDefault();
-    $('#edit').modal('show');
+    $('#edit_male').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $(document).on('click', '.edit_female', function(e){
+    e.preventDefault();
+    $('#edit_female').modal('show');
     var id = $(this).data('id');
     getRow(id);
   });
@@ -210,12 +223,41 @@ function getRow(id){
       $('#edit_guardian').val(response.guardian);
       $('#edit_guardian_contact').val(response.guardian_contact);
       $('#display_photo').attr("src", response.photo ? '../../images/' + response.photo : '../../images/profile.jpg');
-      $('#selfloor').val(response.floor_id);
-      $('#selfloor').html(response.floor_name);
-      $('#selroom').val(response.room_id);
-      $('#selroom').html(response.room_name);
+
+      // $('#selfloor').val(response.floor_id);
+      // $('#selfloor').html(response.floor_name);
+      // $('#selroom').val(response.room_id);
+      // $('#selroom').html(response.room_name);
+
+      $('#selfloor_room').val(response.floor_name +' - '+ response.room_name).html(response.floor_name +' - '+ response.room_name);
+
       $('#selcourse').val(response.course_id);
       $('#selcourse').html(response.code);
+
+
+
+      $('#2edit_student_id').val(response.student_id);
+      $('#2edit_firstname').val(response.firstname);
+      $('#2edit_lastname').val(response.lastname);
+      $('#2edit_middlename').val(response.middlename);
+      $('#2edit_bdate').val(response.bdate);
+      $('#2edit_gender').val(response.gender);
+      $('#2edit_privilege').val(response.privilege);
+      $('#2edit_address').val(response.address);
+      $('#2edit_contact').val(response.contact);
+      $('#2edit_email').val(response.email);
+      $('#2edit_guardian').val(response.guardian);
+      $('#2edit_guardian_contact').val(response.guardian_contact);
+
+      // $('#selfloor').val(response.floor_id);
+      // $('#selfloor').html(response.floor_name);
+      // $('#selroom').val(response.room_id);
+      // $('#selroom').html(response.room_name);
+
+      $('#2selfloor_room').val(response.floor_name +' - '+ response.room_name).html(response.floor_name +' - '+ response.room_name);
+
+      $('#2selcourse').val(response.course_id);
+      $('#2selcourse').html(response.code);
       
       $('.del_stu').html(response.firstname+' '+response.lastname);
     }

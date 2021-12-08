@@ -22,7 +22,7 @@
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-tasks"></i>
-          <span>Dormitory Management</span>
+          <span>Management</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -49,8 +49,8 @@
         <li><a href="../pages/unpaid.php"><i class="fa fa-circle-o"></i> Student Payments</a></li>
         <li><a href="../pages/paid.php"><i class="fa fa-circle-o"></i> Student Paid Record</a></li>
         <li><a href="../pages/pending.php"><i class="fa fa-circle-o"></i> Equipment Requests</a></li>
-        <li><a href="../pages/borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipments</a></li>
-        <li><a href="../pages/return.php"><i class="fa fa-circle-o"></i> Returned Equipments</a></li>
+        <li><a href="../pages/borrow.php"><i class="fa fa-circle-o"></i> Borrowed Equipment</a></li>
+        <li><a href="../pages/return.php"><i class="fa fa-circle-o"></i> Returned Equipment</a></li>
              
         </ul>
       </li>
@@ -95,14 +95,28 @@
       <li class="treeview">
         <a href="#" class="text-white">
           <i class="fa fa-book"></i>
-          <span>Reports</span>
+          <span>Report Logs</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="../pages/room_reports.php"><i class="fa fa-circle-o"></i> Room Reports</a></li>
-        <li><a href="../pages/equipment_reports.php"><i class="fa fa-circle-o"></i> Equipment Reports</a></li>
+        <li><a href="../pages/room_reports.php"><i class="fa fa-circle-o"></i> Room Report Logs</a></li>
+        <li><a href="../pages/equipment_reports.php"><i class="fa fa-circle-o"></i> Equipment Report Logs</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#" class="text-white">
+          <i class="fa fa-pie-chart"></i>
+          <span>Summary Reports</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="../pages/summary_room.php"><i class="fa fa-circle-o"></i> Rooms Summary Report</a></li>
+        <li><a href="../pages/summary_equipment.php"><i class="fa fa-circle-o"></i> Equipment Summary Report</a></li>
         </ul>
       </li>
 

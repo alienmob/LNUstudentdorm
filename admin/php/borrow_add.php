@@ -2,6 +2,7 @@
 include '../includes/session.php';
 
 if (isset($_POST['add'])) {
+	$pending_id = $_POST['id'];
 	$student = $_POST['student_id'];
 	$feedback = $_POST['feedback'];
 	
@@ -19,11 +20,7 @@ if (isset($_POST['add'])) {
 		
 
 		$added = 0;
-		$pending_id = $_POST['id'];
-		$sql = "SELECT * FROM pending WHERE id = $pending_id AND status != 1";
-		$query = $conn->query($sql);
-		$prow = $query->fetch_assoc();
-		$pid = $prow['id'];
+		
 		
 		foreach ($_POST['code'] as $code) {
 
@@ -44,9 +41,30 @@ if (isset($_POST['add'])) {
 						$added++;
 						$sql = "UPDATE equipments SET quantity = $quantity - 1, quantity_used = quantity_used + 1, status = 0 WHERE id = '$bid'";
 						$conn->query($sql);
-						$sql = "UPDATE pending SET feedback = '$feedback', status = $added WHERE id = '$pid' AND status != 1";
+						$sql = "UPDATE pending SET feedback = '$feedback', status = $added WHERE id = '$pending_id'";
+						$conn->query($sql);
+
+						$sql = "SELECT * FROM equipments WHERE code = '$code'";
+						$query = $conn->query($sql);
+						$row = $query->fetch_assoc();
+						$e_id = $row['id'];
+						$available = $row['quantity'];
+						$being_used = $row['quantity_used'];
+						$eservice = $row['quantity_service'];
+						$unservice = $row['quantity_unservice'];
+						$equipment_total = $row['quantity_total'];
+
+						$sql = "INSERT INTO equipment_chart (equipment_id, available, being_used, eservice, unservice, equipment_total) VALUES ('$e_id', '$available', '$being_used', '$eservice', '$unservice', '$equipment_total')";
 						$conn->query($sql);
 						
+
+						$sql = "SELECT * FROM students WHERE student_id = '$student_id'";
+						$query = $conn->query($sql);
+						$row = $query->fetch_assoc();
+						$firstname = $row['firstname'];
+						$lastname = $row['lastname'];
+						$sql = "INSERT INTO reports (equipment_reports, details) VALUES ('$title1', '`".$student_id."` ".$firstname." ".$lastname." borrowed  1 ".$title1."')";
+						$conn->query($sql);
 
 						$sql = "SELECT * FROM equipments WHERE code = '$code'";
 						$query = $conn->query($sql);
