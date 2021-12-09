@@ -55,6 +55,17 @@ const colors = [
   "rgb(26, 83, 69, 0.7)",
   "rgb(185, 183, 23, 0.7)",
   "rgb(248, 8, 0, 0.7)",
+  "rgb(100, 85, 66)",
+  "rgb(59, 38, 10)",
+  "rgb(165, 253, 0)",
+  "rgb(55, 122, 0)",
+  "rgb(0, 133, 173)",
+  "rgb(127, 0, 247)",
+  "rgb(47, 0, 90)",
+  "rgb(92, 135, 255)",
+  "rgb(121, 1, 158)",
+  "rgb(104, 23, 196)",
+  "rgb(180, 189, 100)",
 ]
 
 let chartdata = {
@@ -93,7 +104,7 @@ $.ajax({
         {
           plugins: {
             title: {
-              text: 'Room Records Time Scale',
+              text: 'Weekly Room Records Time Scale',
               display: true
             }
           },

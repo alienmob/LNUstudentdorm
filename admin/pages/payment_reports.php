@@ -47,21 +47,21 @@
             <div class="table-responsive">
                 <table id="example" class="table table-bordered table-striped">
                   <thead>
-                    <th>Time</th>
                     <th>Date</th>
+                    <th>Time</th>
                     <th>Users</th>
                     <th>Details</th>
                   </thead>
                   <tbody>
                     <?php
-                     $sql = "SELECT * FROM payment_report ORDER BY date_reports DESC";
+                     $sql = "SELECT * FROM payment_report ORDER BY id DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     
                       echo "
                         <tr>
+                        <td>" . date('M d, Y', strtotime($row['date_reports'])) . "</td>
                           <td>" . date('h:ia', strtotime($row['date_reports'])) . "</td>
-                          <td>" . date('M d, Y', strtotime($row['date_reports'])) . "</td>
                           <td>" . $row['user'] ."</td>  
                           <td>" . $row['details'] . "</td>
                         </tr>

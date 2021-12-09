@@ -80,8 +80,8 @@
 		WHERE student_id = '$id'";
 		if($conn->query($sql)){
 
-			$sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$floor_room', '$occ')";
-			$conn->query($sql);
+			// $sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$floor_room', '$occ')";
+			// $conn->query($sql);
 
 			$sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$floor_room', 'Changed Assignment of floor and room number for `".$student_id."` ".$firstname." ".$lastname."','Updated Student Record')";
 			$conn->query($sql);

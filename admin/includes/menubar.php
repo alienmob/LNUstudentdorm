@@ -116,8 +116,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="../pages/summary_room.php"><i class="fa fa-circle-o"></i> Rooms Summary Report</a></li>
-        <li><a href="../pages/summary_equipment.php"><i class="fa fa-circle-o"></i> Equipment Summary Report</a></li>
+        <li><a href="../pages/summary_room.php"><i class="fa fa-circle-o"></i> Rooms Report</a></li>
+        <li><a href="../pages/summary_equipment.php"><i class="fa fa-circle-o"></i> Equipment Report</a></li>
+        <li><a href="../pages/borrow&return.php"><i class="fa fa-circle-o"></i> Borrowed & Returned</a></li>
         </ul>
       </li>
 

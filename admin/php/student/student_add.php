@@ -99,12 +99,12 @@
 					$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE id = '$floor_room'";
 					$conn->query($sql);	
 
-					$sql = "SELECT * FROM rooms WHERE id = '$floor_room'";
-					$query = $conn->query($sql);	
-					$row = $query->fetch_assoc();
-					$occ = $row['occupants'];
-					$sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$floor_room', '$occ')";
-					$conn->query($sql);
+					// $sql = "SELECT * FROM rooms WHERE id = '$floor_room'";
+					// $query = $conn->query($sql);	
+					// $row = $query->fetch_assoc();
+					// $occ = $row['occupants'];
+					// $sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$floor_room', '$occ')";
+					// $conn->query($sql);
 			
 					// Activity Log
 					$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";

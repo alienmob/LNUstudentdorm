@@ -259,7 +259,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Paid & Unpaid Status Report</h3>
+              <h3 class="box-title">Paid & Unpaid Summary Report</h3>
               <div class="box-tools pull-right">
                 <form class="form-inline">
                   <div class="form-group">
@@ -282,7 +282,7 @@
               <div class="chart">
                 <br>
                 <div id="legend" class="text-center"></div>
-                <canvas id="barChart" style="height:350px"></canvas>
+                <canvas id="barChart" style="height:460px"></canvas>
               </div>
             </div>
           </div>

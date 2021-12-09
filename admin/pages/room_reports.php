@@ -47,8 +47,8 @@
             <div class="table-responsive">
                 <table id="example" class="table table-bordered table-striped">
                   <thead>
-                    <th>Time</th>
                     <th>Date</th>
+                    <th>Time</th>
                     <th>Rooms</th>
                     <th>Details</th>
                     <th>Reason</th>
@@ -57,14 +57,14 @@
                     <?php
                      $sql = "SELECT * FROM room_report LEFT JOIN rooms ON rooms.id=room_report.room_id 
                      LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-                     LEFT JOIN room_category ON room_category.id=rooms.room_category_id ORDER BY date_reports DESC";
+                     LEFT JOIN room_category ON room_category.id=rooms.room_category_id ORDER BY room_report.id DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     
                       echo "
                         <tr>
+                        <td>" . date('M d, Y', strtotime($row['date_reports'])) . "</td>
                           <td>" . date('h:ia', strtotime($row['date_reports'])) . "</td>
-                          <td>" . date('M d, Y', strtotime($row['date_reports'])) . "</td>
                           <td>" . $row['floor_name'] .'&nbsp;-&nbsp;'. $row['room_name'] . "</td>  
                           <td>" . $row['details'] . "</td>
                           <td>" . $row['reason'] . "</td>
