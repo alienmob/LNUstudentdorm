@@ -61,7 +61,7 @@
 <script>
  $.ajax({
     type: 'POST',
-    url: '../php/student/student_row.php',
+    url: '../php/equip/equip_chart_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
