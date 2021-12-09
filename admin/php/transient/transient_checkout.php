@@ -34,7 +34,7 @@ if (isset($_POST['checkout'])) {
 			$row = $query->fetch_assoc();
 			$rid = $row['rid'];
 			$occ = $row['occupants'];
-			$sql = "INSERT INTO room_chart (room_id, occupants) VALUES ('$rid', '$occ')";
+			$sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$rid', '$occ')";
 			$conn->query($sql);
 
 			$sql = "UPDATE checkout SET status = 1 WHERE transient_id = '$id'";

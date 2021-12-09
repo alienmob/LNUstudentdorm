@@ -67,7 +67,7 @@ if (isset($_POST['checkin'])) {
 			$row = $query->fetch_assoc();
 			$rid = $row['rid'];
 			$occ = $row['occupants'];
-			$sql = "INSERT INTO room_chart (room_id, occupants) VALUES ('$rid', '$occ')";
+			$sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$rid', '$occ')";
 			$conn->query($sql);
 			
 

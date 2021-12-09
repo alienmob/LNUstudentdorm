@@ -1,13 +1,5 @@
 <?php include '../includes/session.php'; ?>
-<?php
-$catid = 0;
-$where = '';
-if (isset($_GET['category'])) {
-  $catid = $_GET['category'];
-  $where = 'WHERE equipments.category_id = ' . $catid;
-}
 
-?>
 <?php include '../includes/header.php'; ?>
 <title>LNU Dormitory | Equipment Report Logs</title>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -49,29 +41,7 @@ if (isset($_GET['category'])) {
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
-              <!-- <div class="box-header with-border">
-                <a href="#addnew" data-toggle="modal" class="btn btn-success btn-sm btn-rounded"><i class="fa fa-plus"></i> New</a>
-                <div class="box-tools pull-right">
-                  <form class="form-inline">
-                    <div class="form-group">
-                      <label>Category: </label>
-                      <select class="form-control input-sm" id="select_category">
-                        <option value="0">ALL</option>
-                        <?php
-                        // $sql = "SELECT * FROM category";
-                        // $query = $conn->query($sql);
-                        // while ($catrow = $query->fetch_assoc()) {
-                        //   $selected = ($catid == $catrow['id']) ? " selected" : "";
-                        //   echo "
-                        //     <option value='" . $catrow['id'] . "' " . $selected . ">" . $catrow['name'] . "</option>
-                        //   ";
-                        // }
-                        ?>
-                      </select>
-                    </div>
-                  </form>
-                </div>
-              </div> -->
+
 
               <div class="box-body">
             <div class="table-responsive">
@@ -84,7 +54,7 @@ if (isset($_GET['category'])) {
                   </thead>
                   <tbody>
                     <?php
-                    $sql = "SELECT *, reports.id AS equipid FROM reports ORDER BY date_reports DESC $where";
+                    $sql = "SELECT * FROM reports ORDER BY id DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                       

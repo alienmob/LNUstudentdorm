@@ -75,6 +75,7 @@ $.ajax({
           chartdata.datasets.push({id: item.id, label: item.title, borderColor: colors[i], backgroundColor: colors[i], data: [{y: item.available, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')}]})
         }
         else {
+          flag = false
           chartdata.datasets.forEach((chartData, i) => {
             if(item.id == chartData.id){
               flag = true

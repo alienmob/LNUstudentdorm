@@ -45,7 +45,7 @@
 			$query = $conn->query($sql);	
 			$row = $query->fetch_assoc();
 			$occ = $row['occupants'];
-			$sql = "INSERT INTO room_chart (room_id, occupants) VALUES ('$floor_room', '$occ')";
+			$sql = "INSERT INTO room_chart (room_id, occ) VALUES ('$floor_room', '$occ')";
 			$conn->query($sql);
 
 			

@@ -72,19 +72,19 @@ $.ajax({
       response.forEach((item, i) => {
         chartdata.labels.push(moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A'))
         if(chartdata.datasets.length == 0){
-          chartdata.datasets.push({id: item.id, label: item.room, borderColor: colors[i], backgroundColor: colors[i], data: [{y: item.occupants, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')}]})
+          chartdata.datasets.push({id: item.id, label: item.room, borderColor: colors[i], backgroundColor: colors[i], data: [{y: item.occ, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')}]})
         }
         else {
           flag = false
           chartdata.datasets.forEach((chartData, i) => {
             if(item.id == chartData.id){
               flag = true
-              chartdata.datasets[i].data.push({y: item.occupants, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')})
+              chartdata.datasets[i].data.push({y: item.occ, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')})
             }
           })
 
           if(!flag) {
-            chartdata.datasets.push({id: item.id, label: item.room, borderColor: colors[i], backgroundColor: colors[i], data: [{y: item.occupants, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')}]})
+            chartdata.datasets.push({id: item.id, label: item.room, borderColor: colors[i], backgroundColor: colors[i], data: [{y: item.occ, x: moment(item.current_date).format('MM-DD-YYYY hh:mm:ss A')}]})
           }
         }
       })
