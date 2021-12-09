@@ -230,7 +230,7 @@
               <h4 class="modal-title text-center"><b>Register New Student</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="../php/student/student_add.php">
+              <form class="form-horizontal" method="POST" action="../php/student/student_add2.php">
 
                <input type="hidden" class="reg_id" name="id">
                <input type="hidden" class="student_id" name="student_id">
@@ -287,9 +287,9 @@
 
                 <hr>
                 <div class="form-group">
-                    <label for="getUID" class="col-sm-3 control-label">RFID:</label>
+                    <label for="getUID2" class="col-sm-3 control-label">RFID:</label>
                     <div class="col-sm-8">
-                      <textarea name="getUID" id="getUID" class="form-control" placeholder="Please Scan ID / Key Chain to display RFID" rows="1" required></textarea>
+                      <textarea name="getUID2" id="getUID2" class="form-control" placeholder="Please Scan ID / Key Chain to display RFID" rows="1" required></textarea>
                     </div>
                 </div>
               <label style="margin-left:150px;"><h5>Please scan RFID to confirm registration!</h5></label>
@@ -310,6 +310,13 @@
       $("#getUID").load("../UIDContainer.php");
     setInterval(function() {
       $("#getUID").load("../UIDContainer.php");
+    }, 600);
+	});
+
+  $(document).ready(function(){
+      $("#getUID2").load("../UIDContainer.php");
+    setInterval(function() {
+      $("#getUID2").load("../UIDContainer.php");
     }, 600);
 	});
 </script>

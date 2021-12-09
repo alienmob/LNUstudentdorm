@@ -9,7 +9,7 @@ if (isset($_GET['category'])) {
 
 ?>
 <?php include '../includes/header.php'; ?>
-<title>LNU Dormitory | Equipment Reports</title>
+<title>LNU Dormitory | Equipment Report Logs</title>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 

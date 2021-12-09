@@ -23,6 +23,8 @@ require_once 'C:\xampp\htdocs\LNUstudentdorm\admin\includes\config.php';
 		while($row = $query->fetch_assoc()){
 		$student_id = $row['student_id'];
 		$privilege = $row['privilege'];
+		$firstname = $row['firstname'];
+		$lastname = $row['lastname'];
 
 		if($privilege == 'Athlete'){
 
@@ -38,6 +40,9 @@ require_once 'C:\xampp\htdocs\LNUstudentdorm\admin\includes\config.php';
 			$conn->query($sql);
 
 			$sql = "UPDATE students SET unpaid_total = unpaid_total + 1 WHERE student_id = '$student_id'";
+			$conn->query($sql);
+
+			$sql = "INSERT INTO payment_report (user, details) VALUES ('`".$student_id."` ".$firstname." ".$lastname."', 'Set payment for ".date('M d, Y', strtotime($date_from))." - ".date('M d, Y', strtotime($date_to))."')";
 			$conn->query($sql);
 
 		} else {

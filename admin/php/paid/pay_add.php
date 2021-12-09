@@ -17,7 +17,10 @@ if (isset($_POST['pay'])) {
 		$_SESSION['error'] = 'Student not found';
 	} else {
         $row = $query->fetch_assoc();
-		$stud_id = $row['student_id'];  //
+		$stud_id = $row['student_id'];
+		$firstname = $row['firstname'];
+		$lastname = $row['lastname'];
+
 		$added = 0;
         $sql = "SELECT * FROM unpaid WHERE student_id = '$stud_id' AND status = 0";
 		$query = $conn->query($sql);
@@ -34,6 +37,9 @@ if (isset($_POST['pay'])) {
 			$conn->query($sql);
 
             $sql = "DELETE FROM `unpaid` WHERE id = '$uid'";
+			$conn->query($sql);
+
+			$sql = "INSERT INTO payment_report (user, details) VALUES ('`".$student_id."` ".$firstname." ".$lastname."', 'Paid for ".date('M d, Y', strtotime($date_from))." - ".date('M d, Y', strtotime($date_to))."')";
 			$conn->query($sql);
 			// $sql = "DELETE FROM `promissory` WHERE status = 1";
 			// $conn->query($sql);

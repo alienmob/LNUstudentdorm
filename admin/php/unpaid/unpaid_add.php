@@ -30,6 +30,8 @@ if (isset($_POST['add'])) {
 		while($row = $query->fetch_assoc()){
 		$student_id = $row['student_id'];
 		$privilege = $row['privilege'];
+		$firstname = $row['firstname'];
+		$lastname = $row['lastname'];
 
 		if($privilege == 'Athlete'){
 
@@ -46,6 +48,11 @@ if (isset($_POST['add'])) {
 
 			$sql = "UPDATE students SET unpaid_total = unpaid_total + 1 WHERE student_id = '$student_id'";
 			$conn->query($sql);
+
+			
+			$sql = "INSERT INTO payment_report (user, details) VALUES ('`".$student_id."` ".$firstname." ".$lastname."', 'Set payment for ".date('M d, Y', strtotime($date_from))." - ".date('M d, Y', strtotime($date_to))."')";
+			$conn->query($sql);
+			
 
 		} else {
 			if (!isset($_SESSION['error'])) {

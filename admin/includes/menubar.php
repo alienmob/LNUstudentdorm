@@ -101,6 +101,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
+        <li><a href="../pages/payment_reports.php"><i class="fa fa-circle-o"></i> Payment Report Logs</a></li>
         <li><a href="../pages/room_reports.php"><i class="fa fa-circle-o"></i> Room Report Logs</a></li>
         <li><a href="../pages/equipment_reports.php"><i class="fa fa-circle-o"></i> Equipment Report Logs</a></li>
         </ul>

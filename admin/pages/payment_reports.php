@@ -1,7 +1,7 @@
 <?php include '../includes/session.php'; ?>
 
 <?php include '../includes/header.php'; ?>
-<title>LNU Dormitory | Rooms Report Logs</title>
+<title>LNU Dormitory | Payment Report Logs</title>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -13,12 +13,12 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Room Report Logs 
+          Payment Report Logs 
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
           <li>Facility</li>
-          <li class="active">Room Report Logs</li>
+          <li class="active">Payment Report Logs</li>
         </ol>
       </section>
       <!-- Main content -->
@@ -49,15 +49,12 @@
                   <thead>
                     <th>Time</th>
                     <th>Date</th>
-                    <th>Rooms</th>
+                    <th>Users</th>
                     <th>Details</th>
-                    <th>Reason</th>
                   </thead>
                   <tbody>
                     <?php
-                     $sql = "SELECT * FROM room_report LEFT JOIN rooms ON rooms.id=room_report.room_id 
-                     LEFT JOIN floor_category ON floor_category.id=rooms.floor_category_id 
-                     LEFT JOIN room_category ON room_category.id=rooms.room_category_id ORDER BY date_reports DESC";
+                     $sql = "SELECT * FROM payment_report ORDER BY date_reports DESC";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     
@@ -65,9 +62,8 @@
                         <tr>
                           <td>" . date('h:ia', strtotime($row['date_reports'])) . "</td>
                           <td>" . date('M d, Y', strtotime($row['date_reports'])) . "</td>
-                          <td>" . $row['floor_name'] .'&nbsp;-&nbsp;'. $row['room_name'] . "</td>  
+                          <td>" . $row['user'] ."</td>  
                           <td>" . $row['details'] . "</td>
-                          <td>" . $row['reason'] . "</td>
                         </tr>
                       ";
                     }
