@@ -43,7 +43,7 @@
         <div class="box-body">
           <div class="chart">
             <div id="legend" class="text-center"></div>
-            <canvas id="timeScale" style="height:350px"></canvas>
+            <canvas id="timeScale" style="height: 650px"></canvas>
           </div>
         </div>
       </div>
@@ -51,66 +51,54 @@
   </div>
   <?php include '../includes/footer.php'; ?>
 </div>
-<?php include '../includes/scripts.php'; ?>
 
 <!-- Chart Data -->
-<?php
-    $logs = array();
-    $labels = array();
-    $data = array();
-    $sql = "SELECT * FROM equipment_chart INNER JOIN equipments ON equipment_chart.equipment_id=equipments.id ORDER BY equipment_chart.id LIMIT 10;";
-    $query = $conn->query($sql);
-    while($row = $query->fetch_assoc()){
-        echo $row;
-        // echo $row['current_date'];
-        array_push($data, $row['available']);
-        array_push($labels, $row['current_date']);
-    }
-    $logs = json_encode($logs);
-?>
+
+<?php include '../includes/scripts.php'; ?>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 
 <!-- End Chart Data -->
 <script>
-$(function(){
-  var timeScale = $('#timeScale').get(0).getContext('2d')
-  var barChart = new Chart(timeScale)
-  
-  
-    const data = {
-    labels: <?= $labels ?>,
-    datasets: [{
-        label: 'My First dataset',
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-        borderColor: Utils.CHART_COLORS.red,
-        fill: false,
-        data: Utils.numbers(NUMBER_CFG),
-    }, {
-        label: 'My Second dataset',
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-        borderColor: Utils.CHART_COLORS.blue,
-        fill: false,
-        data: Utils.numbers(NUMBER_CFG),
-    }, {
-        label: 'Dataset with point data',
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.green, 0.5),
-        borderColor: Utils.CHART_COLORS.green,
-        fill: false,
-        data: [{
-        x: Utils.newDateString(0),
-        y: Utils.rand(0, 100)
-        }, {
-        x: Utils.newDateString(5),
-        y: Utils.rand(0, 100)
-        }, {
-        x: Utils.newDateString(7),
-        y: Utils.rand(0, 100)
-        }, {
-        x: Utils.newDateString(15),
-        y: Utils.rand(0, 100)
-        }],
-    }]
-    };
+ $.ajax({
+    type: 'POST',
+    url: '../php/student/student_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+    }
 });
+var timeScale = $('#timeScale').get(0).getContext('2d')
+const myChart = new Chart(timeScale, {
+  type: 'line',
+  data: {
+      labels: [<?php foreach($labels as $label) { echo "\"" . $label . '",';} ?>], 
+      datasets: [
+        {
+          label: data,
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor:  'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        },
+        {
+          label: '2nd Data',
+          data: [{y: 7, x: '2021-12-08 20:20:36'}, {y: 25, x: '2021-12-08 20:31:43'}],
+          backgroundColor:  'rgba(235, 92, 112, 0.2)',
+          borderColor: 'rgba(235, 92, 112, 0.7)',
+          borderWidth: 1
+        },
+      ]
+  },
+  options: {
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      }
+  }
+});
+// var myChart = barChart.Bar(data, config)
+  
 
 </script>
 

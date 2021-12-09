@@ -25,6 +25,7 @@
 
 <!-- ChartJS -->
 <script type="text/javascript" src="../../bower_components/chart.js/Chart.js"></script>
+
 <!-- daterangepicker -->
 <script type="text/javascript" src="../../bower_components/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
