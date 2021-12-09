@@ -71,6 +71,7 @@
 			$row = $query->fetch_assoc();
 			$floors = $row['floor_category_id'];
 			$rooms = $row['room_category_id'];
+			$occ = $row['occupants'];
 
 
 		$sql = "UPDATE students SET student_id = '$student_id', lastname = '$lastname', firstname = '$firstname', middlename = '$middlename', bdate = '$bdate', privilege = '$privilege', 
@@ -78,6 +79,9 @@
 		guardian_contact = '$guardian_contact', floor_id = '$floors', room_id = '$rooms', actualroom_id = '$floor_room', course_id = '$course' 
 		WHERE student_id = '$id'";
 		if($conn->query($sql)){
+
+			$sql = "INSERT INTO room_chart (room_id, occupants) VALUES ('$floor_room', '$occ')";
+			$conn->query($sql);
 
 			$sql = "INSERT INTO room_report (room_id, details, reason) VALUES ('$floor_room', 'Changed Assignment of floor and room number for `".$student_id."` ".$firstname." ".$lastname."','Updated Student Record')";
 			$conn->query($sql);

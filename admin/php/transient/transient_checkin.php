@@ -61,6 +61,14 @@ if (isset($_POST['checkin'])) {
 			
 			$sql = "UPDATE rooms SET occupants = occupants + 1 WHERE floor_category_id = '$floor_id' AND room_category_id = '$room_id'";
 			$conn->query($sql);	
+
+			$sql = "SELECT *, rooms.id AS rid FROM rooms WHERE floor_category_id = '$floor_id' AND room_category_id = '$room_id'";
+			$query = $conn->query($sql);	
+			$row = $query->fetch_assoc();
+			$rid = $row['rid'];
+			$occ = $row['occupants'];
+			$sql = "INSERT INTO room_chart (room_id, occupants) VALUES ('$rid', '$occ')";
+			$conn->query($sql);
 			
 
 			$_SESSION['success'] = 'Transient "'.$transient_id.'" Checked In Successfully';

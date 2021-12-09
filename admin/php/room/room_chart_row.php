@@ -2,7 +2,7 @@
 	include '../../includes/session.php';
 
 
-    $sql = "SELECT * FROM equipment_chart INNER JOIN equipments ON equipments.id=equipment_chart.equipment_id ORDER BY equipment_chart.id LIMIT 10";
+    $sql = "SELECT * FROM room_chart INNER JOIN rooms ON rooms.id=room_chart.room_id ORDER BY room_chart.id LIMIT 10";
 	$query = $conn->query($sql);
 	while($row = $query->fetch_assoc()){
 		$response[] = $row;

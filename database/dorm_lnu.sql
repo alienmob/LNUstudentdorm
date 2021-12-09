@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2021 at 11:42 AM
+-- Generation Time: Dec 09, 2021 at 05:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -291,7 +291,26 @@ INSERT INTO `activity_logs` (`id`, `admin_id`, `date_time`, `details`) VALUES
 (734, 1, '2021-12-09 08:36:27', 'Added ``Gia Nila Pantas`` to the Student record.'),
 (735, 1, '2021-12-09 08:37:56', 'Added ``Sebastian Gregory`` to the Student record.'),
 (736, 1, '2021-12-09 08:38:30', 'Deleted Gia Nila Pantas`s Student record.'),
-(737, 1, '2021-12-09 08:38:34', 'Deleted Sebastian Gregory`s Student record.');
+(737, 1, '2021-12-09 08:38:34', 'Deleted Sebastian Gregory`s Student record.'),
+(738, 1, '2021-12-09 13:53:02', 'Set Payment for the month of Nov 01, 2021 to Dec 31, 2021'),
+(739, 1, '2021-12-09 13:53:46', 'Set Payment for the month of Nov 01, 2021 to Nov 30, 2021'),
+(740, 1, '2021-12-09 13:54:39', 'Set Payment for the month of Dec 01, 2021 to Dec 31, 2021'),
+(741, 1, '2021-12-09 13:55:06', 'Confirmed Jeremiah Embana`s Unpaid Payment Record.'),
+(742, 1, '2021-12-09 15:14:32', 'Added ``Gia Nila Pantas`` to the Student record.'),
+(743, 1, '2021-12-09 15:17:34', 'Updated Jeremiah Embana`s Student record.'),
+(744, 1, '2021-12-09 15:17:46', 'Updated Gia Nila Pantas`s Student record.'),
+(745, 1, '2021-12-09 15:17:57', 'Updated Gia Nila Pantas`s Student record.'),
+(746, 1, '2021-12-09 15:18:04', 'Updated Jeremiah Embana`s Student record.'),
+(747, 1, '2021-12-09 15:19:58', 'Deleted Gia Nila Pantas`s Student record.'),
+(748, 1, '2021-12-09 15:28:46', 'Added ``Nehru Villarreal Connor Hewitt`` to the Student record.'),
+(749, 1, '2021-12-09 15:29:05', 'Added ``Petra Branch Kaden Suarez`` to the Student record.'),
+(750, 1, '2021-12-09 15:29:20', 'Updated Nehru Villarreal Connor Hewitt`s Student record.'),
+(751, 1, '2021-12-09 15:29:28', 'Updated Petra Branch Kaden Suarez`s Student record.'),
+(752, 1, '2021-12-09 15:29:32', 'Deleted Petra Branch Kaden Suarez`s Student record.'),
+(753, 1, '2021-12-09 15:29:35', 'Deleted Nehru Villarreal Connor Hewitt`s Student record.'),
+(754, 1, '2021-12-09 15:46:35', 'Updated Jeremiah Embana`s Student record.'),
+(755, 1, '2021-12-09 15:46:41', 'Updated Jeremiah Embana`s Student record.'),
+(756, 1, '2021-12-09 15:52:29', 'Confirmed Jeremiah Embana`s Unpaid Payment Record.');
 
 -- --------------------------------------------------------
 
@@ -649,7 +668,9 @@ CREATE TABLE `paid` (
 
 INSERT INTO `paid` (`id`, `student_id`, `date_from`, `date_to`, `date_paid`, `status`, `receipt`) VALUES
 (310, 1800649, '2021-12-01', '2021-12-31', '2021-12-08 16:48:48', 1, ''),
-(311, 1800649, '2021-12-01', '2021-12-31', '2021-12-08 18:22:12', 1, '');
+(311, 1800649, '2021-12-01', '2021-12-31', '2021-12-08 18:22:12', 1, ''),
+(312, 1800649, '2021-12-09', '2022-01-07', '2021-12-09 13:55:06', 1, ''),
+(313, 1800649, '2021-12-01', '2021-12-31', '2021-12-09 15:52:29', 1, '');
 
 -- --------------------------------------------------------
 
@@ -676,6 +697,18 @@ CREATE TABLE `payment_report` (
   `user` varchar(100) NOT NULL,
   `details` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment_report`
+--
+
+INSERT INTO `payment_report` (`id`, `date_reports`, `user`, `details`) VALUES
+(3, '2021-12-09 11:55:00', '`1800649` Jeremiah Embana', 'Set payment for Dec 09, 2021 - Jan 07, 2022'),
+(4, '2021-12-09 13:53:02', '`1800649` Jeremiah Embana', 'Set payment for Nov 01, 2021 - Dec 31, 2021'),
+(5, '2021-12-09 13:53:46', '`1800649` Jeremiah Embana', 'Set payment for Nov 01, 2021 - Nov 30, 2021'),
+(6, '2021-12-09 13:54:39', '`1800649` Jeremiah Embana', 'Set payment for Dec 01, 2021 - Dec 31, 2021'),
+(7, '2021-12-09 13:55:06', '`1800649` Jeremiah Embana', 'Paid for Dec 09, 2021 - Jan 07, 2022'),
+(8, '2021-12-09 15:52:29', '`1800649` Jeremiah Embana', 'Paid for Dec 01, 2021 - Dec 31, 2021');
 
 -- --------------------------------------------------------
 
@@ -738,7 +771,7 @@ CREATE TABLE `register` (
 
 INSERT INTO `register` (`id`, `student_id`, `lname`, `fname`, `mname`, `bdate`, `gender`, `course_id`, `contact`, `privilege`, `email`, `photo`, `address`, `guardian`, `gcontact`, `status`, `curr_date`) VALUES
 (73, 1800435, 'Payne', 'Garrett', 'Olson', '2000-04-22', 'Male', 2, '07980798079', 'Non-Athlete', 'pifuz@mailinator.com', 'minato.png', 'Maiores tempora volu', 'Culpa odit rerum vel', '07980795555', 0, '2021-12-09 08:39:46'),
-(74, 1800567, 'Pantas', 'Gia Nila', 'Pore', '2000-03-15', 'Female', 2, '05968473647', 'Non-Athlete', 'pantasgianila@gmail.com', 'yang.jpg', 'Brgy. 77 PC Village  Marasbaras Tacloban City, Leyte', 'Gil Pantas', '09857213456', 0, '2021-12-09 08:40:45');
+(77, 1800567, 'Pantas', 'Gia Nila', 'Pore', '2000-03-15', 'Female', 2, '09063827392', 'Non-Athlete', 'pantasgianila@gmail.com', 'yang.jpg', 'Brgy. 77 PC Village  Marasbaras Tacloban City, Leyte', 'Gil Pantas', '09837485737', 0, '2021-12-09 15:27:53');
 
 -- --------------------------------------------------------
 
@@ -876,6 +909,33 @@ INSERT INTO `room_category` (`id`, `room_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `room_chart`
+--
+
+CREATE TABLE `room_chart` (
+  `id` int(15) NOT NULL,
+  `room_id` int(15) NOT NULL,
+  `occupants` int(50) DEFAULT NULL,
+  `current_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `room_chart`
+--
+
+INSERT INTO `room_chart` (`id`, `room_id`, `occupants`, `current_date`) VALUES
+(9, 7, 1, '2021-12-09 15:28:46'),
+(10, 18, 1, '2021-12-09 15:29:05'),
+(11, 7, 1, '2021-12-09 15:29:20'),
+(12, 20, 2, '2021-12-09 15:29:28'),
+(13, 20, 1, '2021-12-09 15:29:32'),
+(14, 7, 0, '2021-12-09 15:29:35'),
+(15, 7, 1, '2021-12-09 15:46:35'),
+(16, 1, 1, '2021-12-09 15:46:41');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `room_equipment`
 --
 
@@ -922,7 +982,21 @@ INSERT INTO `room_report` (`id`, `date_reports`, `room_id`, `details`, `reason`)
 (98, '2021-12-09 08:36:27', 11, 'Assignment of floor and room number for `1800567` Gia Nila Pantas', 'Approved Student Registration'),
 (99, '2021-12-09 08:37:56', 3, 'Assignment of floor and room number for `1800234` Sebastian Gregory', 'Approved Student Registration'),
 (100, '2021-12-09 08:38:30', 11, 'Removed `1800567` Gia Nila Pantas from floor&room number', 'Deleted Student Record'),
-(101, '2021-12-09 08:38:35', 3, 'Removed `1800234` Sebastian Gregory from floor&room number', 'Deleted Student Record');
+(101, '2021-12-09 08:38:35', 3, 'Removed `1800234` Sebastian Gregory from floor&room number', 'Deleted Student Record'),
+(102, '2021-12-09 15:14:32', 11, 'Assignment of floor and room number for `1800567` Gia Nila Pantas', 'Approved Student Registration'),
+(103, '2021-12-09 15:17:34', 3, 'Changed Assignment of floor and room number for `1800649` Jeremiah Embana', 'Updated Student Record'),
+(104, '2021-12-09 15:17:46', 13, 'Changed Assignment of floor and room number for `1800567` Gia Nila Pantas', 'Updated Student Record'),
+(105, '2021-12-09 15:17:57', 11, 'Changed Assignment of floor and room number for `1800567` Gia Nila Pantas', 'Updated Student Record'),
+(106, '2021-12-09 15:18:04', 1, 'Changed Assignment of floor and room number for `1800649` Jeremiah Embana', 'Updated Student Record'),
+(107, '2021-12-09 15:19:58', 11, 'Removed `1800567` Gia Nila Pantas from floor&room number', 'Deleted Student Record'),
+(108, '2021-12-09 15:28:46', 7, 'Assignment of floor and room number for `1800234` Nehru Villarreal Connor Hewitt', 'Approved Student Registration'),
+(109, '2021-12-09 15:29:05', 18, 'Assignment of floor and room number for `1800435` Petra Branch Kaden Suarez', 'Approved Student Registration'),
+(110, '2021-12-09 15:29:20', 7, 'Changed Assignment of floor and room number for `1800234` Nehru Villarreal Connor Hewitt', 'Updated Student Record'),
+(111, '2021-12-09 15:29:28', 20, 'Changed Assignment of floor and room number for `1800435` Petra Branch Kaden Suarez', 'Updated Student Record'),
+(112, '2021-12-09 15:29:32', 20, 'Removed `1800435` Petra Branch Kaden Suarez from floor&room number', 'Deleted Student Record'),
+(113, '2021-12-09 15:29:35', 7, 'Removed `1800234` Nehru Villarreal Connor Hewitt from floor&room number', 'Deleted Student Record'),
+(114, '2021-12-09 15:46:35', 7, 'Changed Assignment of floor and room number for `1800649` Jeremiah Embana', 'Updated Student Record'),
+(115, '2021-12-09 15:46:41', 1, 'Changed Assignment of floor and room number for `1800649` Jeremiah Embana', 'Updated Student Record');
 
 -- --------------------------------------------------------
 
@@ -980,7 +1054,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `rfid`, `password`, `firstname`, `middlename`, `lastname`, `bdate`, `gender`, `address`, `contact`, `floor_id`, `room_id`, `actualroom_id`, `email`, `privilege`, `guardian`, `guardian_contact`, `photo`, `course_id`, `unpaid_total`, `status`, `created_at`, `verified_at`) VALUES
-(1800649, 'D541EC2D', '$2y$10$rkElmAx2CFbYh7jM56bXxuM/.zkyucOb62v4ua0rppP56gt2KQYxS', 'Jeremiah', 'Orpeza', 'Embana', '1999-11-10', 'Male', 'Brgy. 76 Fatima Village Tacloban City, Leyte', '09063774018', 1, 1, 1, 'jeremiahembana22@gmail.com', 'Non-Athlete', 'Jeany Embana', '09613057822', 'MAYA.png', 2, 0, 1, '2021-12-03 02:51:38', '2021-12-02 19:53:15');
+(1800649, 'D541EC2D', '$2y$10$rkElmAx2CFbYh7jM56bXxuM/.zkyucOb62v4ua0rppP56gt2KQYxS', 'Jeremiah', 'Orpeza', 'Embana', '1999-11-10', 'Male', 'Brgy. 76 Fatima Village Tacloban City, Leyte', '09063774018', 1, 1, 1, 'jeremiahembana22@gmail.com', 'Non-Athlete', 'Jeany Embana', '09613057822', 'MAYA.png', 2, 1, 1, '2021-12-03 02:51:38', '2021-12-02 19:53:15');
 
 -- --------------------------------------------------------
 
@@ -1047,6 +1121,13 @@ CREATE TABLE `unpaid` (
   `receipt` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `unpaid`
+--
+
+INSERT INTO `unpaid` (`id`, `student_id`, `date_from`, `date_to`, `date_unpaid`, `deadline`, `status`, `receipt`) VALUES
+(47, 1800649, '2021-11-01', '2021-11-30', '2021-12-09 13:53:46', '2021-11-15', 0, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1099,7 +1180,10 @@ INSERT INTO `verification` (`id`, `email`, `token`) VALUES
 (48, 'pantasgianila@gmail.com', '768e78024aa8fdb9b8fe87be86f647454422c5ff86'),
 (49, 'pantasgianila@gmail.com', '768e78024aa8fdb9b8fe87be86f647457722efa923'),
 (50, 'pantasgianila@gmail.com', '768e78024aa8fdb9b8fe87be86f64745a88137cda2'),
-(51, 'vegufa@mailinator.com', '768e78024aa8fdb9b8fe87be86f64745680422268a');
+(51, 'vegufa@mailinator.com', '768e78024aa8fdb9b8fe87be86f64745680422268a'),
+(52, 'pantasgianila@gmail.com', '768e78024aa8fdb9b8fe87be86f64745306e654fe7'),
+(53, 'jafud@mailinator.com', '768e78024aa8fdb9b8fe87be86f64745119f7d8d96'),
+(54, 'cawoqev@mailinator.com', '768e78024aa8fdb9b8fe87be86f6474592b491a5a5');
 
 -- --------------------------------------------------------
 
@@ -1303,6 +1387,13 @@ ALTER TABLE `room_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `room_chart`
+--
+ALTER TABLE `room_chart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `room_id` (`room_id`);
+
+--
 -- Indexes for table `room_report`
 --
 ALTER TABLE `room_report`
@@ -1366,7 +1457,7 @@ ALTER TABLE `violations`
 -- AUTO_INCREMENT for table `activity_logs`
 --
 ALTER TABLE `activity_logs`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=738;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=757;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -1456,7 +1547,7 @@ ALTER TABLE `log_book`
 -- AUTO_INCREMENT for table `paid`
 --
 ALTER TABLE `paid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=314;
 
 --
 -- AUTO_INCREMENT for table `password_reset`
@@ -1468,7 +1559,7 @@ ALTER TABLE `password_reset`
 -- AUTO_INCREMENT for table `payment_report`
 --
 ALTER TABLE `payment_report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pending`
@@ -1480,7 +1571,7 @@ ALTER TABLE `pending`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `reports`
@@ -1513,10 +1604,16 @@ ALTER TABLE `room_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `room_chart`
+--
+ALTER TABLE `room_chart`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `room_report`
 --
 ALTER TABLE `room_report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -1534,13 +1631,13 @@ ALTER TABLE `superadmin`
 -- AUTO_INCREMENT for table `unpaid`
 --
 ALTER TABLE `unpaid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `verification`
 --
 ALTER TABLE `verification`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `violations`
@@ -1657,6 +1754,12 @@ ALTER TABLE `rfid_setting`
 ALTER TABLE `rooms`
   ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`floor_category_id`) REFERENCES `floor_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `rooms_ibfk_2` FOREIGN KEY (`room_category_id`) REFERENCES `room_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `room_chart`
+--
+ALTER TABLE `room_chart`
+  ADD CONSTRAINT `room_chart_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `room_report`
