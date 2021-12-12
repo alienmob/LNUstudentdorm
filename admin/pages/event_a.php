@@ -16,8 +16,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-        <li>Announcements</li>
-        <li class="active">Attendance Record</li>
+        <li>Monitoring</li>
+        <li class="active">Student Attendance</li>
       </ol>
     </section>
     <!-- Main content -->

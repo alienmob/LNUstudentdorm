@@ -14,6 +14,8 @@
 	$title2 = $row['title'];
 
 
+	
+
 	// Activity log
 	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
 	$query = $conn->query($sql);
@@ -24,9 +26,13 @@
 	$conn->query($sql);
 	// End activity log
 
-		$sql = "UPDATE equipments SET title = '$title', category_id = '$category' WHERE id = '$id'";
+		$sql = "UPDATE equip_room SET equipment_name = '$title' WHERE equipment_name = '$title2'";
 
 		if($conn->query($sql)){
+
+		$sql = "UPDATE equipments SET title = '$title', category_id = '$category' WHERE id = '$id'";
+		$conn->query($sql);
+
 			$_SESSION['success'] = 'Equipment updated successfully';
 		}
 		else{

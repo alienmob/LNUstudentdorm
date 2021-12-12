@@ -22,6 +22,8 @@
 
 		$sql = "DELETE FROM equipments WHERE id = '$id'";
 		if($conn->query($sql)){
+			$sql = "DELETE FROM equip_room WHERE equipment_name = '$title'";
+			$conn->query($sql);
 			$_SESSION['success'] = 'Equipment deleted successfully';
 		}
 		else{

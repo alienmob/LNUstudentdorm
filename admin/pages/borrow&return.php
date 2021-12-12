@@ -25,6 +25,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+        <li>Summary Reports</li>
         <li class="active">Borrowed & Returned Summary Report</li>
       </ol>
     </section>
@@ -149,7 +150,7 @@ $(function(){
     labels  : <?php echo $months; ?>,
     datasets: [
       {
-        label               : 'Returned',
+        label               : 'Borrowed',
         fillColor           : 'rgba(34, 34, 133, 1)',
         strokeColor         : 'rgba(34, 34, 133, 1)',
         pointColor          : 'rgba(34, 34, 133, 1)',
@@ -159,7 +160,7 @@ $(function(){
         data                : <?php echo $borrow; ?>
       },
       {
-        label               : 'Borrowed',
+        label               : 'Returned',
         fillColor           : 'rgba(60,141,188,0.9)',
         strokeColor         : 'rgba(60,141,188,0.8)',
         pointColor          : '#3b8bba',

@@ -16,8 +16,8 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-          <li>Transaction</li>
-          <li class="active">Requests</li>
+          <li>Transactions</li>
+          <li class="active">Equipment Requests</li>
         </ol>
       </section>
       <!-- Main content -->

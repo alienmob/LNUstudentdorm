@@ -16,8 +16,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-        <li>Student Status</li>
-        <li class="active">Status</li>
+        <li>Monitoring</li>
+        <li class="active">Student Status</li>
       </ol>
     </section>
     <!-- Main content -->

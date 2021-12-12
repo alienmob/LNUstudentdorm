@@ -15,9 +15,9 @@
           Borrowed Equipment Record List
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li>Transaction</li>
-          <li class="active">Borrowed</li>
+          <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+          <li>Transactions</li>
+          <li class="active">Borrowed Equipment</li>
         </ol>
       </section>
       <!-- Main content -->

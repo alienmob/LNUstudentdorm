@@ -16,7 +16,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-        <li>Transient Management</li>
+        <li>Monitoring</li>
         <li class="active">Checked-In Transient</li>
       </ol>
     </section>

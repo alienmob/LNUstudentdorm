@@ -41,6 +41,16 @@
 			$sql = "INSERT INTO equipment_chart (equipment_id, available, being_used, eservice, unservice, equipment_total) VALUES ('$e_id', '$available', '$being_used', '$eservice', '$unservice', '$equipment_total')";
 			$conn->query($sql);
 
+
+			$sql = "SELECT * FROM rooms";
+			$query = $conn->query($sql);
+			while($row = $query->fetch_assoc()){
+            $rid = $row['id'];
+            $sql = "INSERT INTO equip_room (room_id, equipment_name, equip_room_quantity) 
+			VALUES ('$rid', '$title' , '0')";
+            $conn->query($sql);
+			}
+
 			$_SESSION['success'] = 'Equipment added successfully';
 
 	

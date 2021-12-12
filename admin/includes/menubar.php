@@ -87,8 +87,9 @@
         <li><a href="../pages/log.php"><i class="fa fa-circle-o"></i> Student Log Book</a></li>
         <li><a href="../pages/event_a.php"><i class="fa fa-circle-o"></i> Student Attendance</a></li>
         <li><a href="../pages/payment.php"><i class="fa fa-circle-o"></i> Student Payment Status</a></li>
+        <li><a href="../pages/equip_room.php"><i class="fa fa-circle-o"></i> Equipment in Rooms</a></li>
         <li><a href="../pages/checkin.php"><i class="fa fa-circle-o"></i> Transient Check In Status</a></li>
-          <li><a href="../pages/checkout.php"><i class="fa fa-circle-o"></i> Transient Check Out Status</a></li>
+        <li><a href="../pages/checkout.php"><i class="fa fa-circle-o"></i> Transient Check Out Status</a></li>
         </ul>
       </li>
 

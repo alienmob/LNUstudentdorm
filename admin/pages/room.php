@@ -25,8 +25,8 @@ if (isset($_GET['floor_category'])) {
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-          <li>Facility</li>
-          <li class="active">Rooms</li>
+          <li>Records</li>
+          <li class="active">Room Record</li>
         </ol>
       </section>
       <!-- Main content -->

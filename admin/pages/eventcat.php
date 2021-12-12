@@ -15,9 +15,9 @@
         Event Category
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Announcements</li>
-        <li class="active">Category</li>
+        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+        <li>Category Management</li>
+        <li class="active">Event Category</li>
       </ol>
     </section>
     <!-- Main content -->

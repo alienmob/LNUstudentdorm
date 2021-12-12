@@ -14,6 +14,7 @@ if (isset($_POST['add'])) {
 	} else {
 		$row = $query->fetch_assoc();
 		$student_id = $row['student_id'];  //
+		$room_id = $row['actualroom_id'];
 		$return = 0;
 		foreach ($_POST['code'] as $code) {
 			if (!empty($code)) {
@@ -49,6 +50,9 @@ if (isset($_POST['add'])) {
 						$equipment_total = $row['quantity_total'];
 
 						$sql = "INSERT INTO equipment_chart (equipment_id, available, being_used, eservice, unservice, equipment_total) VALUES ('$e_id', '$available', '$being_used', '$eservice', '$unservice', '$equipment_total')";
+						$conn->query($sql);
+
+						$sql = "UPDATE equip_room SET equip_room_quantity = equip_room_quantity - 1 WHERE room_id = '$room_id' AND equipment_name = '$title'";
 						$conn->query($sql);
 
 						$sql = "SELECT * FROM students WHERE student_id = '$student_id'";

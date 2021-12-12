@@ -16,8 +16,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-        <li>Student Logs</li>
-        <li class="active">Log Book</li>
+        <li>Monitoring</li>
+        <li class="active">Student Log Book</li>
       </ol>
     </section>
     <!-- Main content -->

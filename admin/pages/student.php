@@ -25,8 +25,8 @@ if (isset($_GET['rooms'])) {
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-        <li>Students</li>
-        <li class="active">Student List</li>
+        <li>Management</li>
+        <li class="active">Student Management</li>
       </ol>
     </section>
     <!-- Main content -->

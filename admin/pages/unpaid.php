@@ -16,8 +16,8 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-          <li>Payment Records</li>
-          <li class="active">Unpaid Status</li>
+          <li>Transactions</li>
+          <li class="active">Student Payments</li>
         </ol>
       </section>
       <!-- Main content -->
